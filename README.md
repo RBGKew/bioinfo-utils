@@ -8,6 +8,7 @@ These pages are collectively maintained by staff and students at RBG Kew for the
 * Utility scripts
 * List of machines including addresses and installed software
 * Usage instructions, best practice guides and useful links
+* List of shared data locations and scratch usage guidelines
 
 These pages are public so **do not post _passwords_, _keys_, or _other sensitive information_**.
 
