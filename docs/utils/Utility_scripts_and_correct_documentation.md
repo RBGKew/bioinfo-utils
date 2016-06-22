@@ -20,7 +20,7 @@ function_one{
 }
 ```
 
-Break the task up, e.g. instead of `function_one()` use `script_one`. Then the separate functions can still be simply chained together with e.g. `cat some_input.fa | script_one | script_two | script_three > outfile.fa. This allows functions to be recombined or improved much more readily.
+Break the task up, e.g. instead of `function_one()` use `script_one`. Then the separate functions can still be simply chained together with e.g. `cat some_input.fa | script_one | script_two | script_three > outfile.fa`. This allows functions to be recombined or improved much more readily.
 
 General instructions, advice, best practice etc can be found in the [docs](../docs) folder.		
 
@@ -38,3 +38,10 @@ At a minimum **all** scripts here should have the following:
   * What the script does		
   * Any arguments that are expected		
 * A boilerplate usage document in Markdown format with the same name, e.g `extract_fasta.py` with a corresponding `extract_fasta.md`
+
+## General advice
+
+See:
+
+1. [Dudley &amp; Butte, 2009](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2791169/)
+
