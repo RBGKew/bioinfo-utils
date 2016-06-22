@@ -6,12 +6,12 @@ Please make sure that **all scripts are well-documented** and that where appropr
 
 General documentation is in the docs folder.
 
-##ÊCorrect documentation
+##Correct documentation
 
 At a minimum **all** scripts here should have the following:
 
 * A sensible, informative name
 * Basic usage information in the script header itself:
-.. * What the script does
-.. * Any arguments that are expected
+ * What the script does
+ * Any arguments that are expected
 * A boilerplate usage document in Markdown format with the same name, e.g `extract_fasta.py` with a corresponding `extract_fasta.md`
