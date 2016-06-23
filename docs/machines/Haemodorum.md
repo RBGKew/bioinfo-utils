@@ -4,8 +4,13 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 ## Basic info
 
-Name_on_network | IP | Name | MAC_address | Asset | Total_RAM(GB) | Total_cores | Notes 
-haemodorum.ad.kew.org  	10.152.1.94	Haemodorum   	3c:d9:2b:5b:58:3c 	a9263	24		8		Headless
+Name on network | IP  | Name | Total RAM(GB) | Total cores | Notes
+--------------- | --- | ---- | ------------- | ----------- | -----
+haemodorum.ad.kew.org | x.x.1.94 | Haemodorum | 24 | 8 | Headless
+
+## Known Sudoers
+
+Joe, Alex, Mike
 
 ## Specific notes for this machine
 
