@@ -4,7 +4,7 @@ Here is general advice and tutorials
 
 ## Fungal phylogenomics
 
-A pipeline / wiki for fungal phylogenomics is available at http://mycologywiki.kew.org/mycology/index.php/Phylogenomic_tools_wiki (we'll port it at some point...)
+Bryn Dentinger has written a pipeline / wiki for fungal phylogenomics is available at [Phylogenomic tools wiki](Phylogenomic_tools_wiki.md).
 
 ## Commonly used software
 
@@ -19,4 +19,5 @@ A pipeline / wiki for fungal phylogenomics is available at http://mycologywiki.k
 
 * [Analysing nanopore data with SPAdes](http://angus.readthedocs.io/en/stable/analyzing_nanopore_data.html)
 * [De novo assembly with SPAdes](http://angus.readthedocs.io/en/stable/assembling-ecoli.html)
+* [Trimming and mapping reads to a genome with FastQC, trimGalore, BWA](https://www.biostars.org/p/75489/)
 
