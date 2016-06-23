@@ -17,8 +17,8 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 ## Table of info
 
-Name on network | IP  | Name | Total RAM(GB) | Total cores | SUdoers | Notes
---------------- | --- | ---- | ------------- | ----------- | ------------------- | -----
+Name on network | IP  | Name | Total RAM(GB) | Total cores | Known SUdoers | Notes
+--------------- | --- | ---- | ------------- | ----------- | ------------- | -----
 arisaema.ad.kew.org | x.x.1.92 | Arisaema | 48 | 8 | Mike | na
 equisetum.ad.kew.org | x.x.1.93 | Equisetum | 24 | 8 | Mike | na
 pandanus.ad.kew.org | x.x.1.95 | Pandanus | 24 | 8 | Mike | Headless
