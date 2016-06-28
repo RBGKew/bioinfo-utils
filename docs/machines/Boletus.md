@@ -14,4 +14,6 @@ Joe, Alex, Mike
 
 ## Specific notes for this machine
 
-Put any notes specific to this machine here.
+(Put any notes specific to this machine here.)
+
+**Student-preference machine**: This machine is primarily indended for MSc students' projects. In all cases they are assumed to have priority in job scheduling - please check before running long or CPU- or memory-intensive analyses.
