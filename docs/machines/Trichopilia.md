@@ -10,7 +10,7 @@ trichopilia.ad.kew.org | x.x.1.96 | Trichopilia | 40 | 8 | na
 
 ## Known Sudoers
 
-Joe, Alex, Mike
+Joe, Alex, Mike, Pepijn
 
 ## Specific notes for this machine
 

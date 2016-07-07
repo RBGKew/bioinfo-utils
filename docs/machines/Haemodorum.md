@@ -10,7 +10,7 @@ haemodorum.ad.kew.org | x.x.1.94 | Haemodorum | 24 | 8 | Headless
 
 ## Known Sudoers
 
-Joe, Alex, Mike
+Joe, Alex, Mike, Pepijn
 
 ## Specific notes for this machine
 
