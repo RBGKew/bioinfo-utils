@@ -13,7 +13,7 @@ These pages are collectively maintained by staff and students at RBG Kew for the
 
 These pages are public so **do not post _passwords_, _keys_, or _other sensitive information_**.
 
-This documentation is available on the organisation github or linked readthedocs.org accounts. Please contact @lonelyjoeparker for requests.
+This documentation is available on the organisation github or linked [readthedocs.org](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/) accounts. Please contact @lonelyjoeparker for requests.
 
 ---
 
