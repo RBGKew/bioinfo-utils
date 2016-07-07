@@ -1,0 +1,48 @@
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "$PS1" ]; then
+  if [ "$BASH" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ "`id -u`" -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+
+# Adding commands to write out the jobs.list
+# This should work for bash sessions - for zsh
+# (default) edit /etc/zsh/zlogin. 
+echo "=============== UPCOMING JOBS ================="
+echo "User	analysis	start	end	threads	mem"
+echo "-----------------------------------------------"
+tail -n 10 /etc/bioinfo.jobs.list
+echo "=============== -<=>-<=>-<=>- ================="
+echo "Add jobs with:"
+echo "i-want-a-jobby <program name> <start> <duration> <CPUs> <RAM>"
+echo "Where:"
+echo "	<program name>	Any text"
+echo "	<start>	One of: 'now' 'yyyy-mm-dd' 'yyyy-mm-dd hh:mm'"
+echo "	<duration>	Duration in hours/days/weeks (e.g. 3h, 1d, 0.5w etc)"
+echo "	<threads>	(Optional) Number of threads"
+echo "	<mem>	(Optional) Memory/RAM in Gb"
+echo "=============== -<=>-<=>-<=>- ================="
