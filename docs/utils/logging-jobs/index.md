@@ -1,4 +1,4 @@
-# i-want-a-jobby 
+# Simple jobs logging for shared bioinformatics machines
 
 ## Purpose
 The jobs logging scripts provide a means to (non-interactively) list analyses that are running, or soon starting, on a given machine. The idea is to make it as simple as possible for people to use the system so there's no excuse!
@@ -13,16 +13,18 @@ It consists of three things:
 
 
 ## Usage
- The main i-want-a-jobby script will be called with
- ```i-want-a-jobby <program name> <start> <duration> <CPUs> <RAM>```
- Where:
-	argv[0] (unsued, =='i-want-a-jobby')
-	argv[1]: <program name>	Any text
-	argv[2]: <start>	One of: 'now' 'yyyy-mm-dd' 'yyyy-mm-dd hh:mm'
-	argv[3]: <duration>	Duration in hours/days/weeks (e.g. 3h, 1d, 0.5w etc)
-	argv[4]: <threads>	(Optional) Number of threads
-	argv[5]: <mem>	(Optional) Memory/RAM in Gb
-	
+The main i-want-a-jobby script will be called with
+```
+i-want-a-jobby <program name> <start> <duration> <threads> <memory>
+
+# where
+	<program name>	Any text
+	<start>		One of: 'now' 'yyyy-mm-dd' 'yyyy-mm-dd hh:mm'
+	<duration>	Duration in hours/days/weeks (e.g. 3h, 1d, 0.5w etc)
+	<threads>	(Optional) Number of threads
+	<mem>		(Optional) Memory/RAM in Gb
+```
+
 ## Note 
 **assumes** the following:
 
