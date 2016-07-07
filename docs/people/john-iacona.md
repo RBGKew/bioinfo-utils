@@ -9,4 +9,4 @@ everyone to use.
 Contact me:
 
 * On Github [@jiacona](https://github.com/jiacona)
-* Email [j.iacona@kew.org](j.iacona@kew.org)
+* Email [j.iacona@kew.org](mailto:j.iacona@kew.org)
