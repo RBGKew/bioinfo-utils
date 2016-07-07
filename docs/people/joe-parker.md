@@ -13,4 +13,4 @@ Contact me:
 
 * On Github [@lonelyjoeparker](http://github.com/lonelyjoeparker)
 * By email: [joe.parker@kew.org](mailto:joe.parker@kew.org)
-* On [my personal science site](realtimephylogenomics.co.uk). 
+* On [my personal science site](http://realtimephylogenomics.co.uk). 
