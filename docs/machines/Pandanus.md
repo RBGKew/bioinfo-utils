@@ -10,7 +10,7 @@ pandanus.ad.kew.org | x.x.1.95 | Pandanus | 24 | 8 | Headless
 
 ## Known Sudoers
 
-Alex, Mike
+Alex, Mike, Pepijn
 
 ## Specific notes for this machine
 

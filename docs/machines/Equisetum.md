@@ -10,7 +10,7 @@ equisetum.ad.kew.org | x.x.1.93 | Equisetum | 24 | 8 | na
 
 ## Known Sudoers
 
-Alex, Mike
+Alex, Mike, Pepijn
 
 ## Specific notes for this machine
 

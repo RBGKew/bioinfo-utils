@@ -10,7 +10,7 @@ boletus.ad.kew.org | x.x.1.102 | Boletus | 256 | 24 | na
 
 ## Known Sudoers
 
-Joe, Alex, Mike
+Joe, Alex, Mike, Pepijn
 
 ## Specific notes for this machine
 

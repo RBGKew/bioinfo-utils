@@ -10,7 +10,7 @@ arisaema.ad.kew.org | x.x.1.92 | Arisaema | 48 | 8 | na
 
 ## Known Sudoers
 
-Mike
+Mike, Pepijn
 
 ## Specific notes for this machine
 
