@@ -8,7 +8,7 @@
 # i-want-a-jobby <program name> <start> <duration> <CPUs> <RAM>
 # Where:
 #	argv[0] (unsued, =='i-want-a-jobby')
-#	argv[1]: <program name>	Any text
+#	argv[1]: <program name>	Any text - if "status" is used the current jobs list will be printed
 #	argv[2]: <start>	One of: 'now' 'yyyy-mm-dd' 'yyyy-mm-dd hh:mm'
 #	argv[3]: <duration>	Duration in hours/days/weeks (e.g. 3h, 1d, 0.5w etc)
 #	argv[4]: <threads>	(Optional) Number of threads
@@ -24,7 +24,12 @@ jobsfile = '/etc/bioinfo.jobs.list'
 
 #parse the input and decide what to append to /etc/bioinfo.jobs.list
 
-if len(argv) >= 4:
+if argv[1] == 'status':
+	f = open(jobsfile, 'r')
+	print f.read(),
+	f.close()
+	exit()
+elif len(argv) >= 4:
 	calling = argv[0]
 	program = argv[1]
 	starttime = argv[2]
@@ -38,7 +43,7 @@ else:
 	print "i-want-a-jobby <program name> <start> <duration> <CPUs> <RAM>\n"
 	print "Where:\n"
 	print "	argv[0] (unsued, =='i-want-a-jobby')\n"
-	print "	argv[1]: <program name>	Any text\n"
+	print "	argv[1]: <program name>	Any text - if \"status\" is used the current jobs list will be printed\n"
 	print "	argv[2]: <start>	One of: 'now' 'yyyy-mm-dd' 'yyyy-mm-dd hh:mm'\n"
 	print "	argv[3]: <duration>	Duration in hours/days/weeks (e.g. 3h, 1d, 0.5w etc)\n"
 	print "	argv[4]: <threads>	(Optional) Number of threads\n"
