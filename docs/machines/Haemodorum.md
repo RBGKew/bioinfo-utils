@@ -6,7 +6,7 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores | Notes
 --------------- | --- | ---- | ------------- | ----------- | -----
-haemodorum.ad.kew.org | x.x.1.94 | Haemodorum | 24 | 8 | Headless
+haemodorum.ad.kew.org | x.x.1.94 | Haemodorum | 56 | 8 | Headless
 
 ## Known Sudoers
 

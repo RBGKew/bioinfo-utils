@@ -6,7 +6,7 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores | Notes
 --------------- | --- | ---- | ------------- | ----------- | -----
-arisaema.ad.kew.org | x.x.1.92 | Arisaema | 48 | 8 | na
+arisaema.ad.kew.org | x.x.1.92 | Arisaema | 56 | 8 | na
 
 ## Known Sudoers
 
