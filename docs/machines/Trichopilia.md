@@ -6,7 +6,7 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores | Notes
 --------------- | --- | ---- | ------------- | ----------- | -----
-trichopilia.ad.kew.org | x.x.1.96 | Trichopilia | 40 | 8 | na
+trichopilia.ad.kew.org | x.x.1.96 | Trichopilia | 56 | 8 | na
 
 ## Known Sudoers
 
