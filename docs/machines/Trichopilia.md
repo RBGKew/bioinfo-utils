@@ -15,3 +15,6 @@ Joe, Alex, Mike, Pepijn
 ## Specific notes for this machine
 
 Put any notes specific to this machine here.
+
+* Update 2016-aug-19: installed poretools 0.5.1 from github (Joe)
+
