@@ -11,7 +11,7 @@ tuber.ad.kew.org | x.x.1.56 | Tuber | 48 | 8 | na
 
 ## Known Sudoers
 
-Mike
+Mike, Pepijn, Joe
 
 ## Specific notes for this machine
 
