@@ -15,3 +15,9 @@ Joe, Mike, Pepijn
 ## Specific notes for this machine
 
 Put any notes specific to this machine here.
+
+### Install notes 
+
+Date | tool | version | installed by | location(s) | Notes
+---- | ---- | ------- | ------------ | ----------- | -----
+2016-11-21 | canu | 1.3 | joe | /usr/local/bioinf/canu | Tried to alias it to /usr/local/bin/

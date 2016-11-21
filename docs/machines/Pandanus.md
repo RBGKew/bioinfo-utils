@@ -15,3 +15,10 @@ Alex, Mike, Pepijn, joe
 ## Specific notes for this machine
 
 Put any notes specific to this machine here.
+
+### Install notes 
+
+Date | tool | version | installed by | location(s) | Notes
+---- | ---- | ------- | ------------ | ----------- | -----
+2016-11-21 | miniasm | 0.2-r137-dirty | joe | /usr/local/bioinf/miniasm/miniasm/miniasm | Tried to alias it to /usr/local/bin/ 
+2016-11-21 | minimap | 0.2-r124-dirty | joe | /usr/local/bioinf/minimap/minimap/minimap | Tried to alias it to /usr/local/bin/ 
