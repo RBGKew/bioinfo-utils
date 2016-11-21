@@ -19,10 +19,10 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores | Known SUdoers | Notes
 --------------- | --- | ---- | ------------- | ----------- | ------------- | -----
-arisaema.ad.kew.org | x.x.1.92 | Arisaema | 56 | 8 | Mike, Pepijn | na
+arisaema.ad.kew.org | x.x.1.92 | Arisaema | 56 | 8 | Mike, Pepijn, Joe | na
 equisetum.ad.kew.org | x.x.1.93 | Equisetum | 56 | 8 | Mike, Pepijn | na
-pandanus.ad.kew.org | x.x.1.95 | Pandanus | 56 | 8 | Mike, Pepijn | Headless
-trichopilia.ad.kew.org | x.x.1.96 | Trichopilia | 56 | 8 | Mike, Pepijn | na
+pandanus.ad.kew.org | x.x.1.95 | Pandanus | 56 | 8 | Mike, Pepijn, Joe | Headless
+trichopilia.ad.kew.org | x.x.1.96 | Trichopilia | 56 | 8 | Mike, Pepijn, Joe | na
 haemodorum.ad.kew.org | x.x.1.94 | Haemodorum | 56 | 8 | Mike, Pepijn, Joe, Alex | Headless
 boletus.ad.kew.org | x.x.1.102 | Boletus | 256 | 24 | Mike, Pepijn, Joe, Alex | na
 senecio.ad.kew.org | x.x.1.103 | Senecio | 256 | 24 | Mike, Pepijn, Joe, Alex | na
