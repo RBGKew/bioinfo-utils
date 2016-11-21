@@ -16,4 +16,7 @@ Pepijn, Joe, Alex, Mike
 
 (Put any notes specific to this machine here.)
 
+* Update 2016-aug-19: installed poretools 0.5.1 from github (Joe)
+* Update 2016-aug-19: installed pip, setuptools (Joe)
+
 **Student-preference machine**: This machine is primarily indended for MSc students' projects. In all cases they are assumed to have priority in job scheduling - please check before running long or CPU- or memory-intensive analyses.
