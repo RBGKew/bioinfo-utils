@@ -17,4 +17,6 @@ Joe, Alex, Mike, Pepijn
 Put any notes specific to this machine here.
 
 * Update 2016-aug-19: installed poretools 0.5.1 from github (Joe)
+* Update 2016-nov-02: installed MrBayes v3.2.6 parallel version to be run with mpirun (Pepijn):
+`mpirun -np NUMBERTHREADS mbpar file.nex > log.txt &`
 
