@@ -29,4 +29,4 @@ This machine has been upgraded to run ncbi-blast+ 2.5.0 (September 2016 build) a
 
 Date | Database(s) | Version | Updated by
 ---- | ----------- | ------- | ----------
-2016-11-29 | nr,nt | 216 (Oct 2016) | Joe
+2016-11-29 | nr,nt,refseq | 216 (Oct 2016) | Joe
