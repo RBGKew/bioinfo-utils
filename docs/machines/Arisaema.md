@@ -21,3 +21,12 @@ Put any notes specific to this machine here.
 Date | tool | version | installed by | location(s) | Notes
 ---- | ---- | ------- | ------------ | ----------- | -----
 2016-11-21 | canu | 1.3 | joe | /usr/local/bioinf/canu | Tried to alias it to /usr/local/bin/
+2016-11-29 | ncbi-blast+ | 2.5.0 | joe | /usr/local/bioinf/ncbi-blast-2.5.0+
+
+### BLAST standalone installation on this machines 
+
+This machine has been upgraded to run ncbi-blast+ 2.5.0 (September 2016 build) and the refseq, nr and nt databases should be installed on this machine under `/mnt/HDD_2/blastdb`. Please add update notes below:
+
+Date | Database(s) | Version | Updated by
+---- | ----------- | ------- | ----------
+2016-11-29 | nr,nt | 216 (Oct 2016) | Joe
