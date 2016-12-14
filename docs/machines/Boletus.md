@@ -17,7 +17,7 @@ Joe, Alex, Mike, Pepijn
 (Put any notes specific to this machine here.)
 
 * Update 2016-aug-19*: installed poretools 0.5.1 from github (Joe)
-* Update 2016-dec-14: installed OpenCL using apt-get (Pepijn)
+* Update 2016-dec-14: installed OpenCL using apt-get, CUDA 8.0 following instructions on https://developer.nvidia.com/cuda-downloads (Pepijn)
 
 **Student-preference machine**: This machine is primarily indended for MSc students' projects. In all cases they are assumed to have priority in job scheduling - please check before running long or CPU- or memory-intensive analyses.
 
