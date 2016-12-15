@@ -24,11 +24,22 @@ jobsfile = '/etc/bioinfo.jobs.list'
 
 #parse the input and decide what to append to /etc/bioinfo.jobs.list
 
-if argv[1] == 'status':
-	f = open(jobsfile, 'r')
-	print f.read(),
-	f.close()
-	exit()
+if len(argv) == 1:
+        print "Usage: # will be called with\n"
+        print "i-want-a-jobby <program name> <start> <duration> <CPUs> <RAM>\n"
+        print "Where:\n"
+        print " argv[0] (unsued, =='i-want-a-jobby')\n"
+        print " argv[1]: <program name> Any text - if \"status\" is used the current jobs list will be printed\n"
+        print " argv[2]: <start>        One of: 'now' 'yyyy-mm-dd' 'yyyy-mm-dd hh:mm'\n"
+        print " argv[3]: <duration>     Duration in hours/days/weeks (e.g. 3h, 1d, 0.5w etc)\n"
+        print " argv[4]: <threads>      (Optional) Number of threads\n"
+        print " argv[5]: <mem>  (Optional) Memory/RAM in Gb\n"
+        exit()
+elif argv[1] == 'status':
+        f = open(jobsfile, 'r')
+        print f.read(),
+        f.close()
+        exit()
 elif len(argv) >= 4:
 	calling = argv[0]
 	program = argv[1]
