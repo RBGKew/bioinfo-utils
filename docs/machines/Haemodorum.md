@@ -20,3 +20,4 @@ Put any notes specific to this machine here.
 * Update 2016-nov-02: installed MrBayes v3.2.6 parallel version to be run with mpirun (Pepijn):
 `mpirun -np NUMBERTHREADS mbpar file.nex > log.txt &`
 
+* Update 2017-jan-04: installad tuptime 3.3.0 to monitor shutdowns/reboots -> type `sudo tuptime` (Pepijn)
