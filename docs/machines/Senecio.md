@@ -19,5 +19,6 @@ Pepijn, Joe, Alex, Mike
 * Update 2016-aug-19: installed poretools 0.5.1 from github (Joe)
 * Update 2016-aug-19: installed pip, setuptools (Joe)
 * Update 2016-dec-15: installed parallel version of MrBayes 3.2.6 -> type `mpirun -np NUMBER_CPUs mbpar` (Pepijn)
+* Update 2017-jan-04: installad tuptime 3.3.0 to monitor shutdowns/reboots -> type `sudo tuptime` (Pepijn)
 
 **Student-preference machine**: This machine is primarily indended for MSc students' projects. In all cases they are assumed to have priority in job scheduling - please check before running long or CPU- or memory-intensive analyses.
