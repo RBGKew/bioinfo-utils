@@ -22,6 +22,7 @@ Date | tool | version | installed by | location(s) | Notes
 ---- | ---- | ------- | ------------ | ----------- | -----
 2016-11-21 | canu | 1.3 | joe | /usr/local/bioinf/canu | Tried to alias it to /usr/local/bin/
 2016-11-29 | ncbi-blast+ | 2.5.0 | joe | /usr/local/bioinf/ncbi-blast-2.5.0+
+2017-01-04 | tuptime | 3.3.0 | Pepijn | /usr/local/bioinf/git-repositories with auto install in /usr/bin | sudo rights required 
 
 ### BLAST standalone installation on this machines 
 
