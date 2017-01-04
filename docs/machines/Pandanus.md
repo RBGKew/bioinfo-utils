@@ -22,3 +22,4 @@ Date | tool | version | installed by | location(s) | Notes
 ---- | ---- | ------- | ------------ | ----------- | -----
 2016-11-21 | miniasm | 0.2-r137-dirty | joe | /usr/local/bioinf/miniasm/miniasm/miniasm | Tried to alias it to /usr/local/bin/ 
 2016-11-21 | minimap | 0.2-r124-dirty | joe | /usr/local/bioinf/minimap/minimap/minimap | Tried to alias it to /usr/local/bin/ 
+2017-01-04 | tuptime | 3.3.0 | Pepijn | /usr/local/bioinf/git-repositories with auto install in /usr/bin | sudo rights required 
