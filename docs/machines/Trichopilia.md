@@ -17,4 +17,5 @@ Joe, Alex, Mike, Pepijn
 Put any notes specific to this machine here.
 
 * Update 2016-aug-19: installed poretools 0.5.1 from github (Joe)
+* Update 2017-jan-04: installad tuptime 3.3.0 to monitor shutdowns/reboots -> type `sudo tuptime` (Pepijn)
 
