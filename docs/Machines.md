@@ -12,14 +12,28 @@ These are detailed information about each available machine. **DO NOT** put pass
 * MSc students' machines: (256GB, 24 cores)
   * [Senecio](machines/Senecio.md)
   * [Boletus](machines/Boletus.md)
-* Fatnode:
-  * *To be provided - June 2016*
+* Fatnode (ATTA):
+  * *Commissioning in progress - May 2017*
   * Specced at ≥40vCPU, ≥512GB) 
+
+## Room move May 2017
+
+The standalone 'Linux/MSc' workstations have moved to the air-conditioned computer room in the Jodrell (aka 'The Mac room'), and will probably remain there for the forseeable future. Notes:
+- Haemodorum and Pandanus stay headless
+- Haemodorum and Pandanus currently are turned off and offline. They are pending a hub for internet connection
+- Arisaema and Tuber share one screen (You can switch the screen by clicking the select button)
+  - Arisaema is left of the screen, connected with DisplayPort; 
+  - Tuber is on the right of the screen (on the floor), connected with DVI-D. 
+- Senecio and Equisetum have not been moved yet (2017-05-16) but will soon when existing jobs finish.
+- Trichopilia will share screen with Equisetum once the later has moved:
+  - Trichopilia is left of the screen, connected with VGA; 
+  - Equisetum will be right of the screen, connected with DisplayPort
 
 ## Table of info
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores | Known SUdoers | Notes
 --------------- | --- | ---- | ------------- | ----------- | ------------- | -----
+atta.ad.kew.org | x.x.x.x | Atta | x | x | James | na
 arisaema.ad.kew.org | x.x.1.92 | Arisaema | 56 | 8 | Mike, Pepijn, Joe | na
 equisetum.ad.kew.org | x.x.1.93 | Equisetum | 56 | 8 | Mike, Pepijn | na
 pandanus.ad.kew.org | x.x.1.95 | Pandanus | 56 | 8 | Mike, Pepijn, Joe | Headless
