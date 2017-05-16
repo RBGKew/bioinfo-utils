@@ -17,3 +17,4 @@ Alex, Mike, Pepijn
 Put any notes specific to this machine here.
 
 * Update 2017-jan-04: installad tuptime 3.3.0 to monitor shutdowns/reboots -> type `sudo tuptime` (Pepijn)
+* Update 2017-may-16: installad iperf 2.0.5 to monitor network speed (Pepijn)
