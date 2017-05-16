@@ -19,6 +19,7 @@ These are detailed information about each available machine. **DO NOT** put pass
 ## Room move May 2017
 
 The standalone 'Linux/MSc' workstations have moved to the air-conditioned computer room in the Jodrell (aka 'The Mac room'), and will probably remain there for the forseeable future. Notes:
+
 * Haemodorum and Pandanus stay headless
 * Haemodorum and Pandanus currently are turned off and offline. They are pending a hub for internet connection
 * Arisaema and Tuber share one screen (You can switch the screen by clicking the select button)
