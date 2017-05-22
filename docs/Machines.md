@@ -34,7 +34,7 @@ The standalone 'Linux/MSc' workstations have moved to the air-conditioned comput
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores | Known SUdoers | Notes
 --------------- | --- | ---- | ------------- | ----------- | ------------- | -----
-atta.ad.kew.org | x.x.x.x | Atta | x | x | James | na
+atta1.ad.kew.org | x.x.x.x | Atta | x | x | James | na
 arisaema.ad.kew.org | x.x.1.92 | Arisaema | 56 | 8 | Mike, Pepijn, Joe | na
 equisetum.ad.kew.org | x.x.1.93 | Equisetum | 56 | 8 | Mike, Pepijn | na
 pandanus.ad.kew.org | x.x.1.95 | Pandanus | 56 | 8 | Mike, Pepijn, Joe | Headless
