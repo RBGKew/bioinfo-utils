@@ -9,7 +9,7 @@ There is a Google Groups maillist for bioinformatics discussions / announcements
 
 ## Signup URL
 
-Sign up here: https://groups.google.com/forum/#!forum/rbg-kew-bioinformatics
+Sign up here: [https://groups.google.com/forum/#!forum/rbg-kew-bioinformatics](https://groups.google.com/forum/#!forum/rbg-kew-bioinformatics)
 
 ## Details and usage
 
