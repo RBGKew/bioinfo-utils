@@ -22,6 +22,7 @@ Joe, Alex, Mike, Pepijn
 * Update 2017-jan-04: installed tuptime 3.3.0 to monitor shutdowns/reboots -> type `sudo tuptime` (Pepijn)
 * Update 2017-mar-21: updated boost to v 1.63.0, updated mothur to v 1.39.5, updated uchime to v 4.2, updated FastQC to v 0.11.5 (Pepijn)
 * Update 2017-mar-24: updated ABySS to v 2.0.2, available from /usr/local/bin -> version in /usr/bin is still v 1.5.2 (Pepijn)
+* Update 2017-jun-29: deployed Trinity from github in /usr/local/bioinf/git-repositories/, available as symlink trinity from /usr/local/bin (Pepijn)
 
 **Student-preference machine**: This machine is primarily indended for MSc students' projects. In all cases they are assumed to have priority in job scheduling - please check before running long or CPU- or memory-intensive analyses.
 
