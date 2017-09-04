@@ -76,7 +76,7 @@ Two compute nodes, with:
 
 
 ## Rules
-* Be considerate - the cluster is a shared resource. Please don't interfer with other people's jobs or data.
+* Be considerate - the cluster is a shared resource. Please don't interfere with other people's jobs or data.
 * Follow sensible security practices - don't share accounts, don't leave connections open to the cluster on shared computers, make sure you know that the data source you're using is safe.
 * Report issues/ broken things
-* Do not store data on the cluster. Please move it off when you are done. The cluster is not at all backed up, and hence your data may just vanish if too many discs fail.
+* Do not store data on the cluster. Please move it off when you are done. The cluster is not backed up, and your data may just vanish if too many discs fail.
