@@ -98,7 +98,7 @@ $java -Xmx32G -jar pilon-1.12.jar --genome genome.fa --frags file.sorted.bam
 
 ## GENE PREDICTION
 
-1) gene prediction using [AUGUSTUS](http://bioinf.uni-greifswald.de/augustus/) **INSTALLING AUGUSTUS ON OS X 10.9 MAVERICKS ---DOES NOT WORK! TRY INSTALLING ON LINUX USING VIRTUAL BOX OR TUNNELLING INTO LINUX MACHINES IN JODRELL (e.g., ssh -lguest 10.152.8.93)**
+1) gene prediction using [AUGUSTUS](http://bioinf.uni-greifswald.de/augustus/) **INSTALLING AUGUSTUS ON OS X 10.9 MAVERICKS ---DOES NOT WORK! TRY INSTALLING ON LINUX USING VIRTUAL BOX OR TUNNELLING INTO LINUX MACHINES IN JODRELL (e.g., ssh -lguest x.x.8.93)**
 ```
 $augustus --species=coprinus path-to-infile/infile.fa > path-to-outfile/outfile.gff
 ```
