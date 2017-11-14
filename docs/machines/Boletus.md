@@ -24,6 +24,8 @@ Joe, Alex, Mike, Pepijn
 * Update 2017-mar-24: updated ABySS to v 2.0.2, available from /usr/local/bin -> version in /usr/bin is still v 1.5.2 (Pepijn)
 * Update 2017-jun-29: deployed Trinity from github in /usr/local/bioinf/git-repositories/, available as symlink trinity from /usr/local/bin (Pepijn)
 * Update 2017-jul-31: upgraded ant to v 1.10.1 and installed jModelTest2 from github in /usr/local/bioinf/git-repositories/, available as symlink jModelTest2 (Pepijn)
+* Update 2017-nov-13: installed nanopolish from github in /usr/local/bioinf/git-repositories/, available as symlink nanopolish (Pepijn)
+* Update 2017-nov-14: installed HTSlib v1.6.24 and samtools v1.6.2 from github in /usr/local/bioinf/git-repositories/ (make install into /usr/local/bin/), to work with nanopolish. Old version samtools available as samtools_0.1.19 (Pepijn)
 
 **Student-preference machine**: This machine is primarily indended for MSc students' projects. In all cases they are assumed to have priority in job scheduling - please check before running long or CPU- or memory-intensive analyses.
 
