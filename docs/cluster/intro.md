@@ -27,19 +27,36 @@ scp path/to/file username@atta1:~/
 ```
 ## Queueing system
 The cluster currently uses a standard install of slurm as a queuing system.
-To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc)
+To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.) Due to the lack of shared file storage, the cluster queues are split into two partitions, which run a job on either atta1 or atta2
 
-Example:
+Example (Run a job with 50 cores on atta1):
 ```
-#!/bin/sh
-#SBATCH --ntasks=8
-#SBATCH --workdir=/set/working/directory
-#SBATCH--error=/path/to/error/files
-#SBATCH--output=/path/to/standard/out
-echo "hello world"
+#!/bin/bash
+#
+#SBATCH --job-name=test_omp
+#SBATCH --output=res_omp.txt
+#
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=50
+#SBATCH --time=10:00
+#SBATCH --partition=atta1
+echo "hello world!"
+```
+Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on atta2)
+```
+#!/bin/bash
+#
+#SBATCH --job-name=test_omp
+#SBATCH --error=error.txt
+#SBATCH --error=out.txt
+#
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=100
+#SBATCH --time=10:00
+#SBATCH --partition=atta2
+echo "hello world!"
+```
 
-```
-Currently, the only resource specification that works is ntasks, which specifies number of tasks to run.
 
 ### Submit a job:
 ```
@@ -53,6 +70,8 @@ useful flags:
 
 --output=/path/to/standard/out
 
+--time=10:00  sets the maximum time for a job to 10 minutes - useful for jobs that can otherwise run for ever.
+
 ### Check job status:
 ```
 squeue
@@ -63,6 +82,11 @@ squeue -u username
 ```
 to show only your jobs
 
+### Kill a job
+Get the job id from 
+```squeue -u username```
+Then
+  ```scancel jobid```
 
 ## Tech specs
 Runs Ubuntu 17
