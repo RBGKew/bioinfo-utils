@@ -84,9 +84,13 @@ to show only your jobs
 
 ### Kill a job
 Get the job id from 
-```squeue -u username```
+```
+squeue -u username
+```
 Then
-  ```scancel jobid```
+```
+scancel jobid
+```
 
 ## Tech specs
 Runs Ubuntu 17
