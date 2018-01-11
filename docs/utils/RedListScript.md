@@ -1,4 +1,4 @@
-==Red List Downloader==
+#Red List Downloader
 
 Script to download all info from the redlist site. Written by Steve Bachman.
 
