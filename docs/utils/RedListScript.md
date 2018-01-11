@@ -1,17 +1,21 @@
 # Red List Downloader
 
-Script to download all info from the redlist site. Written by Steve Bachman.
+Script to download basic info from the IUCN Red List including taxonomy, rating and criteria, assessor etc. 
+Written by Steve Bachman & Justin Moat
 
 ```
-# Query Red List API and assessments
+# Query Red List API and assessments using 'rredlist' package
 #
-#https://cran.r-project.org/web/packages/rredlist/index.html
+# https://cran.r-project.org/web/packages/rredlist/index.html
+#
+# Note that there may be a rate limiting issue when sending calls to the API. Either try running the script several
+# times or add a delay between calls
 
-#if rredlist package already installed - load package, if not
+#if rredlist package already installed - load package, if not:
 install.packages("rredlist")
 library(rredlist)
 
-#RL key - ***change this to your own key
+#RL key - ***change this to your own key. Generate a token here: http://apiv3.iucnredlist.org/api/v3/token
 rlkey <- "my key"
 
 # get the species IDs by looping through pages (10,000 each) until no more results
@@ -26,6 +30,7 @@ rl.all = rl$result
   rl.all = rbind(rl.all,test$result)
   i = i+1
     }
+
 # filter on plants 'PLANTAE'
 plants <- rl.all[ which(rl.all$kingdom_name=='PLANTAE'),] 
 
@@ -52,11 +57,11 @@ version = rl_version(key = rlkey)
 #get date
 today = Sys.Date()
 
-#file path
+#file path - set your own path
 respath = paste0("C:/dump/PLANTAE_version_",version,"_run_on_",today,".csv")
 
 # change the directory where you want to save the data -
 write.table(rl_df, respath,row.names = FALSE, na="", sep = ",")
 
-# do the same for threat, conservation measures, growth forms, narratives, countries, habitats etc. 
+# A similar script can be used to get more detailed info on threats, conservation measures, growth forms, narratives, countries, habitats etc. using the rredlist package
 ```
