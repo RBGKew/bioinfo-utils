@@ -12,7 +12,7 @@ install.packages("rredlist")
 library(rredlist)
 
 #RL key - ***change this to your own key
-rlkey <- "cf3cf316d5dd72945456d42a633ac92357f6b8039bf1d512cc58e26d6169a8f3"
+rlkey <- "my key"
 
 # get the species IDs by looping through pages (10,000 each) until no more results
 i=1
