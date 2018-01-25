@@ -14,8 +14,8 @@ These are detailed information about each available machine. **DO NOT** put pass
 
 Name on network | IP  | Name | Total RAM(GB) | Total cores vCPU | Notes
 --------------- | --- | ---- | ------------- | ---------------- | -----
-atta1.ad.kew.org | x.x.x.x | Atta2 | ~4000 | ~120 | Prinicpally BLAST, Kraken
-atta2.ad.kew.org | x.x.x.x | Atta2 | ~4000 | ~120 | na
+atta1.ad.kew.org | x.x.x.x | Atta1 | ~1480 | ~176 | Prinicpally BLAST, Kraken
+atta2.ad.kew.org | x.x.x.x | Atta2 | ~1480 | ~176 | na
 
 ## Known Sudoers
 
@@ -23,7 +23,7 @@ James [@james-milburn-crowe](https://github.com/james-milburn-crowe)
 
 ## Specific notes for this machine
 
-User home spaces on both machines (`/home/user`) map to a separate physical device on `/mnt/HDD_2`. This is to preserve the faster flash space for OS operations. Large reference datasets (BLAST, Kraken) also map to the same space - you should not need to duplicate BLAST databases, and custom databases you wish to create should probably be stored in the same location.
+User home spaces on both machines (`/home/user`) map to a separate physical device on `/data/user`. This is to preserve the faster flash space for OS operations. Large reference datasets (BLAST, Kraken) also map to the same space - you should not need to duplicate BLAST databases, and custom databases you wish to create should probably be stored in the same location.
 
 ## CHANGELOG
 
