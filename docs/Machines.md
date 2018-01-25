@@ -12,9 +12,9 @@ These are detailed information about each available machine. **DO NOT** put pass
 * MSc students' machines: (256GB, 24 cores)
     * [Senecio](machines/Senecio.md)
     * [Boletus](machines/Boletus.md)
-* Fatnode (ATTA):
-    * *Commissioning in progress - May 2017*
-    * Specced at ≥40vCPU, ≥512GB) 
+* Fatnodes (ATTA1 / ATTA2):
+    * [atta1](machines/Atta.md)
+    * [atta2](machines/Atta.md)
 
 ## Room move May 2017
 
