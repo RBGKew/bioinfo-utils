@@ -27,9 +27,9 @@ scp path/to/file username@atta1:~/
 ```
 ## Queueing system
 The cluster currently uses a standard install of slurm as a queuing system.
-To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.) Due to the lack of shared file storage, the cluster queues are split into two partitions, which run a job on either atta1 or atta2
+To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.)
 
-Example (Run a job with 50 cores on atta1):
+Example (Run a job with 50 cores on either of the two atta nodes):
 ```
 #!/bin/bash
 #
@@ -39,10 +39,10 @@ Example (Run a job with 50 cores on atta1):
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=50
 #SBATCH --time=10:00
-#SBATCH --partition=atta1
+#SBATCH --partition=atta
 echo "hello world!"
 ```
-Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on atta2)
+Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on either atta node)
 ```
 #!/bin/bash
 #
@@ -53,7 +53,7 @@ Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on atta2)
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=100
 #SBATCH --time=10:00
-#SBATCH --partition=atta2
+#SBATCH --partition=atta
 echo "hello world!"
 ```
 
