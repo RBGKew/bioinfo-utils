@@ -13,5 +13,7 @@ The baits can be designed to overlap each-other, we then talk about “bait tili
 
 People usually rely on a company to design and to synthesize the baits.
 
+[Figure 1](bioinfo-utils/docs/advice/images/Fig1_bait_design.pdf)
+
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**1. Checking data quality**
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**2. Cleaning data**
