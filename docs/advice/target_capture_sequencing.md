@@ -32,12 +32,14 @@ We usually **multiplex**, i.e. we put multiple DNA libraries together in a singl
 The beads+baits+target DNA cluster on the magnet while the reagents and the DNA that did not attach well to the baits are washed away. 
 6. Finally, the DNA that attached to the baits is eluted, and amplified by PCR. 
 We thus end up with the **captured DNA**, containing mostly the target genes but also some non-specific = **off target** DNA that came along. 
-The ratio of specific/non-specific (= **on/off target**) captured DNA illustrates how successful was the **enrichment** of the libraries in target DNA: the higher the ratio, the most successful the enrichment, the least sequencing effort needed.
+The ratio of specific/non-specific (= **on/off target**) captured DNA illustrates how successful was the **enrichment** of the libraries in target DNA: the higher the ratio is, the more successful the enrichment is, the lesser sequencing effort is needed.
 
-Finally, we can sequence the captured DNA:
-We often put multiple pools of captured DNA together (again because it is cheaper) in a single tube to proceed with the sequencing. This is the “sequencing pool”. This sequencing pool is loaded into the Illumina sequencing machine (MiSeq, HiSeq, etc.), which will “read” the DNA sequences (details here). 
-We usually perform “paired-end” sequencing: the DNA fragments are read twice, once from each extremity, producing a pair of reads that we know come a same fragment (details here).
-NB: Because the DNAs of multiple samples are mixed in the hybridization pool(s) and/or in the sequencing pool, it is crucial that the DNA libraries of these samples are made with adapters containing different indexes, so that we can tell what DNA sequence is from what sample (details here). The easiest way to ensure this is to think about what samples should go in a same sequencing pool before starting to prepare the libraries.
+### Sequencing of the captured DNA
+
+We often put multiple pools of captured DNA together (again because it is cheaper) in a single tube to proceed with the sequencing. This is the **sequencing pool**.  
+The sequencing pool is loaded into the Illumina sequencing machine (MiSeq, HiSeq, etc.), which will **read** the DNA sequences (details here). 
+We usually perform **paired-end** sequencing: the DNA fragments are read twice, once from each extremity, producing a pair of reads that are known to come from a same fragment.  
+NB: Because the DNAs of multiple samples are mixed in the hybridization pool(s) and/or in the sequencing pool, it is crucial that the DNA libraries of these samples are made with adapters containing different indexes, so that we can tell what DNA sequence is from what sample. The easiest way to ensure this is to **think about what samples should go in a same sequencing pool before starting to prepare the libraries**.
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**1. Checking data quality**
