@@ -100,7 +100,7 @@ Some size variation is ok, and one can adjust the molarity of individual librari
 
 * If a non-negligible proportion of the DNA library is smaller than the read length you chose, the sequencing will fail.
   
-#### Details about the adapters 
+### Details about the adapters 
 
 Adapters are important because:
   
@@ -110,6 +110,6 @@ Adapters are important because:
   
 * They allow the DNA fragment to be fixed on the **flow cell** during the sequencing process.
 
-Details about how the adapters are put on the DNA, how the DNA is sequenced, what data result from this, and why we end up with pieces of adapters in the reads are given [here](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Adapters.jpg).
+Details about how the adapters are put on the DNA, how the DNA is sequenced, what data result from this, and why we end up with pieces of adapters in the reads are given [here](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Adapters.pdf).
 
 
