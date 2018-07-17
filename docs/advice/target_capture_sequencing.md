@@ -65,14 +65,14 @@ When we want to be able to capture genetically divergent taxa with a same bait, 
 * One can target regions that are conserved enough to be captured by a same bait but divergent enough so that they provide phylogenetic signal. This is possible to a certain extent because baits can hybridize to divergent DNA, but at some level of divergence this becomes inefficient because the baits will hybridize a lot to non-desired regions.  
 In addition, since the efficiency of hybridization is proportional to the bait-target similarity, if, in a same hybridization pool, some taxa have DNA more similar to the baits than other taxa, the captured DNA may come mostly from the taxa with the DNA the most similar to the baits.
   
-* Another way is to design multiple baits targeting the same DNA region, with some baits more similar to some taxa than to others. This is the approach chosen for the [PAFTOL project], but they refined it, as explained in [their article] (link to paper).
+* Another way is to design multiple baits targeting the same DNA region, with some baits more similar to some taxa than to others. This is the approach chosen for the [PAFTOL project] (https://www.kew.org/science/who-we-are-and-what-we-do/strategic-outputs-2020/plant-and-fungal-trees-life), but they refined it, as explained in [their article] (https://www.biorxiv.org/content/biorxiv/early/2018/07/04/361618.full.pdf).
   
 * Another, compatible, way is to target regions that are flanked by more variable regions. The flanking regions will come along during the capture if there are DNA fragments containing part of the target region (enough for a bait to hybridize) and part of the flanking region. The larger the library size is, the longer the flanking region that can be captured is, but the higher the effort required to sequence the complete flanking region will be, as shown in [Figure 3](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Fig3_splash_zone.jpg).  
 The sequenced flanking regions form what [some people] call the **splash zone**. 
   
 At the inter-generic level, it may be difficult to find conserved regions flanked by regions that are variable but still conserved enough to be aligned between taxa, so the last approach is most beneficial at the intra-generic level. 
   
-This is why the [PAFTOL project] relies mostly on having multiple baits targeting the same DNA regions in multiple plant families, and on the fact that inside a family these regions are conserved enough to be targeted by a same bait but also variable enough to provide phylogenetic resolution at the genus level.  
+This is why the [PAFTOL project] (https://www.kew.org/science/who-we-are-and-what-we-do/strategic-outputs-2020/plant-and-fungal-trees-life) relies mostly on having multiple baits targeting the same DNA regions in multiple plant families, and on the fact that inside a family these regions are conserved enough to be targeted by a same bait but also variable enough to provide phylogenetic resolution at the genus level.  
   
 However, the PAFTOL bait kit can also be used to capture the flanking regions of the PAFTOL targets, which can then be used to answer intra-generic phylogenetic questions and/or build species-level barcoding libraries. 
 
@@ -110,6 +110,6 @@ Adapters are important because:
   
 * They allow the DNA fragment to be fixed on the **flow cell** during the sequencing process.
 
-Details about how the adapters are put on the DNA, how the DNA is sequenced, what data result from this, and why we end up with pieces of adapters in the reads are given [here](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Adapters.pdf).
+Details about how the adapters are put on the DNA, how the DNA is sequenced, what data result from this, and why we end up with pieces of adapters in the reads are given [here](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Adapters.pdf). See the last page of the document for a summary of what adapters are in the data.
 
 
