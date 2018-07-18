@@ -38,7 +38,6 @@ Example (Run a job with 50 cores on either of the two atta nodes):
 #
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=50
-#SBATCH --time=10:00
 #SBATCH --partition=atta
 echo "hello world!"
 ```
@@ -52,7 +51,6 @@ Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on either atta
 #
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=100
-#SBATCH --time=10:00
 #SBATCH --partition=atta
 echo "hello world!"
 ```
