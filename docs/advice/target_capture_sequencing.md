@@ -77,7 +77,7 @@ At the inter-generic level, it may be difficult to find conserved regions flanke
   
 This is why the [PAFTOL project](https://www.kew.org/science/who-we-are-and-what-we-do/strategic-outputs-2020/plant-and-fungal-trees-life) relies mostly on having multiple baits targeting the same DNA regions in multiple plant families, and on the fact that inside a family these regions are conserved enough to be targeted by a same bait but also variable enough to provide phylogenetic resolution at the genus level.  
   
-However, the PAFTOL bait kit can also be used to capture the flanking regions of the PAFTOL targets, which can then be used to answer intra-generic phylogenetic questions and/or build species-level barcoding libraries. Researchers at Kew are currently testing the utility of the PAFTOL bait kit at the infra-generic and infra-specific levels in numerous angiosperm families such as Araceae, Arecaceae, Combretaceae, Nepenthaceae, Nymphaeaceae, and Solanaceae.
+However, the PAFTOL bait kit can also be used to capture the flanking regions of the PAFTOL targets, which can then be used to answer intra-generic phylogenetic questions and/or build species-level barcoding libraries. Researchers at Kew are currently testing the utility of the PAFTOL bait kit at the infra-generic and infra-specific levels in numerous angiosperm families such as Araceae, Arecaceae, Combretaceae, Fabaceae, Iridaceae, Liliaceae, Magnoliaceae, Nepenthaceae, Nymphaeaceae, Saxifragaceae, and Solanaceae.
 
 
 ### Details about the DNA library size and the splash zone
