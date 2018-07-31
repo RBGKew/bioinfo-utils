@@ -29,7 +29,7 @@ scp path/to/file username@atta1:~/
 The cluster currently uses a standard install of slurm as a queuing system.
 To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.)
 
-Example (Run a job with 50 cores on either of the two atta nodes):
+Example (Run a job with 5 cores):
 ```
 #!/bin/bash
 #
@@ -37,11 +37,11 @@ Example (Run a job with 50 cores on either of the two atta nodes):
 #SBATCH --output=res_omp.txt
 #
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=50
+#SBATCH --cpus-per-task=5
 #SBATCH --partition=atta
 echo "hello world!"
 ```
-Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on either atta node)
+Example 2 (Run a job with 10 cores, for a maximum of 10 minutes)
 ```
 #!/bin/bash
 #
@@ -50,7 +50,7 @@ Example 2 (Run a job with 100 cores, for a maximum of 10 minutes, on either atta
 #SBATCH --error=out.txt
 #
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=100
+#SBATCH --cpus-per-task=10
 #SBATCH --partition=atta
 echo "hello world!"
 ```
