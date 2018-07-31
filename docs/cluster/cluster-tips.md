@@ -1,8 +1,8 @@
 # Some Tips for Using the PAFTOL / Kew Cluster
 
 The purpose of these tips is to help you getting the most of the
-cluster, by helping you to design and conduct your analyses so that
-you efficiently get results that are valid and also reproducible.
+cluster, by helping you to design and conduct your analyses to get you
+valid results, and to get them efficiently and quickly.
 
 
 ## Plan and Prepare Your Analysis
@@ -16,13 +16,13 @@ depend on your specific research project or question and therefore
 cannot be addressed by generic tips. However, some technical
 considerations apply to almost all analyses. These include:
 
-* checking that input data is complete
+* checking that input data is complete,
 
-* ensuring that input data is in a consistent and suitable format
+* ensuring that input data is in a consistent and suitable format,
 
 * where you run multiple programs in a "pipeline", verify that the
   output format of each program is suitable as input for the
-  subsequent program
+  subsequent program.
 
 For all these checks, formal specs are preferable to trying things out
 and finding they work.
@@ -62,7 +62,7 @@ There are only a few complexity categories that really matter:
 
 * Complexity of higher polynomial degree: Rare, use extreme caution.
 
-* Exponential complexity: Forget it.
+* Exponential complexity: Forget it (unless you can use really very small values of **n**).
 
 
 ## Series of Small Tests That Increase in Size
@@ -77,7 +77,6 @@ As an example, this script generates random sequences of lenghts
 application, then uses `msbar` to make a "mutated" variant of each,
 and finally aligns the two using `water`, using `/usr/bin/time` to
 collect computing times in a file:
-
 ```
 rm -f watertime.txt
 for seqLength in 10000 20000 30000 40000 50000 ; do
@@ -94,24 +93,25 @@ If your findings here are inconsistent with your expectations based on
 algorithmic complexity, check what's going on, e.g. by reviewing
 relevant literature and documentation, or by emailing your local
 bioinformatics community at
-`rbg-kew-bioinformatics+noreply@googlegroups.com`
+`rbg-kew-bioinformatics@googlegroups.com`
 
-For this type of test you can use any machine, including the legacy
-Linux boxes or using a docker container running on your laptop, as the
-main purpose is to find out the characteristics of computing time as a
-function of input size, not the absolute times. Once you know this
-characteristic, working out the expected absolute computing time on
-the cluster is a matter of multiplication with a constant.
+The main purpose is to find out the characteristics of computing time
+as a function of input size, not the absolute times. Therefore, you
+can use any machine, including the legacy Linux boxes or a docker
+container running on your laptop, for this type of test. Once you know
+this characteristic, working out the expected absolute computing time
+on the cluster is a matter of multiplication with a constant.
 
 
 ## Explore Parallelisation
 
 Many computational processes can be parallelised. Some benefit greatly
-from that, while others don't at all. Any further discussion of theory
-and programming principles behind this are beyond the scope here. It
-is, however, a very common phenomenon to find that programs benefit
-from parallelisation up to some point, but benefits diminish beyond
-that point.
+from that (these are the highly scalable ones), while with others,
+benefits are much more limited. A full discussion of theory and
+programming principles behind this are beyond the scope here. It is,
+however, a very common phenomenon to find that programs benefit from
+parallelisation up to some point, but benefits diminish beyond that
+point.
 
 The most common way of specifying the amount of parallelism is by
 giving programs a number of threads that they should use. Typically,
