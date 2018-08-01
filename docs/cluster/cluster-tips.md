@@ -7,14 +7,30 @@ valid results, and to get them efficiently and quickly.
 
 ## Plan and Prepare Your Analysis
 
-This is really a prerequisite to ensure getting a scientifically valid
-result, so you probably have done a good part of this already.
+This is based on research question and inferring from that which data
+and analysis techniques (computational and otherwise) you need to
+answer it, so you probably have done a good part of this already.
 Typically this involves checking literature and documentation of the
 software you use and checking that all prerequisites for a valid
-analysis are met. Scientific criteria are most fundamental, and they
-depend on your specific research project or question and therefore
-cannot be addressed by generic tips. However, some technical
-considerations apply to almost all analyses. These include:
+analysis are met.
+
+Scientific criteria are most fundamental, and they largely depend on
+your specific research project or question. One general thing to keep
+in mind when surveying software options is that the most adequate
+software is often not described as suitable to your specific purpose.
+This is because your research question is new -- so nobody, including
+the authors of the software, has thought about this specific use.
+Therefore, breaking up your analysis into small and generic
+operations, and finding a piece of software to carry out each of
+these, will frequently be a more efficient way to find the software
+you need. Or, in other words, software designed for a narrow, specific
+use case is suitable only if your requirements fall into that scope.
+Otherwise, committing to using that sofware all too often results in
+unnecessary compromise scientifically, while at the same time causing
+a lot of entirely avoidable technical hassle and awkwardness.
+
+At the technical level, some considerations apply to almost all
+analyses. These include:
 
 * checking that input data is complete,
 
@@ -38,12 +54,26 @@ analyses to complete at this stage, make your pilot data smaller.
 
 Once you have initially worked through all steps, resist the
 temptation to assume that this is how things will always work. They
-won't. Therefore, introduce some errors or problems into copies of
-your pilot data at various stages of your analysis, and find out how
-that affects the process. Getting some impression of how your software
-behaves when things are not quite right will greatly help you to
-troubleshoot problems later, and even more importantly, to spot
-tell-tale signs of problems in the first place.
+won't. Therefore, make some copies of your pilot data at various
+stages of your analysis, change them, predict the effect of these
+changes on your results, and test whether your expectations are right.
+Importantly, include some changes that make your data invalid or
+corrupt. Getting some impression of how your software behaves when
+things are not quite right will greatly help you to troubleshoot
+problems later, and even more importantly, to spot tell-tale signs of
+problems in the first place.
+
+Exploring and getting to know your software is different from
+exploring and analysing your data, and the importance of knowing your
+software can hardly be overstated. It really is an aspect of the
+general scientific discipline of being sceptical, aware of all
+possible states and conditions, and being unbiased. Prematurely
+focusing on data analysis can result in becoming biased towards
+initial result, especially if they are consistent with expectations or
+hopes, and sometimes even result in perceiving genuine but less
+favourable evidence as results of software flaws or bugs. Knowing your
+software _per se_ is an excellent way to protect against walking into
+such traps.
 
 
 ## Get an Idea of Algorithmic Complexity
@@ -158,9 +188,17 @@ Just be sure to use _small_ test data sets, please.
 
 Having carried out these preparations, you should have a basis to
 expect your analysis process to yield valid results, and a good handle
-to estimate how long it will take. So go ahead and submit your job --
-at the time of writing this, the `slurm` queueing system is the
-mechanism provided to do that.
+to estimate how long it will take as a function of the number of cores
+you request.
 
-Good luck with your analysis, and please let us know if you have any
-suggestions to improve or add to these tips.
+If you only need a small fraction of the cores on the cluster, just go
+ahead and submit your job. At the time of writing this, we have 2
+nodes with 88 cores each and use the `slurm` queue management system,
+so requesting up to 22 CPUs in a one-task job is probably ok. If you
+need more resources, it's a good idea to check the general load of the
+cluster and to get in touch with the cluster user community.
+
+Good luck with your analysis. If you have any suggestions to improve
+or add to these tips, general questions, and interesting results and
+experiences to share, please join us on Tuesdays, 11:00, for Biscuits
+& Bioinformatics in the Jodrell coffee room.
