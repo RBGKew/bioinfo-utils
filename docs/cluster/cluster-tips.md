@@ -17,10 +17,10 @@ analysis are met.
 Scientific criteria are most fundamental, and they largely depend on
 your specific research project or question. One general thing to keep
 in mind when surveying software options is that the most adequate
-software is often not described as suitable to your specific purpose.
-This is because your research question is new -- so nobody, including
-the authors of the software, has thought about this specific use.
-Therefore, breaking up your analysis into small and generic
+software is often not described as a solution to your specific
+purpose. This is because your research question is new -- so nobody,
+including the authors of the software, has thought about this specific
+use. Therefore, breaking up your analysis into small and generic
 operations, and finding a piece of software to carry out each of
 these, will frequently be a more efficient way to find the software
 you need. Or, in other words, software designed for a narrow, specific
