@@ -12,9 +12,9 @@ When you cannot find the tool you need or when you have difficulties to understa
   
 Kew has computing and High Performance Computing (HPC) facilities that have been set up to enable the analysis of large amounts of target capture sequencing data by multiple users. Before using them, please ensure that:  
   
-**- you make yourself known to Kew’s (bio)informaticians, 
-- you get familiar with the facilities, 
-- you take note of the best practices described here.**
+- **you make yourself known to Kew’s (bio)informaticians** 
+- **you get familiar with the facilities** 
+- **you take note of the best practices described here**
 
 ## **2. Checking data quality**
 ## **3. Cleaning data**
