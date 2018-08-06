@@ -115,6 +115,6 @@ Adapters are important because:
   
 * They allow the DNA fragment to be fixed on the **flow cell** during the sequencing process.
 
-Details about how the adapters are put on the DNA, how the DNA is sequenced, what data result from this, and why we end up with pieces of adapters in the reads are given [here](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Adapters.pdf). See the last page of the document for a summary of what adapters are in the data.
+Details about how the adapters are put on the DNA, how the DNA is sequenced, what data result from this, and why we end up with pieces of adapters in the reads are given [here](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/images/Adapters.pdf) (see the last page for a summary of what adapters are in the data).
 
 
