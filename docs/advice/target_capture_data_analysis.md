@@ -10,11 +10,11 @@ More important than knowing many commands is to **understand the principles behi
   
 When you cannot find the tool you need or when you have difficulties to understand what is happening, ask a (bio)informatician!  
   
-Kew has computing and High Performance Computing (HPC) facilities that have been set up to enable the analysis of large amounts of target capture sequencing data by multiple users. Before using them, please ensure that:  
+Kew has computing and High Performance Computing (HPC) facilities that have been set up to enable the analysis of large amounts of target capture sequencing data by multiple users. Before using them, please ensure to:  
   
-- **you make yourself known to Kew’s (bio)informaticians** 
-- **you get familiar with the facilities** 
-- **you take note of the best practices described here**
+- **make yourself known to Kew’s (bio)informaticians** 
+- **get familiar with the facilities** 
+- **take note of the best practices described here**
 
 ## **2. Checking data quality**
 ## **3. Cleaning data**
