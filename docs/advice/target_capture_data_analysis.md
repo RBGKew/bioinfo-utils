@@ -12,7 +12,7 @@ When you cannot find the tool you need or when you have difficulties to understa
   
 Kew has computing facilities that have been set up to enable the analysis of large amounts of target capture sequencing data by multiple users. Before using them, please ensure to:  
   
-- **make yourself known to Kew’s (bio)informaticians**, in particular [Michael Chester](M.Chester@kew.org) or [Pepijn Kooij](p.kooij@kew.org) for the general usage machines and [James Crowe](j.crowe2@kew.org) for the cluster.
+- **make yourself known to Kew’s (bio)informaticians**, in particular Michael Chester or Pepijn Kooij for the general usage machines and James Crowe for the cluster.
 - **get familiar with the [facilities](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/Machines/)** 
 - **take note of the general best practices described [here](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/best-practice/Best_practice/), and of the best usage practices described [here](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/utils/logging-jobs/) for the general usage machines, and [here](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/cluster/__intro/) for the cluster.**
 
