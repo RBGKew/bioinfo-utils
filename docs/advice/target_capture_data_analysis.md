@@ -30,7 +30,7 @@ The format of the data is [**fastq**](https://en.wikipedia.org/wiki/FASTQ_format
   
 The first thing to do when you get your data is to check if the reads are of sufficient quality, and to decide what to do to improve the quality of the individual reads and of the whole dataset. This is also the step where you can spot contamination by completely unrelated organisms (for instance fungi or bacteria when sequencing plants).
   
-A great software to do this is FastQC (S. Andrews, Babraham Bioinformatics) https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ , but there are other programs available.
+A great software to do this is [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (S. Andrews, Babraham Bioinformatics), but there are other programs available.
 
 To understand the graphical output of FastQC please follow this [link](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/).
 
