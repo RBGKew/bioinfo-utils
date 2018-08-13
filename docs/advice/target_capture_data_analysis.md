@@ -1,10 +1,12 @@
 # **Analyse target capture data to obtain gene alignments**
   
-## **1. Working environment and best practices**
+## **1. Working environment, pre-requisites, and best practices**
 
 Processing sequencing data is much easier, faster and customizable using command line. Many bioinformatic tools are free and designed to work in a unix-like environment, so people usually analyse NGS data on OS X or Linux computers.  
   
 There are already many free tools, pipelines and tutorials available so most often you just need to know enough basic commands to link these tools together and to parse results, so **don’t panic**, and don’t hesitate to google your problem!  
+
+Tutorials to **learn basic linux commands** can be found on Internet.
   
 More important than knowing many commands is to **understand the principles behind the tool that you use**, so that you can correctly analyze the data and properly interpret the results. But this does not require high bioinformatic skills, it requires to read the manual or article associated with the tool. More on this topic is provided [here](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/cluster/cluster-tips/).  
   
@@ -18,7 +20,7 @@ Kew has computing facilities that have been set up to enable the analysis of lar
 
 Below we provide information on our current strategies to analyse target capture data to obtain multiple sequence alignments for individual genes.  
 We also list useful software and give some default commands to use them, as well as some tips to use these software on multiple samples at once.  
-The commands provided here are not made to be copied and pasted directly (and they probably won't work as such), but they are given as a reference and starting point for beginners. You should adapt the commands and options to your dataset after reading the software documentation, probably try various options, and think about which steps are necessary or not to answer your research questions.
+The commands provided here are not meant to be copied and pasted directly (and they probably won't work as such), but they are given as a reference and starting point for beginners. You should adapt the commands and options to your dataset after reading the software documentation, probably try various options, and think about which steps are necessary or not to answer your research questions.
 
 ## **2. Checking data quality**
   
