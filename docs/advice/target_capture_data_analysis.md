@@ -6,7 +6,7 @@ Processing sequencing data is much easier, faster and customizable using command
   
 There are already many free tools, pipelines and tutorials available so most often you just need to know enough basic commands to link these tools together and to parse results, so **don’t panic**, and don’t hesitate to google your problem!  
 
-Tutorials to **learn basic linux commands** can be found on the Internet. Knowing basic commands will be necessary. You should be able to move from a folder to another, copy or move files, look into the beginning or the end of a file, find a pattern inside a file, and get information about a particular command. Knowing a few more commands will be handy.
+Tutorials to **learn basic linux commands** can be found on the Internet. Knowing basic commands will be necessary. You should at least be able to move from a folder to another, copy or move files, look into the beginning or the end of a file, find a pattern inside a file, and get information about a particular command.
   
 More important than knowing many commands is to **understand the principles behind the tool that you use**, so that you can correctly analyze the data and properly interpret the results. But this does not require high bioinformatic skills, it requires to read the manual or article associated with the tool. More on this topic is provided [here](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/cluster/cluster-tips/).  
   
