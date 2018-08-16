@@ -41,7 +41,7 @@ Example (Run a job with 5 cores):
 #SBATCH --partition=atta
 echo "hello world!"
 ```
-Example 2 (Run a job with 10 cores, for a maximum of 10 minutes)
+Example 2 (Run a job with 10 cores)
 ```
 #!/bin/bash
 #
