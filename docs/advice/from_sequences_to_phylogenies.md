@@ -35,9 +35,123 @@ PASTA works with different alignment software, including MAFFT.
 Using MAFFT through PASTA may give better results than using MAFFT alone, especially because PASTA tends to infer gaps instead of forcing alignment between very divergent sequences.  
 Recent work by people in [T. Warnow's group](http://tandy.cs.illinois.edu/) suggest that a combination of PASTA and [BAli-Phy](http://www.bali-phy.org/) could [work well](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3101-8#Sec15) although more testing on real data is needed (pers. com. from Mike Nute, PhyloSynth symposium, Montpellier, France, August 2018).
 
+
+### Concatenate alignments (if needed)
+
+We know of two command line tools: [FASconCAT-G](https://github.com/PatrickKueck/FASconCAT-G) and [AMAS](https://github.com/marekborowiec/AMAS). The latter seems more robust to big alignments.
+The command to run AMAS is:
+```
+python3 AMAS.py concat -i input-file*.txt -f fasta -d dna
+```
+AMAS.py does some other useful things including giving a summary of an alignment with number of parsimony informative sites etc:
+```
+python3  AMAS.py summary -i alignment.fasta -f fasta -d dna
+```
+
+### Trimming alignments
+We have used [trimAl](http://trimal.cgenomics.org/).  
+It can be used to trim out columns or sequences based on their gap content.  
+For instance:
+```
+trimal -in concatenated.out -out concat_trimmalled.fas -automated -resoverlap 0.65 -seqoverlap 0.65
+```
+  
+Another suite of tools to perform similar tasks and many others is [phyutility](https://github.com/blackrim/phyutility).  
+
 ## **2. Gene trees**
+
+### Model selection
+
+### Gene tree estimation using maximum likelihood
+We often use RAxML, see full documentation [here](https://sco.h-its.org/exelixis/web/software/raxml/) to understand the options.  
+Example of command to get gene trees with 100 bootstrap replicates, with branch lengths in the bootstrap files (option -k):
+```
+for f in *.fasta; do (raxmlHPC-PTHREADS -m GTRGAMMA -f a -p 12345 -x 12345 -# 100 -k -s $f -n ${f}_tree -T 4); done
+```
+Be careful with the -T option, which controls the number of threads to use!  
+The -p and -x options are important for reproducibility, the number does not matter but you should take note of it (see the manual).
+
+The trees to be used for species tree estimation with ASTRAL (see below) are the RAxML_bipartitions.* trees, NOT the RAxML_bipartitionsBranchLabels.* trees.
+  
+  
 ## **3. Spotting alignment problems**
-## **4. Rooting trees**
-## **5. Infer species tree with ASTRAL**
+
+
+## **4. Infer species tree with ASTRAL**
+
+We use ASTRAL-III (version 5.1.1 and above). See the article [here]() and ASTRAL documentation [here]().
+When using ASTRAL-III, it is better to collapse very low support branches in the gene trees before running ASTRAL.  
+It can be done with newick utilities in the following way (for branches with less than 10% bootstrap):  
+```
+~/software/newick-utils-1.6/src/nw_ed all_trees.tre 'i & b<=10' o > all_trees-BS10.tre
+```
+
+To run Astral with the -t 0 option, and get the species tree from the stdout, without any annotations or branch lengths:
+```
+java -Xmx12000M -jar ~/software/ASTRAL/astral.5.5.9.jar -i all_trees-BS10.tre -t 0 -o SpeciesTree.tre
+```
+If astral had '[p=...]' annotations (other -t options, see the manual), the following commands could help removing all annotations, but it is generally easier to rerun Astral with -t 0.
+```
+sed 's/\[[^\[]*\]//g'SpeciesTree.tre > SpeciesTree2.tre
+sed "s/'//g" SpeciesTree2.tre > SpeciesTree3.tre
+```
+## **5. Rooting trees**
+
+**WARNING!** If you use phyparts (see below) or more generally if you have to compare gene trees to your species tree, it is important that the same rooting method is applied to all trees.
+
+### Root the species tree 
+
+We use the command pxrr of the [phyx](https://github.com/FePhyFoFum/phyx) package:
+```
+~/software/phyx/src/pxrr -t SpeciesTree.tre -g outgroup_name_as_in_the_tree > SpeciesTree_PxrrRooted.tre
+```
+For phyparts (see below), you need to ensure that the end of the species tree has a ";" and that it finishes with \r\n:
+```
+sed 's/\;\n/\;\r\n/' SpeciesTree_PxrrRooted.tre > SpeciesTree_PxrrRooted_formated.tre
+```
+### Root many gene trees at once
+
+You can also use the pxrr command from [phyx](https://github.com/FePhyFoFum/phyx) to root multiple trees at once, and it is also relatively flexible when you need to use multiple outgroups. See the documentation [here](https://github.com/FePhyFoFum/phyx/wiki/Program-list).  
+Examples of this flexibility are welcome!
+  
+If you have multiple and different outgroups per gene tree, and some risk that your outgroups may not be monophyletic in some trees, you can also use our custom R script to generate the adequate command for pxrr for each tree, and then run all commands at once. 
+
+This R script, called root_tree_general_pxrr_v2.R, will generate a command to root each tree on the first preferred taxon that is available.
+Input for the script:  
+Based on your species tree, create a list with the outgroups, for instance called outgroups.txt. Ensure that:
+- Each outgroup is on a separate line
+- If the outgroup is a clade, put all taxa of the clade on the same line separated by " ; "
+- Each outgroup (and not each taxon) is enclosed in quotes
+Such as:  
+"OG1"  
+"OG2"  
+"OG3 ; OG4 ; OG5"  
+"OG6"  
+"OG7 ; OG8"  
+"OG9"  
+etc  
+
+Put the list of outgroups in the same folder as the gene trees, avoid puting anything else in the folder.
+
+# use R (root_tree_general_pxrr.R) to generate a command for pxrr for each rooting each tree 
+# (alternatively the script could be used directly to root the trees but prefer the rooting method of pxrr because this is what S. Smith, the author of phyparts, uses)
+# The script can take clades of OG as input.
+# When a OG clade is found not monophyletic in the tree, the script looks for the largest combination of those OGs that is monophyletic and use it to root the tree. It will also generate a warning so that you can go and check the tree and the corresponding pxrr command if you want to be sure.
+
+# Once the pxrr commands are generated and you are happy with them, run them on Trichopilia (or anywhere else with phyx pxrr installed but would need to modify the paths in the commands):
+# command example with one OG
+/home/sidonie/softwares/phyx/src/pxrr -t ExM_BPall_SpeciesTreeNoBL.tre -g Gynostemma_burmania_SB16 > ExM_BPall_SpeciesTreeNoBL_PxrrRooted.tre
+# command example with a clade of two OGs
+/home/sidonie/softwares/phyx/src/pxrr -t ExM_BPall_SpeciesTreeNoBL.tre -g Indofevillea_khasiana_SYS66,Ampelosicyos_humblotii_SB12 > ExM_BPall_SpeciesTreeNoBL_PxrrRooted_testOG.tre
+# To run all commands from the file generated by R, just copy and paste them in the terminal
+
+
+
+
+# Ensure that the end of all rooted gene trees has a ";" and that it finishes with \r\n:
+
+for f in *.tre; do (sed 's/\;\n/\;\r\n/' $f > ${f/.tre}2.tre); done
+
+
 ## **6. Calculate bipartition support**
 ## **7. Visualize support on the species tree**
