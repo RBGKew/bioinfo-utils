@@ -76,6 +76,14 @@ The trees to be used for species tree estimation with ASTRAL (see below) are the
   
 ## **3. Spotting alignment problems**
 
+When you have hundreds of alignments, looking at all of them to spot wrong alignments or weird sequences becomes difficult, so people are developping tools to spot problems automatically.  
+
+Matt Johnson's [script](https://github.com/mossmatters/KewHybSeqWorkshop/blob/master/Alignment.md#identifying-poorly-aligned-sequences) to spot anormally long branches in trees.
+  
+U. Mai and S. Mirarab's [Treeshrink](https://github.com/uym2/TreeShrink) to do the same.
+
+If you can have a look at your alignments don't hesitate though...  
+
 
 ## **4. Infer species tree with ASTRAL**
 
@@ -182,8 +190,9 @@ Example:
 xvfb-run python test-ete.py species_tree.tre
 ```
 
-### Support interpretation for phyparts (from [S. Smith](https://bitbucket.org/blackrim/phyparts) and [M. Johnson](https://github.com/mossmatters/phyloscripts/tree/master/phypartspiecharts) websites, and assuming no change in colors from M. Johnson's original script):
-
+### Support interpretation for phyparts 
+From [S. Smith](https://bitbucket.org/blackrim/phyparts) and [M. Johnson](https://github.com/mossmatters/phyloscripts/tree/master/phypartspiecharts) websites, and assuming no change in colors from M. Johnson's original script:  
+  
 Blue: Support the shown topology = percentage of gene trees concordant with the shown topology  
 Green: Conflict with the shown topology (most common conflicting bipartion) = percentage of gene trees showing the most common conflicting topology  
 Red: Conflict with the shown topology (all other supported conflicting bipartitions) = percentage of gene trees showing any other conflicting topology  
