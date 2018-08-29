@@ -100,7 +100,7 @@ As a general rule, we found that the MAXINFO setting is complicated to understan
 Setting the "targetLength" parameter too low does result in lots of reads being dropped but the "strictness" parameter can be turned up to the maximum of 1 and still just trims without completely dropping reads, on the datasets that we tested.  
 We did not find necessary to use TRAILING or LEADING but it might be necessary to use CROP on the long reads.
   
-If you performed paired-end sequencing and used the NEBNext® Multiplex Oligos for Illumina®, the adapter file **TruSeq3-PE-2.fa** in "Trimmomatic-0.36/adapters/" should be the one you need (as of August 2018).
+If you performed paired-end sequencing and used the NEBNext® Multiplex Oligos for Illumina®, the adapter file **TruSeq3-PE-2.fa** in "Trimmomatic-0.36/adapters/" should be the one you need (as of August 2018). We use the PALINDROME setting rather than SIMPLECLIP - this is automatically selected by using the PE-2 adapter file. The parameter set to "true" tells it to keep both reads even if redundant. 
   
 After you cleaned the data, you should ideally check if your clean data are as you expect, and you should check the output of the trimming program, to know how many reads you lost, and how many you trimmed.  
 In general, trimming a new dataset requires multiple trials. But after a while, it becomes easier to know what will work on which kind of dataset.  
@@ -287,9 +287,15 @@ supercontig:
 This is an ideal case when one manages to retrieve the complete target and the complete flanking region, but you may just retrieve fragments of them, or you may retrieve longer sequences than what you expect if there was an insertion in the sequenced species compared to the reference.
 
 
-### Running long jobs
+### Running long or heavy jobs
 Running hybpiper on many samples takes time! You should first try it on two samples to see if your commands work before submitting a long job.  
-If running on the servers that don't have a system of job submission, you can use some tool to be able to run the job and close your terminal.  
+  
+The [HybPiper HPC wiki](https://github.com/mossmatters/HybPiper/wiki/HPC) has information on running on a cluster, ask your informatician.  
+If you are running HybPiper on lots of samples/genes and you have a decent size cluster available, it seems to make more sense to parallelise it as an array job over as many cpus as you have samples. This has worked well for us.  
+  
+The --cpu option (which takes a number of cpus to use) is useful if you don’t want to gobble all your resources: you should set it to less than the full number of cores your machine has, and ideally leave some cores for other users (see [best practices](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/cluster/__intro/)).
+  
+If you are running jobs on servers that don't have a system of job submission, you can use some tool to be able to close your connection to the server while the job is still running.   
 For instance, you can use screen (official documentation [here](https://www.gnu.org/software/screen/manual/html_node/index.html)):  
 Launch screen:
 ```
