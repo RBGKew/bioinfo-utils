@@ -237,7 +237,7 @@ for f in *R1_001_Tunpaired.fastq; do (cat $f ${f/R1_001_Tunpaired.fastq}R2_001_T
 ```
   
 #### Retrieving the splash zone
-You can retrieve the flanking regions of the target regions using Matt Jhonson's intronerate script from the HybPiper directory.
+You can retrieve the flanking regions of the target regions using Matt Johnson's intronerate script from the HybPiper directory.
 ```
 while read name
 do python intronerate.py --prefix $name
@@ -245,7 +245,7 @@ done < namelist.txt
 ```
 
 #### Gathering (supposedly) homologous regions from all samples
-After HybPiper has run, you can make a file for each target region provided in the reference file, using Matt Jhonson's retrieve_sequences.py script from the HybPiper directory.  
+After HybPiper has run, you can make a file for each target region provided in the reference file, using Matt Johnson's retrieve_sequences.py script from the HybPiper directory.  
 Each file will contain supposedly homologous regions from all samples.  
   
 ```
@@ -278,7 +278,7 @@ dna:
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  
 
 intron:  
--------------------------------  
+\-------------------------------  
   
 supercontig:  
 ---------xxxxxxxxxxxx----------xxxxxxxxxxxxxxxxxxxxx------------  
@@ -290,7 +290,7 @@ This is an ideal case when one manages to retrieve the complete target and the c
 #### Running long jobs
 Running hybpiper on many samples takes time! You should first try it on two samples to see if your commands work before submitting a long job.  
 If running on the servers that don't have a system of job submission, you can use some tool to be able to run the job and close your terminal.  
-For instance, you can use screen (official documentation [here](https://www.gnu.org/software/screen/manual/html_node/index.html)):
+For instance, you can use screen (official documentation [here](https://www.gnu.org/software/screen/manual/html_node/index.html)):  
 Launch screen:
 ```
 screen
@@ -327,7 +327,7 @@ screen -X -S session-id quit
 Ensure you keep control of your screen windows, delete the windows and kill the sessions when you don't use them anymore.
 
 #### Checking for paralogs
-You can check for paralogs using Matt Jhonson's paralog_investigator.py script in the HybPiper directory, in the same kind of loop as for the main HybPiper command:
+You can check for paralogs using Matt Johnson's paralog_investigator.py script in the HybPiper directory, in the same kind of loop as for the main HybPiper command:
 ```
 while read i
 do
@@ -340,15 +340,17 @@ This can also be a first step to identify recent whole genome duplications, or a
 
 
 
-ADVICE: 
-Organize yourself! Make folders corresponding to the different steps, and move the relevant files in them.
-For instance you may have a folder with the raw data, a folder with the trimmed data, a folder with the hybpiper output of a given run, a folder with the final gene files...
-
-Tidy up! Hybpiper provide a cleaning script that removes unnecessary files. In addition, after a few trials you should be able to know what files are really necessary and what files can be deleted.
-Work in a reproducible way, for you and for others. 
-At the minimum, keep track of your commands (you can consult the output of the history command if you don't remember them), this is the first step towards building your own pipeline.
-You can put all commands in a file and make a script out of them, or at least come back to them and copy paste them quickly in the terminal following your needs.
-Ideally, run the commands in a container (eg. using docker) so that everybody can reproduce your work by launching the container.
+#### General advice: 
+Organize yourself!  
+Make folders corresponding to the different steps, and move the relevant files in them.  
+For instance you may have a folder with the raw data, a folder with the trimmed data, a folder with the output of a given HybPiper run, a folder with the final gene files...
+  
+Tidy up!  
+HybPiper provides a cleaning script that removes unnecessary files. In addition, after a few trials you should be able to know what files are really necessary and what files can be deleted or at least moved to an external, long storage place.  
+  
+Work in a reproducible way, for you and for others.   
+At least, keep track of your commands. You can consult/save the output of the **history** command, or just take notes of your commands.  
+Putting all commands in a file will allow you to run them all at once, or at least to come back to them and copy paste them quickly in the terminal following your needs. This is the first step towards building your own pipeline.  
 
 
 ## 6. Improving target recovery
