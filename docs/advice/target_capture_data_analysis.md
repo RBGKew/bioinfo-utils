@@ -147,7 +147,7 @@ HybPiper and PAFTOOLS both:
 However, even if you do target capture, it may be a good idea to map the reads on a full genome, where your targets are annotated. This may improve the read mapping, avoid artefacts created by wrong mappings, and make easier the recovery of the regions flanking the genes of interest. Let us know if you test it!
   
   
-#### Reference files
+### Reference files
 For HybPiper, you need to provide a **reference file** containing the sequences of the genes that you are targetting in a fasta format.  
 Ideally the file should contain the regions on which you created baits, and only them.  
 In general, people give protein coding sequences, i.e. exons concatenated together.  
@@ -169,7 +169,7 @@ However, we found out empirically that blast allows to recover less reads, but l
 
 ## **5. Tips when running Hybpiper**
 
-#### Name list
+### Name list
 Hybpiper relies on a namelist, which is a list of all the samples on which you want to run hybpiper.  
 The names in the list should contain **all** the part of the read file names that is **unique to each sample**.  
 To make the list, you can use a loop such as:
@@ -199,7 +199,7 @@ Genus_speciesC_
 (Because you miss a part of the unique identifier)  
   
     
-#### PATH
+### PATH
 Depending on where you run your analyses, you may need to put some programs in your **[PATH](https://kb.iu.edu/d/acar)**, so that HybPiper can find the program.  
 To check what directories are your PATH (and thus findable by HybPiper), type:
 ```
@@ -220,7 +220,7 @@ You have to run the export command each time you open a new terminal, or you hav
 And try to understand what Hybpiper is complaining about.  
 Typically if it does not find a file, it is either one of the two latter problems, and/or your HybPiper command is wrong, usually in the way you specified the input.  
   
-#### Typical command
+### Typical command
 Example of HybPiper command (adapt to your needs, and read the HybPiper documentation to understand the options!):
 ```
 while read name 
@@ -236,7 +236,7 @@ If you want to use unpaired reads in hybpiper, you need to have all unpaired rea
 for f in *R1_001_Tunpaired.fastq; do (cat $f ${f/R1_001_Tunpaired.fastq}R2_001_Tunpaired.fastq > ${f/R1_001_Tunpaired.fastq}TunpairedAll.fastq); done
 ```
   
-#### Retrieving the splash zone
+### Retrieving the splash zone
 You can retrieve the flanking regions of the target regions using Matt Johnson's intronerate script from the HybPiper directory.
 ```
 while read name
@@ -244,7 +244,7 @@ do python intronerate.py --prefix $name
 done < namelist.txt
 ```
 
-#### Gathering (supposedly) homologous regions from all samples
+### Gathering (supposedly) homologous regions from all samples
 After HybPiper has run, you can make a file for each target region provided in the reference file, using Matt Johnson's retrieve_sequences.py script from the HybPiper directory.  
 Each file will contain supposedly homologous regions from all samples.  
   
@@ -287,7 +287,7 @@ supercontig:
 This is an ideal case when one manages to retrieve the complete target and the complete flanking region, but you may just retrieve fragments of them, or you may retrieve longer sequences than what you expect if there was an insertion in the sequenced species compared to the reference.
 
 
-#### Running long jobs
+### Running long jobs
 Running hybpiper on many samples takes time! You should first try it on two samples to see if your commands work before submitting a long job.  
 If running on the servers that don't have a system of job submission, you can use some tool to be able to run the job and close your terminal.  
 For instance, you can use screen (official documentation [here](https://www.gnu.org/software/screen/manual/html_node/index.html)):  
@@ -326,7 +326,7 @@ screen -X -S session-id quit
 ```
 Ensure you keep control of your screen windows, delete the windows and kill the sessions when you don't use them anymore.
 
-#### Checking for paralogs
+### Checking for paralogs
 You can check for paralogs using Matt Johnson's paralog_investigator.py script in the HybPiper directory, in the same kind of loop as for the main HybPiper command:
 ```
 while read i
@@ -340,7 +340,7 @@ This can also be a first step to identify recent whole genome duplications, or a
 
 
 
-#### General advice: 
+### General advice: 
 Organize yourself!  
 Make folders corresponding to the different steps, and move the relevant files in them.  
 For instance you may have a folder with the raw data, a folder with the trimmed data, a folder with the output of a given HybPiper run, a folder with the final gene files...
