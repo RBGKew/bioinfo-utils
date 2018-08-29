@@ -97,57 +97,67 @@ As a general rule, we found that the MAXINFO setting is complicated to understan
 Setting the "targetLength" parameter too low does result in lots of reads being dropped but the "strictness" parameter can be turned up to the maximum of 1 and still just trims without completely dropping reads, on the datasets that we tested.  
 We did not find necessary to use TRAILING or LEADING but it might be necessary to use CROP on the long reads.
   
-If you used the Illumina adapters xxxxxx, the adapter file TruSeq3-PE-2.fa in "Trimmomatic-0.36/adapters/" should be the one you need.
+If you performed paired-end sequencing and used the NEBNext® Multiplex Oligos for Illumina®, the adapter file **TruSeq3-PE-2.fa** in "Trimmomatic-0.36/adapters/" should be the one you need (as of August 2018).
   
 After you cleaned the data, you should ideally check with fastqc if your clean data are as you expect, and you should check the output of the trimming program, to know how many reads you lost, and how many you trimmed.  
 In general, trimming a new dataset requires multiple trials. But after a while, it becomes easier to know what will work on which kind of dataset.  
   
 ### CODE TIPS
 
-You can customize loops to create outputs with informative names in the following way:
-for i in *.fastq; do (command $i > ${i/.fastq}_paired.fastq); done
-In this example, we create an output with the same name as the input, but we remove ".fastq" from this name, and we replace it by "_paired.fastq", to indicate that the output will contain reads belonging to intact pairs.
+You can customize loops to create outputs with informative names:
+```
+for i in *.fastq; do (command $i > ${i/.fastq}-paired.fastq); done
+```
+In this example, we write the output in a new file using ">", and the name of this output file will be the same name as the name of the input file, after removal of ".fastq" and replacement of it by "-paired.fastq", to indicate that the output will contain reads belonging to intact pairs.
 
 In the same way you can construct a loop that will be able to pick additional inputs based on the first input name that you specify:
+```
 for i in *R1.fastq; do (command $i ${i/R1.fastq}R2.fastq > ${i/.fastq}_paired.fastq ${i/R1.fastq}R2_paired.fastq); done
-This loop iterates on each file finishing by R1.fastq, and uses it as input as well as the file with the same name but finishing by R2.fastq
-It also creates two output files with names finishing by R1_paired.fastq and R2_paired.fastq
+```
+This loop iterates on each file finishing by "R1.fastq", and uses this file as input as well as the file with the same name but finishing by "R2.fastq" instead.
+Using the same logic, it also creates two output files with names finishing by R1_paired.fastq and R2_paired.fastq
 
-The trimmomatic command can be designed the same way, carefully. For instance:
+The Trimmomatic command can be designed the same way, carefully. For instance:
+```
+for f in *R1_001.fastq; do (java -jar ~/softwares/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 $f ${f/R1_001.fastq}R2_001.fastq ${f/R1_001.fastq}R1_001_Tpaired.fastq ${f/R1_001.fastq}R1_001_Tunpaired.fastq ${f/R1_001.fastq}R2_001_Tpaired.fastq ${f/R1_001.fastq}R2_001_Tunpaired.fastq ILLUMINACLIP:~/softwares/Trimmomatic-0.36/adapters/TruSeq3-PE-2.fa:1:30:7:2:true MAXINFO:40:0.85 MINLEN:36); done
+```
+**BE CAREFUL!**  
+You need to understand the above command and adapt it to our needs/input names!
+THE ORDER OF THE OUTPUT FILES MATTERS!
 
-for f in *R1_001.fastq; do (java -jar ~/softwares/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 $f ${f/R1_001.fastq}R2_001.fastq ${f/R1_001.fastq}R1_001_Tpaired.fastq ${f/R1_001.fastq}R1_001_Tunpaired.fastq ${f/R1_001.fastq}R2_001_Tpaired.fastq ${f/R1_001.fastq}R2_001_Tunpaired.fastq ILLUMINACLIP:../softwares/Trimmomatic-0.36/adapters/TruSeq3-PE-2.fa:1:30:7:2:true MAXINFO:40:0.85 MINLEN:36); done
 
-BE CAREFUL! YOU NEED TO UNDERSTAND THE ABOVE COMMAND AND ADAPT IT TO YOUR NEEDS/INPUT NAMES!
+## **4. Chosing a strategy to assemble the data, and formatting the reference file**
 
+There are multiple pipelines to analyze target capture sequencing data and to produce phylogenies from them.  
+At Kew, we often use **HybPiper** or a homemade pipeline inspired by it: **PAFTOOLS**.  
+However, there may be more adequate pipelines depending on your needs, or, more likely, you will need to customize an existing pipeline.  
+HybPiper has the advantage to be relatively easy to customize, his author [Matt Johnson](https://github.com/mossmatters) is very helpful, and the pipeline allows us to retrieve the [splash-zone](), which is of interest to many people working at Kew.  
+What follows is based on Hybpiper. If you want to use PAFTOOLS, talk to Jan Kim.  
+You should read about HybPiper [here](https://github.com/mossmatters/HybPiper) and [here](https://github.com/mossmatters/KewHybSeqWorkshop) before trying it by yourself, because the original tutorial is very detailed and useful, and because it may contain updates that we overlooked (please let us know!). Below we only give some additional tips.
 
-
-## **4. Chosing a strategy to assemble the data and formatting the reference file**
-
-There are multiple pipelines to analyze target capture sequencing data and to produce phylogenies from them. 
-At Kew, we often use HybPiper or a homemade pipeline inspired by it: PAFTOOLS. 
-However, there may be more adequate pipelines depending on your needs, or, more likely, you will need to customize an existing pipeline.
-HybPiper has the advantage to be relatively easy to customize, his author Matt Johnson https://github.com/mossmatters is very helpful, and the pipeline allows us to retrieve the splash-zone, which is of interest to many people working at Kew.
-What follows is based on Hybpiper. If you want to use PAFTOOLS, talk to Jan Kim.
-You should read about HybPiper here https://github.com/mossmatters/HybPiper and here https://github.com/mossmatters/KewHybSeqWorkshop before trying it by yourself, because the original tutorial is already very detailed and useful, and because it may contain updates that we overlooked (please let us know!).
-
-Hybpiper and PAFTOOLS both rely on aligning (mapping) the reads on the sequences of the genes that you want to retrieve, keeping the reads that align well to the target genes, as well as their mates, and assembling separately the groups of reads corresponding to each gene to generate a consensus for each gene.
-However, even if you do target capture, it may be a good idea to map the reads on a full genome, where your targets are annotated. This may improve the read mapping, avoid artefacts created by wrond mappings, and make easier the recovery of the regions flanking the genes of interest.
-Let us know if you test it!
-
-For hybpiper, you need to provide a reference file containing the genes that you are targetting.
-Ideally the file should contain the regions for which you created baits, and only them.
-In general, people give gene coding sequences, i.e. exons concatenated together.
-The format should be as following (in the same order, with the hyphen):
->ReferenceSpecies-geneName
-AAAAAAAAAAAAAAAAAAAAAAA
-This allows to provide the same gene from different species, and to align homologous genes to each other later.
-
-You can ask hybpiper to retrieve other things than your target. For instance you can provide plastid genes, or even complete plastid genomes, formatted the same way.
-
-To create a reference file for plastid regions, there are multiple approaches.
-You can download a plastome in Genbank, in format .gb, open it in Geneious, use the annotation tool to extract all regions that you are interested in, and rename them as required by hybpiper using a smart text editor that allows you to use regular expressions to perform complext find and replace operations, or the command sed.
-When you want to do it for multiple plastomes, instead of Geneious you can use/customize one of our scripts, to extract only the regions you want based on the annotations, and rename them as you wish.
-
+HybPiper and PAFTOOLS both:
+- align (map) the reads on the reference sequences of the genes that you want to retrieve, 
+- keep the reads that align well to the target genes, as well as their mates, 
+- assemble separately the groups of reads corresponding to each gene to generate a consensus for each gene.  
+  
+However, even if you do target capture, it may be a good idea to map the reads on a full genome, where your targets are annotated. This may improve the read mapping, avoid artefacts created by wrong mappings, and make easier the recovery of the regions flanking the genes of interest. Let us know if you test it!
+  
+  
+#### Reference files
+For HybPiper, you need to provide a **reference file** containing the sequences of the genes that you are targetting in a fasta format.  
+Ideally the file should contain the regions on which you created baits, and only them.  
+In general, people give protein coding sequences, i.e. exons concatenated together.  
+The format should be **exactly** as following (in the same order, with the hyphen):  
+\>ReferenceSpecies-geneName  
+AAAAAAATTTTTTTTTGGGGGGGGGCCCCCCCC  
+This allows to provide reference sequences of a same gene from different species, and to align homologous genes to each other later.  
+  
+You can ask HybPiper to retrieve other things than your target. For instance you can provide plastid genes, or even complete plastid genomes, formatted the same way.  
+  
+**To create a reference file for plastid regions**, there are multiple approaches.
+You can download a plastome in Genbank, in format .gb, open it in Geneious, use the annotation tool to extract all regions that you are interested in, and rename them as required by HybPiper using the command **sed**, or a smart text editor ([BBEdit](https://www.barebones.com/products/bbedit/), [Notepad++](https://notepad-plus-plus.org/), etc.) that allows you to use regular expressions to perform complex find-replace operations.    
+When you want to do it for multiple plastomes, or if you don't have access to Geneious, you can use/customize one of our [scripts](), to extract only the regions you want based on the annotations, and rename them as you wish.
+  
 Depending on your input it will be relevant or not to use the "intronerate" option without modifications (see below).
 If you chose to use blast, your reference file will have to provide amino-acid sequences, so it may not make sense to use blast for something else than coding sequences.
 However, we found out empirically that blast allows to recover less reads, but longer genes, than with bwa, regardless if sequences were coding or not.
