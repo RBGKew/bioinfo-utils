@@ -1,5 +1,5 @@
 # **Phylogenomics tips**
-## **1. Multiple Sequence Alignments (MSAs)**
+## **1. Multiple Sequence Alignments**
 There are many different programs to align sequences.  
 None of them is guarantied to find the optimal alignment.  
 Performance depends on your data and how you tune the parameters.
