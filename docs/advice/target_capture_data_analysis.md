@@ -347,17 +347,119 @@ This can also be a first step to identify recent whole genome duplications, or a
 
 
 ### General advice: 
-Organize yourself!  
+
+Be up to date
+Ensure that you don't miss an important update of HybPiper by consulting the website regularly.  
+Consult also this website for new solutions. And please don't hesitate to contribute!  
+  
+Organize yourself  
 Make folders corresponding to the different steps, and move the relevant files in them.  
 For instance you may have a folder with the raw data, a folder with the trimmed data, a folder with the output of a given HybPiper run, a folder with the final gene files...
   
-Tidy up!  
-HybPiper provides a cleaning script that removes unnecessary files. In addition, after a few trials you should be able to know what files are really necessary and what files can be deleted or at least moved to an external, long storage place.  
+Tidy up  
+HybPiper provides a cleaning script cleanup.py that removes unnecessary files. In addition, after a few trials you should be able to know what files are really necessary and what files can be deleted or at least moved to an external, long storage place.  
   
-Work in a reproducible way, for you and for others.   
+Work in a reproducible way, for you and for others  
 At least, keep track of your commands. You can consult/save the output of the **history** command, or just take notes of your commands.  
 Putting all commands in a file will allow you to run them all at once, or at least to come back to them and copy paste them quickly in the terminal following your needs. This is the first step towards building your own pipeline.  
 
+## 6. Assess target capture efficiency
 
-## 6. Improving target recovery
---coverage-cutoff
+After you retrieved all the target regions (including or not flanking regions) for all the samples, you may want to know how much you recovered for each sample.  
+There are different measures that can give you information about the success of the whole process, from the hybridization to the sequence recovery.  
+Depending on what you look at, you may be able to tell if a low recovery comes from a problem during the DNA capture, unsufficient sequencing and/or unefficient read mapping or assembly.  
+
+
+### Number of regions recovered for each sample, and length of the recovered regions
+
+See Matt Johnson's script get_seq_lengths.py
+Example of command, to run from the directory where you put the HybPiper output directory(ies):
+```
+python ~/software/HybPiper/get_seq_lengths.py ReferenceTargets.fasta namelist.txt dna > seq_lengths.txt
+```
+Replace dna by aa if the reference file contains amino-acids.
+
+The table seq_lengths.txt can then be visualized as a heatmap using Matt Johnson's script gene.recovery.heatmap.R, also available in the HybPiper directory.  
+Just open the script in R and follow the instructions at the beginning of the script.
+  
+### Number of reads ON/OFF target
+See Matt Johnson's script hybpiper_stats.py
+Example of command:
+```
+python ~/software/HybPiper/hybpiper_stats.py seq_lengths.txt namelist.txt > stats.txt
+```
+You will need the result of the previous script (get_seq_lengths.py) first.  
+**WARNING:** if you get 50% for everything, you are probably using a wrong, outdated version of the script. Get the newest one from the HybPiper github.
+
+### Coverage of the recovered regions
+
+The **coverage** of a given region for a given sample can be expressed in different ways:
+- Read number: Number of reads used to assemble the region (not very informative, but easy to get)
+- **Average coverage**: (number of reads used to assemble the region\*average read length)/region length
+- **Read depth** of a particular nucleotidic position: number of reads that cover this position
+- Average (or minimal, or median, or maximal...) read depth: average (or minimal, or median, or maximal...) of all read depths for the region.   
+Depending if one considers the total region to be the region recovered or to be the reference region, these numbers will change.
+
+The sequencing depth, or genome coverage, is usually understood as: (total read number\*read length)/ haploid genome size. It is usually expressed as "...x", where x means "times the haploid genome size". For instance, "a coverage of 3x", means that you generated 3 times as many bp as there are in the haploid genome.  
+Because the sequencing is random, because there are organelle genomes in multiple copies, and because AT rich and AT poor regions are more difficult to sequence, you cannot expect the whole genome to be covered by 3 reads when you plan a 3x coverage. But it gives you an idea.  
+
+Below are tips to access coverage information.  
+Ideally you should familiarize with SAM and BAM files before trying the commands below. Read the documentation [here](https://samtools.github.io/hts-specs/).  
+
+To calculate read depth, you need to have reads mapped on your reference region (or recovered region). To do this, you can use bwa or bowtie, for instance.  
+Below are some examples using bwa, but they should not be reproduced as such, you need to adapt following your needs.
+You first have to index the reference:
+```
+for f in *supercontig.fasta; do (bwa index $f); done
+```
+Then you do the mapping (play with parameters!):
+```
+for f in *supercontig.fasta; do (bwa mem -t 6 -a $f ${f/supercontig.fasta}interleaved.fasta > ${f/.fasta}\_BWA.sam); done
+```
+These steps can be memory and space consuming, you may need some strategy to parallelize the job!
+
+Once you have your sam or bam file with the mapping information, you can do various operations to get read depth information, using [samtools](http://www.htslib.org/):
+
+Use samtools to convert the sam to bam and to sort the bam
+```
+for f in *BWA.sam; do (samtools view -b $f -o ${f/.sam}.bam); done
+for f in *BWA.bam; do (samtools sort $f -o ${f/.bam}_sorted.bam); done
+```
+Use samtools to get some basic stats for each region, put all stats in one single file for each species
+```
+for f in *BWA_sorted.bam; do (samtools index $f); done
+for f in *BWA_sorted.bam; do (samtools idxstats $f >> All_basic_stats.txt); done
+```
+Use samtools to get some coverage stats for each gene, one file per gene
+```
+for f in *BWA_sorted.bam; do (samtools stats -c 0,1000,1 $f > ${f/.bam}_covstat.txt); done
+```
+Use samtools to get read depth at each position for each gene, one file per gene
+```
+for f in *BWA_sorted.bam; do (samtools depth -a $f > ${f/.bam}_depth.txt); done
+```
+This may give wrong results if your mapping is not good, for instance if many reads map where they should not map (frequent if you map reads from genome sequencing on a particular region instead of the whole genome).  
+To avoid this, you have to tweak the read mapping parameters, and you can also play with some filtering options of the depth command.  
+Alternatively, you can filter out the wrong matches using custom scripts.
+  
+You can use samtools tview to see the sorted.bam alignment in the console.  
+You can use samtools phase to phase reads.  
+
+You can use [picard](https://broadinstitute.github.io/picard/) markduplicates if you want to remove duplicates for unpaired reads (or reads where the paired-end information is not used).  
+
+Use samtools to create a **pileup**, i.e a file with information about how many reads match each base and how well they match.
+Use -ff to filter only the reads following a particular condition (see the samtools mpileup documentation):
+```
+for f in *BWA_sorted.bam; do (samtools mpileup -A -ff UNMAP -f $f -o ${f/.bam}_pileup.txt); done
+```
+
+  
+## 7. Improving target recovery
+
+The approach followed by HybPiper may not always be optimal, or it may only become optimal after fine tuning.  
+Here are some strategies that may be worth trying when the default approach does not work well:  
+- Run HybPiper on a sample for which you have good data, build a better reference file based on the results, and run HybPiper again on the other samples, using the new reference file
+- Use the blast option instead of bwa
+- Tune the bwa parameters (you probably need to tweak the HybPiper script, or see PAFTOOLS)
+- Use the --cov_cutoff option to allow SPADES to assemble contigs with less coverage than the default (8)
+- Try a more or less stringent trimming strategy
