@@ -1,4 +1,4 @@
-# **Analyse target capture data to obtain gene alignments**
+# **Analyse target capture data to obtain regions of interest**
   
 ## **1. Working environment, pre-requisites, and best practices**
 
@@ -40,28 +40,41 @@ Looking at the FASTQC results should help you decide which quality score thresho
 
 An alternative to look at the quality of all the samples could be to use the script “clean_reads.py” of the pipeline [SEQCAPR](https://peerj.com/preprints/26477/) (Andermann et al., 2018). This script will trim the reads (see below) and produce a graphical summary of their quality for all species together.
 
-Commands tips:
+### CODE TIPS
 
-The wild card is very useful to perform simple operations on multiple inputs.
+The **wild card** is very useful to perform simple operations on multiple inputs.
 For instance, to move all files with the "html" extension to a directory called "dir", you can use a wild card like this:
+```
 mv *.html dir
-
-If you want to unzip files, you can use the command "gunzip file". But ask yourself if it is really necessary before, because you will use more space.
+```
+If you want to unzip files, you can use the command 
+```
+gunzip file
+```
+But ask yourself if it is really necessary before, because you will use more space.
 The program fastqc works on zipped (.gz) files as well as on fastq files.
 
-Loops are used to perform a same operation (or suite of operations) on multiple inputs, one input after the other.
+**Loops** are used to perform a same operation (or suite of operations) on multiple inputs, one input after the other.
 The basic structure of the loop is:
-for <each input>; do (the operation); done
+**for each_input; do (the operation); done**
 For instance, you can run the fastqc command on all files finishing by ".fastq" by typing:
+```
 for f in *.fastq; do (fastqc $f); done
-
-"for f in *.fastq" sets the loop: the loop will iterate as many times as there are objects of name finishing by ".fastq" in the current directory.
-In addition, at each iteration, a variable named f is created, and the object of name finishing by ".fastq" on which the loop is currently iterating is assigned to f, overwriting the previous value of f.
+```
+"for f in \*.fastq" sets the loop: the loop will iterate as many times as there are objects of name finishing by ".fastq" in the current directory.
+At each iteration, a variable named f is created, and the object of name finishing by ".fastq" on which the loop is currently iterating is assigned to f, overwriting the previous value of f.
 "do ()" indicates an action to perform at each iteration of the loop (for instance run fastqc with the variable f as input). 
 $f indicates that f is a variable.
 
-Use "scp" to copy files from the remote server to your laptop/desktop and vice versa.
+To copy files from your laptop/desktop to the remote server and vice versa, you can use the command **scp**:
+```
+scp path/to/file user@host_address:/path/to/directory
 
+scp user@host_address:/path/to/file path/to/directory
+```
+The first command copies a file from your computer to the remote server (you need to know the address of the server and to have a user account on it).
+The second command copies a file from the server to your computer.
+You can use loops or wild cards to copy many files at once.
 
 ## **3. Cleaning data**
 
