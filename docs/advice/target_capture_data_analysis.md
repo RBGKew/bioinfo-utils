@@ -131,6 +131,7 @@ THE ORDER OF THE OUTPUT FILES MATTERS!
 
 ## **4. Chosing a strategy to assemble the data, and formatting the reference file**
 
+### Assembly strategy
 There are multiple pipelines to analyze target capture sequencing data and to produce phylogenies from them.  
 At Kew, we often use **HybPiper** or a homemade pipeline inspired by it: **PAFTOOLS**. However, there may be more adequate pipelines depending on your needs, or, more likely, you will need to customize an existing pipeline.  
   
@@ -297,37 +298,23 @@ The --cpu option (which takes a number of cpus to use) is useful if you don’t 
   
 If you are running jobs on servers that don't have a system of job submission, you can use some tool to be able to close your connection to the server while the job is still running.   
 For instance, you can use screen (official documentation [here](https://www.gnu.org/software/screen/manual/html_node/index.html)):  
-Launch screen:
 ```
+#Launch screen:
 screen
-```
-Create a new window:
-```
+#Create a new window:
 ctrl-A c
-```
-Go to the next or the previous window:
-```
+#Go to the next or the previous window:
 ctrl-A n 
 ctrl-A p 
-```
-Detach from the screen session:
-```
+#Detach from the screen session:
 ctrl-A d
-```
-Reattach to the screen session (you may have to indicate the session id, see error message if any):
-```
+#Reattach to the screen session (you may have to indicate the session id, see error message if any):
 screen -r
-```
-Close a single window (you will lose what is running inside):
-```
+#Close a single window (you will lose what is running inside):
 exit
-```
-Know the screen session(s) id(s):
-```
+#Know the screen session(s) id(s):
 screen -ls
-```
-Kill the whole screen session (you will lose what is running in all windows):
-```
+#Kill the whole screen session (you will lose what is running in all windows):
 screen -X -S session-id quit
 ```
 Ensure you keep control of your screen windows, delete the windows and kill the sessions when you don't use them anymore.
@@ -348,18 +335,18 @@ This can also be a first step to identify recent whole genome duplications, or a
 
 ### General advice: 
 
-Be up to date
+#### Be up to date
 Ensure that you don't miss an important update of HybPiper by consulting the website regularly.  
 Consult also this website for new solutions. And please don't hesitate to contribute!  
   
-Organize yourself  
+#### Organize yourself  
 Make folders corresponding to the different steps, and move the relevant files in them.  
 For instance you may have a folder with the raw data, a folder with the trimmed data, a folder with the output of a given HybPiper run, a folder with the final gene files...
   
-Tidy up  
+#### Tidy up  
 HybPiper provides a cleaning script cleanup.py that removes unnecessary files. In addition, after a few trials you should be able to know what files are really necessary and what files can be deleted or at least moved to an external, long storage place.  
   
-Work in a reproducible way, for you and for others  
+#### Work in a reproducible way, for you and for others  
 At least, keep track of your commands. You can consult/save the output of the **history** command, or just take notes of your commands.  
 Putting all commands in a file will allow you to run them all at once, or at least to come back to them and copy paste them quickly in the terminal following your needs. This is the first step towards building your own pipeline.  
 
@@ -372,7 +359,7 @@ Depending on what you look at, you may be able to tell if a low recovery comes f
 
 ### Number of regions recovered for each sample, and length of the recovered regions
 
-See Matt Johnson's script get_seq_lengths.py
+See Matt Johnson's script get_seq_lengths.py  
 Example of command, to run from the directory where you put the HybPiper output directory(ies):
 ```
 python ~/software/HybPiper/get_seq_lengths.py ReferenceTargets.fasta namelist.txt dna > seq_lengths.txt
@@ -383,12 +370,12 @@ The table seq_lengths.txt can then be visualized as a heatmap using Matt Johnson
 Just open the script in R and follow the instructions at the beginning of the script.
   
 ### Number of reads ON/OFF target
-See Matt Johnson's script hybpiper_stats.py
+See Matt Johnson's script hybpiper_stats.py  
 Example of command:
 ```
 python ~/software/HybPiper/hybpiper_stats.py seq_lengths.txt namelist.txt > stats.txt
 ```
-You will need the result of the previous script (get_seq_lengths.py) first.  
+You will need the result of the previous script (get_seq_lengths.py) first.    
 **WARNING:** if you get 50% for everything, you are probably using a wrong, outdated version of the script. Get the newest one from the HybPiper github.
 
 ### Coverage of the recovered regions
@@ -406,7 +393,7 @@ Because the sequencing is random, because there are organelle genomes in multipl
 Below are tips to access coverage information.  
 Ideally you should familiarize with SAM and BAM files before trying the commands below. Read the documentation [here](https://samtools.github.io/hts-specs/).  
 
-To calculate read depth, you need to have reads mapped on your reference region (or recovered region). To do this, you can use bwa or bowtie, for instance.  
+To calculate read depth, you need to have reads mapped on your reference region (or recovered region). To do this, you can use [bwa](http://bio-bwa.sourceforge.net/) or [bowtie](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), for instance.  
 Below are some examples using bwa, but they should not be reproduced as such, you need to adapt following your needs.
 You first have to index the reference:
 ```
