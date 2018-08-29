@@ -2,8 +2,8 @@
 ## **1. Multiple Sequence Alignments (MSAs)**
 There are many different programs to align sequences.  
 None of them is guarantied to find the optimal alignment.  
-All of them perform more or less good depending on your data and how you tune their parameters.
-Below we give examples of use and remarks about the software that we tend to use most.  
+Performance depends on your data and how you tune the parameters.
+Below we give examples of use and remarks about the software that we tend to use the most.  
 
 ### MAFFT
 See the documentation [here](https://mafft.cbrc.jp/alignment/software/)  
@@ -17,15 +17,24 @@ less genenames.txt
 parallel --eta "mafft --localpair --adjustdirectionaccurately --maxiterate 1000 {} > {}.aligned.fasta" :::: genenames.txt
 ```
 This is just an example, look at the documentation to chose adequate options!
+Note the "--adjustdirectionaccurately" option, which reverse complement sequences if necessary.
   
 As well as running MAFFT with the GNU-Parallel command, it’s possible, as with HybPiper, to run this in parallel on a cluster as a simple array job using one CPU for each gene.  
   
 Alternatively, for aligning big alignments MAFFt has a –thread option that can be set to the number of cores on your machine.   
-Explained [here](https://mafft.cbrc.jp/alignment/software/multithreading.html).
+Explained [here](https://mafft.cbrc.jp/alignment/software/multithreading.html).  
 There is also a [MPI version](https://mafft.cbrc.jp/alignment/software/mpi.html).
 
 
 ### PASTA
+See the documentation [here](https://github.com/smirarab/pasta).  
+What follows needs testing and proofreading. Comments welcome!  
+PASTA aligns sequences following an iterative approach that uses a user-provided guide tree to generate an alignment, generates a new tree from this alignment, use this tree to improve the previous alignment, and does it again a user-defined number of times.  
+PASTA is able to deal with very large numbers of sequences to align because it splits the data in subsets of sequences, align the subsets, and then combine the alignments.  
+PASTA works with different alignment software, including MAFFT.    
+Using MAFFT through PASTA may give better results than using MAFFT alone, especially because PASTA tends to infer gaps instead of forcing alignment between very divergent sequences.  
+Recent work by people in [T. Warnow's group](http://tandy.cs.illinois.edu/) suggest that a combination of PASTA and [BAli-Phy](http://www.bali-phy.org/) could [work well](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3101-8#Sec15) although more testing on real data is needed (pers. com. from Mike Nute, PhyloSynth symposium, Montpellier, France, August 2018).
+
 ## **2. Gene trees**
 ## **3. Spotting alignment problems**
 ## **4. Rooting trees**
