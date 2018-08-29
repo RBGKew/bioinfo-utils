@@ -42,7 +42,7 @@ An alternative to look at the quality of all the samples could be to use the scr
 
 ### CODE TIPS
 
-The **wild card** is very useful to perform simple operations on multiple inputs.
+The **wild card** is very useful to perform simple operations on multiple inputs.  
 For instance, to move all files with the "html" extension to a directory called "dir", you can use a wild card like this:
 ```
 mv *.html dir
@@ -51,54 +51,58 @@ If you want to unzip files, you can use the command
 ```
 gunzip file
 ```
-But ask yourself if it is really necessary before, because you will use more space.
+But ask yourself if it is really necessary before, because you will use more space.  
 The program fastqc works on zipped (.gz) files as well as on fastq files.
 
-**Loops** are used to perform a same operation (or suite of operations) on multiple inputs, one input after the other.
-The basic structure of the loop is:
-**for each_input; do (the operation); done**
+**Loops** are used to perform a same operation (or suite of operations) on multiple inputs, one input after the other.  
+The basic structure of the loop is:  
+**for each_input; do (the operation); done**  
 For instance, you can run the fastqc command on all files finishing by ".fastq" by typing:
 ```
 for f in *.fastq; do (fastqc $f); done
 ```
-"for f in \*.fastq" sets the loop: the loop will iterate as many times as there are objects of name finishing by ".fastq" in the current directory.
-At each iteration, a variable named f is created, and the object of name finishing by ".fastq" on which the loop is currently iterating is assigned to f, overwriting the previous value of f.
-"do ()" indicates an action to perform at each iteration of the loop (for instance run fastqc with the variable f as input). 
-$f indicates that f is a variable.
-
+"for f in \*.fastq" sets the loop: the loop will iterate as many times as there are objects of name finishing by ".fastq" in the current directory.  
+At each iteration, a variable named f is created, and the object of name finishing by ".fastq" on which the loop is currently iterating is assigned to f, overwriting the previous value of f.  
+"do ()" indicates an action to perform at each iteration of the loop (for instance run fastqc with the variable f as input).   
+$f indicates that f is a variable.  
+  
 To copy files from your laptop/desktop to the remote server and vice versa, you can use the command **scp**:
 ```
-scp path/to/file user@host_address:/path/to/directory
+scp path/to/file/on/local/computer user@server_address:/path/to/directory/on/server
 
-scp user@host_address:/path/to/file path/to/directory
+scp user@server_address:/path/to/file/on/server path/to/directory/on/local/computer
 ```
-The first command copies a file from your computer to the remote server (you need to know the address of the server and to have a user account on it).
-The second command copies a file from the server to your computer.
-You can use loops or wild cards to copy many files at once.
+The first command copies a file from your computer to the remote server (you need to know the address of the server and to have a user account on it).  
+The second command copies a file from the server to your computer.  
+**Both commands are run in the terminal of the local computer.**  
+  
+You can use loops or wild cards to copy many files at once.  
+For instance the following command copies all fastq files from the directory called miseq_run located on the local computer to the directory called raw_data located in the account user in the remote server:
+```
+scp miseq_run/*.fastq user@server_address:raw_data/
+```
 
 ## **3. Cleaning data**
 
-Once you know how you should clean your data, you can use a tool such as Trimmomatic () to do it.
-Trimming tools perform various operations, depending on the tool and on the options you chose. 
-They trim, i.e they cut, the end of the reads if they match adapter sequences (indicated by the user).
-They trim the reads at the end and sometimes at the beginning, based on the quality of the base(s) or arbitrarily.
-They remove completely some reads, based on their quality and/or their length.
-If the data was paired-end, and one of the reads of the pair has been removed but not the other, the remaining read is either removed too, or written in separate file of "unpaired" reads.
-This allows to keep two files of trimmed paired reads where reads at the same line number in both files correspond to the two reads of a pair.
+Once you know how you should clean your data, you can use a tool such as [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to do it.  
+Trimming tools perform various operations, depending on the tool and on the options you chose.  
+They trim, i.e they cut, the end of the reads if they match adapter sequences (indicated by the user).  
+They trim the reads at the end and sometimes at the beginning, based on the quality of the base(s) or arbitrarily.  
+They remove completely some reads, based on their quality and/or their length.  
+If the data was paired-end, and one of the reads of the pair has been removed but not the other, the remaining read is either removed too, or written in a separate file containing **unpaired** reads. This allows to keep two files of trimmed paired reads where reads at the same line number in both files correspond to the two reads of a pair.  
 In Trimmomatic, this results in the creation of four output files: two files containing respectively read 1 and read 2 of each read pair, and two files containing respectively read 1 of the pairs for which read 2 has been deleted, and read 2 of the pairs for which read 1 has been deleted.
 
-The manual of Trimmomatic is worth reading. As a general rule, we found that the MAXINFO setting is complicated. It takes a bit of trial and error to find the right parameters but it seems to be possible to keep the quality very high but dropping very few reads altogether, compared to SLIDINGWINDOW which seems to drop more. 
-Setting the targetlength parameter too low does result in lots of reads being dropped but the strictness parameter can be turned up to the maximum of 1 and still just trims without completely dropping reads, on the datasets that we tested.
-Apparently MAXINFO should only be used instead of SLIDINGWINDOW, not both together. 
+If you use Trimmomatic, you should read the [manual](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf).  
+As a general rule, we found that the MAXINFO setting is complicated to understand but gives good results. It takes a bit of trial and error to find the right parameters but it seems to be possible to keep the quality very high and dropping very few reads altogether, compared to SLIDINGWINDOW which seems to drop more reads. Apparently MAXINFO should only be used instead of SLIDINGWINDOW, not both together.  
+Setting the "targetLength" parameter too low does result in lots of reads being dropped but the "strictness" parameter can be turned up to the maximum of 1 and still just trims without completely dropping reads, on the datasets that we tested.  
 We did not find necessary to use TRAILING or LEADING but it might be necessary to use CROP on the long reads.
-
+  
 If you used the Illumina adapters xxxxxx, the adapter file TruSeq3-PE-2.fa in "Trimmomatic-0.36/adapters/" should be the one you need.
-
-After you cleaned the data, you should ideally check with fastqc if your clean data are as you expect, and you should check the output of the trimming program, to know how many reads you lost, and how many you trimmed.
-In general, trimming a new dataset requires multiple trials. But after a while, it becomes easier to know what will work on which kind of dataset.
-
-
-Command tips
+  
+After you cleaned the data, you should ideally check with fastqc if your clean data are as you expect, and you should check the output of the trimming program, to know how many reads you lost, and how many you trimmed.  
+In general, trimming a new dataset requires multiple trials. But after a while, it becomes easier to know what will work on which kind of dataset.  
+  
+### CODE TIPS
 
 You can customize loops to create outputs with informative names in the following way:
 for i in *.fastq; do (command $i > ${i/.fastq}_paired.fastq); done
