@@ -58,6 +58,10 @@ trimal -in concatenated.out -out concat_trimmalled.fas -automated -resoverlap 0.
   
 Another suite of tools to perform similar tasks and many others is [phyutility](https://github.com/blackrim/phyutility).  
 
+### Renaming sequences in all alignments
+  
+We have scripts for that, just ask!
+
 ## **2. Gene trees**
 
 ### Model selection
@@ -69,8 +73,13 @@ Example of command to get gene trees with 100 bootstrap replicates, with branch 
 for f in *.fasta; do (raxmlHPC-PTHREADS -m GTRGAMMA -f a -p 12345 -x 12345 -# 100 -k -s $f -n ${f}_tree -T 4); done
 ```
 Be careful with the -T option, which controls the number of threads to use!  
+According to the manual the benfit of using -T will depend on the number of site patterns, so for an average gene it is not worth setting -T to more than 2 or at most 4, although this will depend on the model of evolution and if the sequences are nucleotides or amino-acids.  
 The -p and -x options are important for reproducibility, the number does not matter but you should take note of it (see the manual).
-
+  
+If you have a big cluster, gene trees can be produced in parallel as a simple array job using as many cpus as you have alignments.
+  
+For concatenated alignments RaxML can also be run in MPI mode, or in HYBRID mode with parallelisation of “coarse grain” processes over nodes (e.g. building separate bootstrap trees) and “fine-grain” processes using multithreading of multiple processors on a single machine (e.g. working on a single tree). See [documentation](https://help.rc.ufl.edu/doc/RAxML).
+  
 The trees to be used for species tree estimation with ASTRAL (see below) are the RAxML_bipartitions.* trees, NOT the RAxML_bipartitionsBranchLabels.* trees.
   
   
@@ -86,6 +95,13 @@ If you can have a look at your alignments don't hesitate though...
 
 
 ## **4. Infer species tree with ASTRAL**
+
+Taxa names have to be the same in all trees (but you can have missing taxa).  
+
+Combine all species tree files in one file with the **cat** command: 
+```
+cat  *raxml.tree > alltrees.tre
+```
 
 We use ASTRAL-III (version 5.1.1 and above). See the article [here]() and ASTRAL documentation [here]().
 When using ASTRAL-III, it is better to collapse very low support branches in the gene trees before running ASTRAL.  
@@ -103,6 +119,7 @@ If astral had '[p=...]' annotations (other -t options, see the manual), the foll
 sed 's/\[[^\[]*\]//g'SpeciesTree.tre > SpeciesTree2.tre
 sed "s/'//g" SpeciesTree2.tre > SpeciesTree3.tre
 ```
+
 ## **5. Rooting trees**
 
 **WARNING!** If you use phyparts (see below) or more generally if you have to compare gene trees to your species tree, it is important that the same rooting method is applied to all trees.
