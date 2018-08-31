@@ -87,7 +87,7 @@ The trees to be used for species tree estimation with ASTRAL (see below) are the
 
 When you have hundreds of alignments, looking at all of them to spot wrong alignments or weird sequences becomes difficult, so people are developping tools to spot problems automatically.  
 
-Matt Johnson's [script](https://github.com/mossmatters/KewHybSeqWorkshop/blob/master/Alignment.md#identifying-poorly-aligned-sequences) to spot anormally long branches in trees.
+Matt Johnson's [script](https://github.com/mossmatters/KewHybSeqWorkshop/blob/master/Alignment.md#identifying-poorly-aligned-sequences) to spot anormally long branches in trees. Blogpost about the script [here](http://blog.mossmatters.net/detecting-branch-length-outliers/).
   
 U. Mai and S. Mirarab's [Treeshrink](https://github.com/uym2/TreeShrink) to do the same.
 
@@ -126,10 +126,15 @@ sed "s/'//g" SpeciesTree2.tre > SpeciesTree3.tre
 
 ### Root the species tree 
 
-We use the command pxrr of the [phyx](https://github.com/FePhyFoFum/phyx) package:
+We use the command pxrr of the [phyx](https://github.com/FePhyFoFum/phyx) package, because this is what [S. Smith](https://bitbucket.org/blackrim/) uses so it should work with phyparts (see below):
 ```
 ~/software/phyx/src/pxrr -t SpeciesTree.tre -g outgroup_name_as_in_the_tree > SpeciesTree_PxrrRooted.tre
 ```
+One can also use [newick utilities](http://cegg.unige.ch/newick_utils):
+```
+nw_reroot SpeciesTree.tre outgroup_name_as_in_the_tree > SpeciesTree_NUrooted.tre
+```
+
 For phyparts (see below), you need to ensure that the end of the species tree has a ";" and that it finishes with \r\n:
 ```
 sed 's/\;\n/\;\r\n/' SpeciesTree_PxrrRooted.tre > SpeciesTree_PxrrRooted_formated.tre
@@ -171,15 +176,22 @@ for f in *.tre; do (sed 's/\;\n/\;\r\n/' $f > ${f/.tre}2.tre); done
 ## **6. Calculate support**
 
 ASTRAL provides various measures of clade or bipartition [support](https://github.com/smirarab/ASTRAL/blob/master/astral-tutorial.md#branch-length-and-support).  
+  
 You can also use [phyparts](https://bitbucket.org/blackrim/phyparts) to obtain a measure of the support in each bipartition in the tree.  
   
 **WARNING!**: To use phyparts properly, the species tree and the gene trees have to be rooted using the same rooting method!  
+if you generate the species tree with ASTRAL (see above), use the -t 0 option to not have annotations.  
 
 Example of phyparts command:
 ```
 java -jar target/phyparts-0.0.1-SNAPSHOT-jar-with-dependencies.jar -a 1 -s 70 -v -d gene-trees/ -m species_tree.tre -o out-prefix
 ```
-Use the -s option to collapse clades with a bootstrap percentage lower than the number indicated (here 70%)
+Use the -s option to collapse clades with a bootstrap percentage lower than the number indicated (here 70%).  
+Alternatively, you could collapse clades before loading the trees into phyparts, using newick utilities, and concatenate the collapsed gne trees into one file:
+```
+for f in *.tre; do (nw_ed $f ‘i & b<=70’ o > ${f/.tre}_collapsed70.tre); done
+cat *collapsed70.tre > all_trees.tre
+```
   
 Put the output from phyparts in a separate directory in order to visualize it (see below).
   
@@ -201,11 +213,8 @@ The ""xvfb-run" is sometimes necessary if you run it remotely, but not needed if
   
 ### Make piecharts corresponding to the Astral support
 
-We have scripts to generate piecharts based on ASTRAL local posterior probabilities, or quartet support.  
-Example:
-```
-xvfb-run python test-ete.py species_tree.tre
-```
+We have scripts to generate piecharts based on ASTRAL local posterior probabilities, or quartet support. Just ask. 
+
 
 ### Support interpretation for phyparts 
 From [S. Smith](https://bitbucket.org/blackrim/phyparts) and [M. Johnson](https://github.com/mossmatters/phyloscripts/tree/master/phypartspiecharts) websites, and assuming no change in colors from M. Johnson's original script:  
