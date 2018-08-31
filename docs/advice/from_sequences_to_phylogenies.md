@@ -211,7 +211,7 @@ export PATH=/home/sidonie/anaconda_ete/bin:$PATH
 ```
 Run the script:
 ```
-xvfb-run python sidonie/softwares/phypartspiecharts_MJohnson.py species_tree.tre phyparts-out/out-prefix gene-number
+xvfb-run python phypartspiecharts_MJohnson.py species_tree.tre phyparts-out/out-prefix gene-number
 ```
 The ""xvfb-run" is sometimes necessary if you run it remotely, but not needed if you run it locally (for instance if you installed ete3 on your computer).
   
