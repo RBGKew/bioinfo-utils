@@ -236,3 +236,6 @@ Look at [S. Mirarab](https://github.com/smirarab/ASTRAL/blob/master/astral-tutor
 
 
 
+## 8. Dating divergence times
+
+**DO NOT** use ASTRAL branch lengths (see S. Mirarab [github](https://github.com/smirarab/ASTRAL/blob/master/astral-tutorial.md#branch-length-and-support) for explanations and for coming-soon approach to date phylogeneomic datasets)
