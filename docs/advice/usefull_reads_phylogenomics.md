@@ -14,3 +14,5 @@ This paper also briefly discusses what cutoff value for support in the input tre
 ## **Missing data**
 
 Papers looking at the impact of missing data when using ASTRAL and other species-tree estimation methods [here](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4619-8) and [here]((https://www.ncbi.nlm.nih.gov/pubmed/29029338).
+  
+[Paper](https://www.ncbi.nlm.nih.gov/pubmed/29029241) showing that filtering out fragmentary sequences before aligning results in less gene tree estimation errors.
