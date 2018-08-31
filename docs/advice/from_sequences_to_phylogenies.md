@@ -4,6 +4,8 @@ There are many different programs to align sequences.
 None of them is guarantied to find the optimal alignment.  
 Performance depends on your data and how you tune the parameters.
 Below we give examples of use and remarks about the software that we tend to use the most.  
+  
+According to research conducted by people in [T. Warnow's lab](http://tandy.cs.illinois.edu/), [filtering out fragmentary sequences before aligning results in less gene tree estimation errors](https://www.ncbi.nlm.nih.gov/pubmed/29029241), and is thus generally beneficial since the impact of missing data on species tree estimation methods is usually [null or positive](https://www.ncbi.nlm.nih.gov/pubmed/29029338). 
 
 ### MAFFT
 See the documentation [here](https://mafft.cbrc.jp/alignment/software/)  
@@ -103,13 +105,15 @@ Combine all species tree files in one file with the **cat** command:
 cat  *raxml.tree > alltrees.tre
 ```
 
-We use ASTRAL-III (version 5.1.1 and above). See the article [here]() and ASTRAL documentation [here]().
+We use ASTRAL-III (version 5.1.1 and above). See the article [here](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2129-y) and ASTRAL documentation [here](https://github.com/smirarab/ASTRAL).
 When using ASTRAL-III, it is better to collapse very low support branches in the gene trees before running ASTRAL.  
 It can be done with newick utilities in the following way (for branches with less than 10% bootstrap):  
 ```
 ~/software/newick-utils-1.6/src/nw_ed all_trees.tre 'i & b<=10' o > all_trees-BS10.tre
 ```
-
+Do not over collapse! S. Mirarab's work shows that using a threashold of 10 to 33% of bootstrap support to collapse clades results in less errors in the species tree than inferior or superior thresholds.  
+  
+  
 To run Astral with the -t 0 option, and get the species tree from the stdout, without any annotations or branch lengths:
 ```
 java -Xmx12000M -jar ~/software/ASTRAL/astral.5.5.9.jar -i all_trees-BS10.tre -t 0 -o SpeciesTree.tre
