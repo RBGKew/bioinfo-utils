@@ -226,7 +226,7 @@ From [S. Smith](https://bitbucket.org/blackrim/phyparts) and [M. Johnson](https:
 Blue: Support the shown topology = percentage of gene trees concordant with the shown topology  
 Green: Conflict with the shown topology (most common conflicting bipartion) = percentage of gene trees showing the most common conflicting topology  
 Red: Conflict with the shown topology (all other supported conflicting bipartitions) = percentage of gene trees showing any other conflicting topology  
-Gray: Have no support for conflicting bipartion = percentage of gene trees showing neither support nor conflict with the shown topology due to low bootstrap support ("low" being what you set up during phyparts analysis)  
+Gray: Neither concordant nor conflicting with the shown topology = percentage of gene trees showing neither support nor conflict with the shown topology. Includes topologies compatible with (but not supporting) the shown topology, and topologies supporting or conflicting the shown topology but with low bootstrap support ("low" being what you set up during phyparts analysis).  
 Numbers above branches: number of gene trees concordant with the shown topology (blue)  
 Number below branches: number of gene trees conflicting with the shown topology (red + green)  
 
