@@ -12,6 +12,7 @@
 - [Gathering homologous sequences from all samples](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#gathering-supposedly-homologous-regions-from-all-samples)  
 - [Running long or memory-consuming jobs](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#running-long-or-heavy-jobs)  
 - [Checking for paralogs](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#checking-for-paralogs)  
+  
 [General advice](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#general-advice)  
 [Target capture efficiency](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#6-assess-target-capture-efficiency)  
 [Improving target recovery](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#7-improving-target-recovery)  
