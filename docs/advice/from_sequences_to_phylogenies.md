@@ -1,4 +1,15 @@
 # **Phylogenomics tips**
+
+[Multiple sequence alignments](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#1-multiple-sequence-alignments)  
+[Gene trees](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#2-gene-trees)  
+[Spotting alignment problems](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#3-spotting-alignment-problems)  
+[Species tree estimation using ASTRAL](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#4-infer-species-tree-with-astral)  
+[Rooting trees](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#5-rooting-trees)  
+[Calculate clade support](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#6-calculate-support)  
+[Visualize support](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#7-visualize-support-on-the-species-tree)  
+[Dating divergence times](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#8-dating-divergence-times)  
+
+
 ## **1. Multiple Sequence Alignments**
 There are many different programs to align sequences.  
 None of them is guarantied to find the optimal alignment.  
@@ -91,7 +102,7 @@ When you have hundreds of alignments, looking at all of them to spot wrong align
 
 Matt Johnson's [script](https://github.com/mossmatters/KewHybSeqWorkshop/blob/master/Alignment.md#identifying-poorly-aligned-sequences) to spot anormally long branches in trees. Blogpost about the script [here](http://blog.mossmatters.net/detecting-branch-length-outliers/).
   
-U. Mai and S. Mirarab's [Treeshrink](https://github.com/uym2/TreeShrink) to do the same.
+U. Mai and S. Mirarab's [Treeshrink](https://github.com/uym2/TreeShrink) to do the same. We have a script to remove the outliers found by Treeshrink.
 
 If you can have a look at your alignments don't hesitate though...  
 
