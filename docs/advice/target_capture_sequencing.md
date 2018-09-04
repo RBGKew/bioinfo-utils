@@ -8,6 +8,19 @@ We, Kew scientists using target capture sequencing, provide here a summary of ta
   
 This document does not pretend to be exhaustive, and another great resource is for instance the documentation provided [here](https://github.com/mossmatters/HybPiper) and [here](https://github.com/mossmatters/KewHybSeqWorkshop) by [Matt Johnson](https://github.com/mossmatters) (Texas Tech University, USA), [Eliott Gardner](https://www.plantbiology.northwestern.edu/people/alumni/title/elliot-gardner.html) (Morton Arboretum, USA) and [N. Wickett](http://faculty.wcas.northwestern.edu/wickett/) (Northwestern University, USA), who contributed to the development of the [PAFTOL bait kit](https://www.biorxiv.org/content/biorxiv/early/2018/07/04/361618.full.pdf) (see below) together with Kew.
 
+  
+
+[Bait design](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#bait-design)  
+[DNA preparation and target capture](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#dna-preparation-and-target-capture)  
+[Sequencing](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#sequencing-of-the-captured-dna)  
+  
+[Details](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#details)  
+[Bait design details](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#details-about-the-bait-design)  
+[Library size and splash-zone](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#details-about-the-dna-library-size-and-the-splash-zone)  
+[Adapters](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_sequencing.md#details-about-the-adapters)  
+
+
+
 ### Bait design
 
 We first have to design baits to capture the target DNA
