@@ -1,5 +1,10 @@
 # **Some papers that some of us found useful**
 
+[Alignment](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/usefull_reads_phylogenomics.md#alignment)
+[Tree concordance](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/usefull_reads_phylogenomics.md#tree-concordance)
+[Missing data](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/usefull_reads_phylogenomics.md#missing-data)
+
+
 ## **Alignment**
 
 [Paper](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty448/5026659) looking at a method to remove non-homologous parts from alignments (working mainly on amino-acid sequences and protein-coding nucleotide sequences).  
