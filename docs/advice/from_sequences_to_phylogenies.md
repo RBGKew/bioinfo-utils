@@ -2,7 +2,7 @@
 
 [Multiple sequence alignments](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#1-multiple-sequence-alignments)  
 [Gene trees](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#2-gene-trees)  
-[Spotting alignment problems](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#3-spotting-alignment-problems)  
+[Spotting alignment problems by observing gene trees](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#3-spotting-alignment-problems)  
 [Species tree estimation using ASTRAL](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#4-infer-species-tree-with-astral)  
 [Rooting trees](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#5-rooting-trees)  
 [Calculate clade support](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#6-calculate-support)  
@@ -61,8 +61,10 @@ AMAS.py does some other useful things including giving a summary of an alignment
 python3  AMAS.py summary -i alignment.fasta -f fasta -d dna
 ```
 
-### Trimming alignments
-We have used [trimAl](http://trimal.cgenomics.org/).  
+### Spotting alignment problems and trimming alignments
+[FluenDNA](https://github.com/josiahseaman/FluentDNA) allows to look at many alignments and visually spot abnormalities, changes in nucleotide frequencies etc.  
+
+We have used [trimAl](http://trimal.cgenomics.org/) to trim alignments.  
 It can be used to trim out columns or sequences based on their gap content.  
 For instance:
 ```
@@ -96,7 +98,7 @@ For concatenated alignments RaxML can also be run in MPI mode, or in HYBRID mode
 The trees to be used for species tree estimation with ASTRAL (see below) are the RAxML_bipartitions.* trees, NOT the RAxML_bipartitionsBranchLabels.* trees.
   
   
-## **3. Spotting alignment problems**
+## **3. Spotting alignment problems by observing gene trees**
 
 When you have hundreds of alignments, looking at all of them to spot wrong alignments or weird sequences becomes difficult, so people are developping tools to spot problems automatically.  
 
