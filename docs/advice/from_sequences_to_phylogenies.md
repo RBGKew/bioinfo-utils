@@ -9,6 +9,7 @@
 [Visualize support](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#7-visualize-support-on-the-species-tree)  
 [Dating divergence times](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/from_sequences_to_phylogenies.md#8-dating-divergence-times)  
 
+**FRAG**: Tips for handling highly fragmented DNA (e.g. from ancient herbarium specimens)
 
 ## **1. Multiple Sequence Alignments**
 There are many different programs to align sequences.  
@@ -42,12 +43,16 @@ There is also a [MPI version](https://mafft.cbrc.jp/alignment/software/mpi.html)
 ### PASTA
 See the documentation [here](https://github.com/smirarab/pasta).  
 What follows needs testing and proofreading. Comments welcome!  
-PASTA aligns sequences following an iterative approach that uses a user-provided guide tree to generate an alignment, generates a new tree from this alignment, use this tree to improve the previous alignment, and does it again a user-defined number of times.  
+PASTA aligns sequences following an iterative approach that generates an initial alignment and tree, uses this tree to improve the previous alignment, and does it again a user-defined number of times (default == 3).  Alternatively, the user can provide an initial tree.
 PASTA is able to deal with very large numbers of sequences to align because it splits the data in subsets of sequences, align the subsets, and then combine the alignments.  
 PASTA works with different alignment software, including MAFFT.    
 Using MAFFT through PASTA may give better results than using MAFFT alone, especially because PASTA tends to infer gaps instead of forcing alignment between very divergent sequences.  
 Recent work by people in [T. Warnow's group](http://tandy.cs.illinois.edu/) suggest that a combination of PASTA and [BAli-Phy](http://www.bali-phy.org/) could [work well](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3101-8#Sec15) although more testing on real data is needed (pers. com. from Mike Nute, PhyloSynth symposium, Montpellier, France, August 2018).
 
+### UPP
+See the documentation [here](https://github.com/smirarab/sepp/blob/master/README.UPP.md).
+UPP splits the data set into more fragmented and less fragmented sequences. It then produces a backbone alignment and Hidden Markov Models (HMM) from the less fragmented sequences and attempts to fit the more fragmented sequences into each HMM. The final alignment is then selected from the best supported HMM. It produces slightly more accurate alignments for fragmented DNA.
+**FRAG**: Use UPP -M option for highly fragmented DNA. If the range of sequence lengths is highly variable or most of your fragments are much shorter than the target reference sequence, you may need to specify something like "95th percentile of all sequence lengths in data set" as input for this option.
 
 ### Concatenate alignments (if needed)
 
@@ -70,8 +75,10 @@ For instance:
 ```
 trimal -in concatenated.out -out concat_trimmalled.fas -automated -resoverlap 0.65 -seqoverlap 0.65
 ```
-  
+
 Another suite of tools to perform similar tasks and many others is [phyutility](https://github.com/blackrim/phyutility).  
+
+**FRAG**: Trimming can sometimes result in loss of informativeness. It may be worthwhile to check that the trimming parameters did not actually make things worse. For example, the **optrimAl** script uses AMAS to explore the effect of different trimAl gap threshold values on the proportion of parsimony informative sites and amount of data loss.
 
 ### Renaming sequences in all alignments
   
@@ -96,7 +103,8 @@ If you have a big cluster, gene trees can be produced in parallel as a simple ar
 For concatenated alignments RaxML can also be run in MPI mode, or in HYBRID mode with parallelisation of “coarse grain” processes over nodes (e.g. building separate bootstrap trees) and “fine-grain” processes using multithreading of multiple processors on a single machine (e.g. working on a single tree). See [documentation](https://help.rc.ufl.edu/doc/RAxML).
   
 The trees to be used for species tree estimation with ASTRAL (see below) are the RAxML_bipartitions.* trees, NOT the RAxML_bipartitionsBranchLabels.* trees.
-  
+
+Another relatively fast and robust option is IQ-Tree http://www.iqtree.org/
   
 ## **3. Spotting alignment problems by observing gene trees**
 
@@ -136,6 +144,8 @@ If astral had '[p=...]' annotations (other -t options, see the manual), the foll
 sed 's/\[[^\[]*\]//g'SpeciesTree.tre > SpeciesTree2.tre
 sed "s/'//g" SpeciesTree2.tre > SpeciesTree3.tre
 ```
+
+**FRAG**: ASTRAL option -t 10 does a polytomy test and may help in assessing if a poorly supported branch could be due to insufficient data or reflect a true polytomy.
 
 ## **5. Rooting trees**
 
@@ -251,4 +261,4 @@ Look at [S. Mirarab](https://github.com/smirarab/ASTRAL/blob/master/astral-tutor
 
 ## 8. Dating divergence times
 
-**DO NOT** use ASTRAL branch lengths (see S. Mirarab [github](https://github.com/smirarab/ASTRAL/blob/master/astral-tutorial.md#branch-length-and-support) for explanations and for coming-soon approach to date phylogeneomic datasets)
+**DO NOT** use ASTRAL branch lengths (see S. Mirarab [github](https://github.com/smirarab/ASTRAL/blob/master/astral-tutorial.md#branch-length-and-support) for explanations and for coming-soon approach to date phylogenomic datasets)
