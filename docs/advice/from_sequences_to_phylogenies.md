@@ -75,8 +75,10 @@ For instance:
 ```
 trimal -in concatenated.out -out concat_trimmalled.fas -automated -resoverlap 0.65 -seqoverlap 0.65
 ```
-  
+
 Another suite of tools to perform similar tasks and many others is [phyutility](https://github.com/blackrim/phyutility).  
+
+**FRAG**: Trimming can sometimes result in loss of informativeness. It may be worthwhile to check that the trimming parameters did not actually make things worse. For example, the **optrimAl** script uses AMAS to explore the effect of different trimAl gap threshold values on the proportion of parsimony informative sites and amount of data loss.
 
 ### Renaming sequences in all alignments
   
@@ -101,7 +103,8 @@ If you have a big cluster, gene trees can be produced in parallel as a simple ar
 For concatenated alignments RaxML can also be run in MPI mode, or in HYBRID mode with parallelisation of “coarse grain” processes over nodes (e.g. building separate bootstrap trees) and “fine-grain” processes using multithreading of multiple processors on a single machine (e.g. working on a single tree). See [documentation](https://help.rc.ufl.edu/doc/RAxML).
   
 The trees to be used for species tree estimation with ASTRAL (see below) are the RAxML_bipartitions.* trees, NOT the RAxML_bipartitionsBranchLabels.* trees.
-  
+
+Another relatively fast and robust option is IQ-Tree http://www.iqtree.org/
   
 ## **3. Spotting alignment problems by observing gene trees**
 
@@ -141,6 +144,8 @@ If astral had '[p=...]' annotations (other -t options, see the manual), the foll
 sed 's/\[[^\[]*\]//g'SpeciesTree.tre > SpeciesTree2.tre
 sed "s/'//g" SpeciesTree2.tre > SpeciesTree3.tre
 ```
+
+**FRAG**: ASTRAL option -t 10 does a polytomy test and may help in assessing if a poorly supported branch could be due to insufficient data or reflect a true polytomy.
 
 ## **5. Rooting trees**
 
@@ -256,4 +261,4 @@ Look at [S. Mirarab](https://github.com/smirarab/ASTRAL/blob/master/astral-tutor
 
 ## 8. Dating divergence times
 
-**DO NOT** use ASTRAL branch lengths (see S. Mirarab [github](https://github.com/smirarab/ASTRAL/blob/master/astral-tutorial.md#branch-length-and-support) for explanations and for coming-soon approach to date phylogeneomic datasets)
+**DO NOT** use ASTRAL branch lengths (see S. Mirarab [github](https://github.com/smirarab/ASTRAL/blob/master/astral-tutorial.md#branch-length-and-support) for explanations and for coming-soon approach to date phylogenomic datasets)
