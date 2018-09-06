@@ -388,7 +388,13 @@ Replace dna by aa if the reference file contains amino-acids.
 
 The table seq_lengths.txt can then be visualized as a heatmap using Matt Johnson's script gene.recovery.heatmap.R, also available in the HybPiper directory.  
 Just open the script in R and follow the instructions at the beginning of the script.
-  
+
+Alternative: the **max_overlap** R script estimates capture coverage of target sequences from the output of get_seq_lengths.py by calculating three statistics -
+representedness = proportion of species/genes for which sequences were obtained
+completeness = proportion of target sequence obtained for each species/gene
+evenness = how evenly the sequence lengths are distributed across species/genes, adapted from a measure of species evenness (Pielou EC. 1966. The measurement of diversity in different types of biological collections. J Theor Biol 13: 131-144.)
+It also generates a csv which you can then open in a spreadsheet programme of your choice and create a heatmap with appropriate conditonal formatting.
+
 ### Number of reads ON/OFF target
 See Matt Johnson's script hybpiper_stats.py  
 Example of command:
