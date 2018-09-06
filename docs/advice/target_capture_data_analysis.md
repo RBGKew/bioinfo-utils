@@ -3,7 +3,7 @@
 [Working environment, pre-requisites and best practices](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#1-working-environment-pre-requisites-and-best-practices)  
 [Checking data quality](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#2-checking-data-quality)  
 [Cleaning data](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#3-cleaning-data)  
-[Assembly strategy and reference file](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#4-chosing-a-strategy-to-assemble-the-data-and-formatting-the-reference-file)  
+[Assembly strategy and reference file](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#4-choosing-a-strategy-to-assemble-the-data-and-formatting-the-reference-file)  
 [Hybpiper tips](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#5-tips-when-running-hybpiper)  
 - [Name list](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#name-list)  
 - [PATH](https://github.com/sidonieB/bioinfo-utils/blob/master/docs/advice/target_capture_data_analysis.md#path)  
@@ -104,7 +104,7 @@ scp miseq_run/*.fastq user@server_address:raw_data/
 
 Once you know how you should clean your data, you can use a tool such as [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to do it.  
   
-Trimming tools perform various operations, depending on the tool and on the options you chose.  
+Trimming tools perform various operations, depending on the tool and on the options you choose.  
 - They trim, i.e they cut, the end of the reads if they match adapter sequences (indicated by the user).  
 - They trim the reads at the end and sometimes at the beginning, based on the quality of the base(s) or arbitrarily.  
 - They remove completely some reads, based on their quality and/or their length.  
@@ -147,7 +147,7 @@ You need to understand the above command and adapt it to our needs/input names!
 THE ORDER OF THE OUTPUT FILES MATTERS!
 
 
-## **4. Chosing a strategy to assemble the data, and formatting the reference file**
+## **4. Choosing a strategy to assemble the data, and formatting the reference file**
 
 ### Assembly strategy
 There are multiple pipelines to analyze target capture sequencing data and to produce phylogenies from them.  
@@ -182,7 +182,7 @@ You can download a plastome in Genbank, in format .gb, open it in Geneious, use 
 When you want to do it for multiple plastomes, or if you don't have access to Geneious, you can use/customize one of our [scripts](), to extract only the regions you want based on the annotations, and rename them as you wish.
   
 Depending on your input it will be relevant or not to use the "intronerate" option without modifications (see below).
-If you chose to use blast, your reference file will have to provide amino-acid sequences, so it may not make sense to use blast for something else than coding sequences.
+If you choose to use blast, your reference file will have to provide amino-acid sequences, so it may not make sense to use blast for something else than coding sequences.
 However, we found out empirically that blast allows to recover less reads, but longer genes, than with bwa, regardless if sequences were coding or not.
 
 
@@ -349,7 +349,9 @@ done < namelist.txt
 Depending on the result you may want to discard a gene for a species or for all species.  
 This can also be a first step to identify recent whole genome duplications, or ancient gene duplications.  
 
-
+Useful command:
+parallel "python paralog_retriever.py namelist.txt {} > {}.paralogs.fasta" ::: < gene_list.txt 2> paralog_summary.txt
+produces summary table with the number of copies of each gene. gene_list.txt would be the list of target genes, one per line.
 
 ### General advice: 
 
