@@ -394,7 +394,8 @@ Just open the script in R and follow the instructions at the beginning of the sc
 As an alternative to estimate the capture success, the **max_overlap** R script calculates three statistics using the output of the get_seq_lengths.py script:  
 - representedness = proportion of species and genes for which sequences were obtained
 - completeness = proportion of each target sequence obtained for each species
-- evenness = measure of how evenly the sequence lengths are distributed across species and genes. This is adapted from a measure of species evenness descrcibed in [Pielou, 1966](https://www.sciencedirect.com/science/article/pii/0022519366900130).  
+- evenness = measure of how evenly the sequence lengths are distributed across species and genes. This is adapted from a measure of species evenness described in [Pielou, 1966](https://www.sciencedirect.com/science/article/pii/0022519366900130).  
+  
 This script also generates a csv file which you can open in a spreadsheet programme of your choice to create a heatmap with appropriate conditonal formatting.
 
 ### Number of reads ON/OFF target
