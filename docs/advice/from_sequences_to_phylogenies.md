@@ -78,7 +78,7 @@ trimal -in concatenated.out -out concat_trimmalled.fas -automated -resoverlap 0.
 
 Another suite of tools to perform similar tasks and many others is [phyutility](https://github.com/blackrim/phyutility).  
 
-**FRAG**: Trimming can sometimes result in loss of informativeness. It may be worthwhile to check that the trimming parameters did not actually make things worse. For example, the **optrimAl** script uses AMAS to explore the effect of different trimAl gap threshold values on the proportion of parsimony informative sites and amount of data loss.
+**FRAG**: Trimming can sometimes result in loss of informativeness. It may be worthwhile to check that the trimming parameters did not actually make things worse. For example, one can use the **optrimAl** R script, which uses [AMAS](https://github.com/marekborowiec/AMAS) to explore the effect of different trimAl gap threshold values on the proportion of parsimony informative sites and amount of data loss.
 
 ### Renaming sequences in all alignments
   
@@ -104,7 +104,7 @@ For concatenated alignments RaxML can also be run in MPI mode, or in HYBRID mode
   
 The trees to be used for species tree estimation with ASTRAL (see below) are the RAxML_bipartitions.* trees, NOT the RAxML_bipartitionsBranchLabels.* trees.
 
-Another relatively fast and robust option is IQ-Tree http://www.iqtree.org/
+Another relatively fast and robust option is [IQ-Tree](http://www.iqtree.org/)
   
 ## **3. Spotting alignment problems by observing gene trees**
 
