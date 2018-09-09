@@ -50,9 +50,9 @@ Using MAFFT through PASTA may give better results than using MAFFT alone, especi
 Recent work by people in [T. Warnow's group](http://tandy.cs.illinois.edu/) suggest that a combination of PASTA and [BAli-Phy](http://www.bali-phy.org/) could [work well](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3101-8#Sec15) although more testing on real data is needed (pers. com. from Mike Nute, PhyloSynth symposium, Montpellier, France, August 2018).
 
 ### UPP
-See the documentation [here](https://github.com/smirarab/sepp/blob/master/README.UPP.md).
-UPP splits the data set into more fragmented and less fragmented sequences. It then produces a backbone alignment and Hidden Markov Models (HMM) from the less fragmented sequences and attempts to fit the more fragmented sequences into each HMM. The final alignment is then selected from the best supported HMM. It produces slightly more accurate alignments for fragmented DNA.
-**FRAG**: Use UPP -M option for highly fragmented DNA. If the range of sequence lengths is highly variable or most of your fragments are much shorter than the target reference sequence, you may need to specify something like "95th percentile of all sequence lengths in data set" as input for this option.
+UPP produces slightly more accurate alignments for fragmented DNA than MAFFT, see the documentation [here](https://github.com/smirarab/sepp/blob/master/README.UPP.md).  
+UPP splits the data set into more fragmented and less fragmented sequences. It then produces a backbone alignment and Hidden Markov Models (HMM) from the less fragmented sequences and attempts to fit the more fragmented sequences into each HMM. The final alignment is then selected from the best supported HMM.  
+**FRAG**: Use the UPP ```-M``` option for highly fragmented DNA. If the range of sequence lengths is highly variable or most of your fragments are much shorter than the target reference sequence, you may need to specify something like "95th percentile of all sequence lengths in data set" as input for this option.
 
 ### Concatenate alignments (if needed)
 
