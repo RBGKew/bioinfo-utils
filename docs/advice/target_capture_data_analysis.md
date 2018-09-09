@@ -349,9 +349,11 @@ done < namelist.txt
 Depending on the result you may want to discard a gene for a species or for all species.  
 This can also be a first step to identify recent whole genome duplications, or ancient gene duplications.  
 
-Useful command:
+The following command produces a summary table with the number of copies of each gene:
+```
 parallel "python paralog_retriever.py namelist.txt {} > {}.paralogs.fasta" ::: < gene_list.txt 2> paralog_summary.txt
-produces summary table with the number of copies of each gene. gene_list.txt would be the list of target genes, one per line.
+```
+where gene_list.txt would be the list of target genes, one per line.
 
 ### General advice: 
 
