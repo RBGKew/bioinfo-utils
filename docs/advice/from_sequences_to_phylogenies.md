@@ -51,7 +51,7 @@ Recent work by people in [T. Warnow's group](http://tandy.cs.illinois.edu/) sugg
 ### UPP
 UPP produces slightly more accurate alignments for fragmented DNA than MAFFT, see the documentation [here](https://github.com/smirarab/sepp/blob/master/README.UPP.md).  
 UPP splits the data set into more fragmented and less fragmented sequences. It then produces a backbone alignment and Hidden Markov Models (HMM) from the less fragmented sequences and attempts to fit the more fragmented sequences into each HMM. The final alignment is then selected from the best supported HMM.  
-**For highly fragmented DNA** (e.g. from ancient herbarium specimens): Use the UPP ```-M``` option. If the range of sequence lengths is highly variable or most of your fragments are much shorter than the target reference sequence, you may need to specify something like "95th percentile of all sequence lengths in data set" as input for this option.
+If the range of sequence lengths is highly variable or most of your fragments are much shorter than the target reference sequence, you can use the UPP ```-M``` option, and you may need to specify something like "95th percentile of all sequence lengths in data set" as input for this option.
 
 ### Concatenate alignments (if needed)
 
@@ -77,7 +77,7 @@ trimal -in concatenated.out -out concat_trimmalled.fas -automated -resoverlap 0.
 
 Another suite of tools to perform similar tasks and many others is [phyutility](https://github.com/blackrim/phyutility).  
 
-**FRAG**: Trimming can sometimes result in loss of informativeness. It may be worthwhile to check that the trimming parameters did not actually make things worse. For example, one can use the **optrimAl** R script, which uses [AMAS](https://github.com/marekborowiec/AMAS) to explore the effect of different trimAl gap threshold values on the proportion of parsimony informative sites and amount of data loss.
+Trimming can sometimes result in loss of informativeness. It may be worthwhile to check that the trimming parameters did not actually make things worse. For example, one can use the **optrimAl** R script, which uses [AMAS](https://github.com/marekborowiec/AMAS) to explore the effect of different trimAl gap threshold values on the proportion of parsimony informative sites and amount of data loss.
 
 ### Renaming sequences in all alignments
   
@@ -144,7 +144,7 @@ sed 's/\[[^\[]*\]//g'SpeciesTree.tre > SpeciesTree2.tre
 sed "s/'//g" SpeciesTree2.tre > SpeciesTree3.tre
 ```
 
-**FRAG**: ASTRAL option -t 10 does a polytomy test and may help in assessing if a poorly supported branch could be due to insufficient data or reflect a true polytomy.
+The ASTRAL option ```-t 10``` does a polytomy test and may help in assessing if a poorly supported branch could be due to insufficient data or reflect a true polytomy.
 
 ## **5. Rooting trees**
 
