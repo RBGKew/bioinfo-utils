@@ -27,6 +27,11 @@ scp path/to/file username@hatta:~/
 ```
 ## Queueing system
 The cluster currently uses a standard install of slurm as a queuing system.
+There are two main queues:
+
+  Default : Allows jobs to be run for up to 10 days. Jobs that continue to run after this will be killed
+  Long: Allows jobs to be run for up to 30 days
+  
 To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.)
 
 Example (Run a job with 5 cores):
@@ -38,10 +43,9 @@ Example (Run a job with 5 cores):
 #
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
-#SBATCH --partition=atta
 echo "hello world!"
 ```
-Example 2 (Run a job with 10 cores)
+Example 2 (Run a job with 10 cores, on the Long Job Queue)
 ```
 #!/bin/bash
 #
@@ -51,7 +55,7 @@ Example 2 (Run a job with 10 cores)
 #
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
-#SBATCH --partition=atta
+#SBATCH --partition=long
 echo "hello world!"
 ```
 
