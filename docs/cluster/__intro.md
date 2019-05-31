@@ -7,7 +7,7 @@ We currently have a small (2 x 176 core) compute cluster, which can be used by a
 
 ### Overview
 
-.. image:: ./cluster_overview.png
+(./cluster_overview.png)
 
 [![Cluster Overview, http://www.bbc.co.uk](./cluster_overview.png)]
 
