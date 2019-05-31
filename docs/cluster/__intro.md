@@ -1,7 +1,8 @@
 
 ## Intro
 
-We currently have a small (2 x 176 core) compute cluster, which can be used by anyone at Kew. It has a variety of bioinformatics and spatial analysis packages installed . To get access, or for general queries/software requests, please contact [James Crowe](mailto:james.crowe@kew.org) .
+We currently have a small (2 x 176 core) compute cluster, which can be used by anyone at Kew. It has a variety of bioinformatics and spatial analysis packages installed . To get access, or for general queries/software requests, please contact [Raziel Lowe](mailto:r.lowe@kew.org).
+To raise a ticket, please mail [support](mailto:support@kew.org) and copy in the [linux](mailto:linux@kew.org) team.
 
 ## Basics
 
