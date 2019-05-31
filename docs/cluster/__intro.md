@@ -5,6 +5,10 @@ We currently have a small (2 x 176 core) compute cluster, which can be used by a
 
 ## Basics
 
+### Overview
+
+.. image:: ./cluster_overview_.png
+
 ### From Windows
 Using putty, enter hatta.ad.kew.org into the hostname box
 
