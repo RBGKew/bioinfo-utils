@@ -33,10 +33,15 @@ scp path/to/file username@hatta:~/
 ```
 ## Queueing system
 The cluster currently uses a standard install of slurm as a queuing system.
-There are two main queues:
+There are five queues at this time as follows, please note jobs that run after the time on the queue will be stopped by the system.:--
 
-  Default : Allows jobs to be run for up to 10 days. Jobs that continue to run after this will be killed
-  Long: Allows jobs to be run for up to 30 days
+  fast    :-- Allows jobs to be run for up to 1 day.
+  main*   :-- Allows jobs to be run for up to 3 days.
+  medium  :-- Allows jobs to be run for up to 7 days.
+  long    :-- Allows jobs to be run for up to 14 days.
+  dungeon :-- Allows jobs to be run for up to 28 days.
+  
+  ( * = this denotes the default queue jobs will be placed in if none is defined in script )
   
 To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.)
 
