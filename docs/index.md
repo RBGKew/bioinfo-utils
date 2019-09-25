@@ -4,15 +4,17 @@
 ---
 
 ## Hi.
-These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain (some) of the following information relevant to bioinformatics analyses here:
+These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain (hopfully) useful information about:
+* HATTA cluster
+* the Linux Workstations in the Jodrell computer room
+* Tips and tricks on how to use various bioinformatic software
 * Utility scripts
-* List of machines including addresses and installed software
-* Usage instructions, best practice guides and useful links
-* List of shared data locations and scratch usage guidelines
+
 
 These pages are public so **do not post _passwords_, _keys_, or _other sensitive information_**.
 
-This documentation is available on the organisation github or linked readthedocs.org accounts. Please contact @lonelyjoeparker for requests.
+This documentation is available on the organisation github or linked readthedocs.org accounts. Please contact @lonelyjoeparker or @matt-bio for requests.
+
 
 ---
 # Maillist
