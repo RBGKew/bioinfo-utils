@@ -4,12 +4,12 @@
 ---
 
 ## Hi.
-These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain (some) of the following information relevant to bioinformatics analyses here:
+These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain (hopfully) useful information about:
+* HATTA cluster
+* the Linux Workstations in the Jodrell computer room
+* Tips and tricks on how to use various bioinformatic software
+* Utility scripts
 
-* [Utility scripts](docs/utils)
-* List of [machines](docs/Machines.md) including addresses and installed software
-* Usage instructions, [best practice](docs/best-practice/Best_practice.md) guides and useful links
-* List of shared data locations and scratch usage guidelines
 
 These pages are public so **do not post _passwords_, _keys_, or _other sensitive information_**.
 
