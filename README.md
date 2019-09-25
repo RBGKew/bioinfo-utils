@@ -5,10 +5,10 @@
 
 ## Hi.
 These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain (hopfully) useful information about:
-* HATTA cluster
-* the Linux Workstations in the Jodrell computer room
-* Tips and tricks on how to use various bioinformatic software
-* Utility scripts
+  * HATTA cluster
+  * the Linux Workstations in the Jodrell computer room
+  * Tips and tricks on how to use various bioinformatic software
+  * Utility scripts
 
 
 These pages are public so **do not post _passwords_, _keys_, or _other sensitive information_**.
