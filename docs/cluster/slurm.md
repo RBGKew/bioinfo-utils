@@ -23,6 +23,7 @@ dungeon| 3.4 weeks | 1, 2 & 3 | 2000
 
 \*The way job resource allocation is prioritised is based on multiple factors, not just queue.
 
+If a Job hots the Partition time limit it will be killed (presumed crashed) so bare this in mind if you're job length is varaiable or doesn't seem to have completed correctly.
 
 This system works best if you submit your job to the partition with the shortest time limit your job will finish comfortably in. 
 
@@ -33,12 +34,13 @@ Jobs are submited to the cluster using the sbatch command. For example:
 
 The slurm script (in this case script.sh)  can also have a header containing the same peramiters, particulary useful for frequenly run jobs:
 
-	#!/bin/env bash 
+	#!/bin/bash 
 	#SBATCH -c 1
 	#SBATCH -p main
 	#SBATCH -J test_job
 	#SBATCH -t 0-3:00:00
 	#SBATCH -o /home/mclarke/test.log
+	echo "hello world!"
 
 list of useful sbatch arguments:
 
@@ -50,6 +52,7 @@ Argument| long Argument |Value|Comment
 -J|--job-name|"job_name"| gives your job a name 
 -N|--nodes|min[-max]| give the number of nodes (or a range of numbers of nodes) you want your job to run accross
 -o|--output|/dir/to/std.out| give a file for your jobs STDOUT to be piped into (for STDERR see -e)
+-p|--partition|partition name| select witch partition to submid your job to (listed above; default is "main") 
 -Q|--quiet ||quiet mode (won't print to STDOUT)
 -t|--time|time in minuets| set a time limit for your job
  |--mail-user|your.email@kew.org| an email adde to be notafied of the job's status

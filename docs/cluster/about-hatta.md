@@ -1,119 +1,79 @@
 
-## Intro
+# About HATTA
 
-We currently have a small (2 x 176 core) compute cluster, which can be used by anyone at Kew. It has a variety of bioinformatics and spatial analysis packages installed . To get access, or for general queries/software requests, please contact [Raziel Lowe](mailto:r.lowe@kew.org).
-To raise a ticket, please mail [support](mailto:support@kew.org) and copy in the [linux](mailto:linux@kew.org) team.
+HATTA is a small (192 core) compute cluster, which can be used by anyone at Kew. It has a variety of bioinformatics and spatial analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
 
-## Basics
 
-### Overview
+## System Overview
 
 ![Cluster Overview, http://www.kew.org](./cluster_overview.png)
 
 
-### From Windows
-Using putty, enter hatta.ad.kew.org into the hostname box
+## Connecting
 
-Enter "yes" or "y" if prompted
+Once you've been given access by IT you'll nee to SSH in to the head node (hatta)
+
+### Windows
+
+Using [PuTTY](https://putty.org), enter hatta into the hostname box
+
+Enter "yes" or "y" if asked to confirm adding hatta to hosts list.
 
 log in using your username and password
 
-#### Transfering files (to home directory)
+###Linux/MacOS
+open a terminal window and type
 
-Use a trusted scp client, such as PSCP from the putty website
+	ssh username@hatta
 
-### From Linux/Mac
-```
-ssh username@hatta.ad.kew.org
-```
-  enter password
-#### Transferring files (to home directory):
-```
-scp path/to/file username@hatta:~/
-```
+Type "yes" if prompted to confirm adding hatta to your hosts list
+
+enter your password.
+
+## Transfering files 
+
+There are a couple of ways to transfer files to/from the cluster 
+
+###Windows
+using a scp/ftp/sftp client such as [FileZilla](https://filezilla-project.org/download.php?platform=win64) or [WinSCP](https://winscp.net/eng/index.php)
+
+as with PuTTY the host is hatta and you use your kew username and password
+
+###Linux/Mac
+
+[FileZilla](https://filezilla-project.org) also works on both Linux and Mac as GUI Method.
+
+For larger files or many files you can use rsync via the terminal
+Copying to hatta:
+
+	rsync -zvP /local/file/or/directory username@hatta://directory/to/copy/to
+
+Copying from hatta:
+
+	rsync -zvP username@hatta://file/or/directory/to/copy /local/destination/for/files
+
+If you want to copy a directories contents and not the directory itself add a trailing "/" to the first argument.
+If the rsync command is interupted just  re-run the exact command and its should continue from the file it was last transfering.
+
+
 ## Queueing system
-The cluster currently uses a standard install of slurm as a queuing system.
-There are five queues at this time as follows, please note jobs that run after the time on the queue will be stopped by the system.:--
 
-  fast    :-- Allows jobs to be run for up to 1 day.
-  main*   :-- Allows jobs to be run for up to 3 days.
-  medium  :-- Allows jobs to be run for up to 7 days.
-  long    :-- Allows jobs to be run for up to 14 days.
-  dungeon :-- Allows jobs to be run for up to 28 days.
-  
-  ( * = this denotes the default queue jobs will be placed in if none is defined in script )
-  
-To submit a job, you'll need a script containing the command you want to run, and some instructions telling slurm what resources you need (how many cores, node specific software, etc.)
+The load management system for HATTA is SLURM. Basic usage and some helpful hints can be found on the [slurm](https://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/cluster/slurm/) page.
 
-Example (Run a job with 5 cores):
-```
-#!/bin/bash
-#
-#SBATCH --job-name=test_omp
-#SBATCH --output=res_omp.txt
-#
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=5
-echo "hello world!"
-```
-Example 2 (Run a job with 10 cores, on the Long Job Queue)
-```
-#!/bin/bash
-#
-#SBATCH --job-name=test_omp
-#SBATCH --error=error.txt
-#SBATCH --error=out.txt
-#
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=10
-#SBATCH --partition=long
-echo "hello world!"
-```
-
-
-### Submit a job:
-```
-sbatch name_of_a_bash_script
-```
-useful flags:
-
---workdir=/set/working/directory
-
---error=/path/to/error/files
-
---output=/path/to/standard/out
-
---time=10:00  sets the maximum time for a job to 10 minutes - useful for jobs that can otherwise run for ever.
-
-### Check job status:
-```
-squeue
-```
-or:
-```
-squeue -u username
-```
-to show only your jobs
-
-### Kill a job
-Get the job id from 
-```
-squeue -u username
-```
-Then
-```
-scancel jobid
-```
 
 ## Tech specs
-Runs Ubuntu 17
+Runs Ubuntu 18.04 LTS
 
-Two compute nodes, with:
+Total 192 cores and 3.0 TB RAM a cross 3 nodes
+Compute nodes 1 & 2, each with:
 
-* 4 x  Intel Xeon E7-8880 CPUs (22 cores per cpu)
-* 1.5 TB RAM per node
-* 500GB fast disk (mostly for operating system and installed progams)
-* 42 TB attached scratch storage, shared between nodes
+* 4 x 22 core Intel Xeon CPU @ 2.20-3.00GHz
+* 1.0 TB RAM
+
+Compute node 3 with:
+
+* 2 x 8 core Intel Xeon CPU @ 3.20-3.60GHz
+* 1.0 TB RAM
 
 
 ## Rules
