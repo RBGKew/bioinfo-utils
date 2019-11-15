@@ -46,11 +46,11 @@ as with PuTTY the host is hatta and you use your kew username and password
 For larger files or many files you can use rsync via the terminal
 Copying to hatta:
 
-	rsync -zvP /local/file/or/directory username@hatta://directory/to/copy/to
+	rsync -avP /local/file/or/directory username@hatta://directory/to/copy/to
 
 Copying from hatta:
 
-	rsync -zvP username@hatta://file/or/directory/to/copy /local/destination/for/files
+	rsync -avP username@hatta://file/or/directory/to/copy /local/destination/for/files
 
 If you want to copy a directories contents and not the directory itself add a trailing "/" to the first argument.
 If the rsync command is interupted just  re-run the exact command and its should continue from the file it was last transfering.
