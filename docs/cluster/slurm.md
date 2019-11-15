@@ -44,6 +44,11 @@ The slurm script (in this case script.sh)  can also have a header containing the
 
 list of useful sbatch arguments:
 
+With the header the script can be submitted :
+
+	sbatch script.sh
+
+
 Argument| long Argument |Value|Comment
 -a|--array| | 
 -c|--cpus-per-task|1-88| number of CPU cores needed per job
@@ -72,8 +77,14 @@ There are a few tools to look at what's going on on the cluster.
 
 ## sinfo - see the status of the partitions
 
-## squeue - see the submitted jobs in the queue
+## squeue 
 
+shows submitted jobs in the queue and their status
+
+	squeue
+
+Argument | long argument |value | comment
+-u|--user| your username | only show your jobs
 ## sacct
 
 ## scontol
