@@ -14,12 +14,12 @@ Partitions are the various queues which jobs can be submitted to.
 
 On hatta the partitions are as follows:
 
-|name | time limit | nodes | relative priority*|
-|fast| 1 day | 1, 2 & 3 | 8000 |
-|main| 3 days | 1, 2 & 3 | 7000 |
-|medium| 1 week | 1, 2 & 3 | 6000 | 
-|long| 2 weeks | 1, 2 & 3 | 4000 |
-|dungeon| 3.4 weeks | 1, 2 & 3 | 2000 |
+name | time limit | nodes | relative priority*
+fast| 1 day | 1, 2 & 3 | 8000 
+main| 3 days | 1, 2 & 3 | 7000 
+medium| 1 week | 1, 2 & 3 | 6000  
+long| 2 weeks | 1, 2 & 3 | 4000 
+dungeon| 3.4 weeks | 1, 2 & 3 | 2000 
 
 \*The way job resource allocation is prioritised is based on multiple factors, not just queue.
 
@@ -42,18 +42,18 @@ The slurm script (in this case script.sh)  can also have a header containing the
 
 list of useful sbatch arguments:
 
-|Argument| long Argument |Value|Comment|
-|-a|--array|||
-|-c|--cpus-per-task|1-88| number of CPU cores needed per job|
-|-D|--chdir|/working/dir| makes the script run i the specified directory|
-|-e|--error|/dir/to/std.err| give a file for your jobs STDERR output to be piped into (for STDOUT see -o)|
-|-J|--job-name|"job_name"| gives your job a name |
-|-N|--nodes|min[-max]| give the number of nodes (or a range of numbers of nodes) you want your job to run accross|
-|-o|--output|/dir/to/std.out| give a file for your jobs STDOUT to be piped into (for STDERR see -e)|
-|-Q|--quiet ||quiet mode (won't print to STDOUT
-|-t|--time|time in minuets| set a time limit for your job|
-||--mail-user|your.email@kew.org| an email adde to be notafied of the job's status|
-||--mail-type|BEGIN END FAIL ALL| which events you want to be emailed about|
+Argument| long Argument |Value|Comment
+-a|--array| | 
+-c|--cpus-per-task|1-88| number of CPU cores needed per job
+-D|--chdir|/working/dir| makes the script run i the specified directory
+-e|--error|/dir/to/std.err| give a file for your jobs STDERR output to be piped into (for STDOUT see -o)
+-J|--job-name|"job_name"| gives your job a name 
+-N|--nodes|min[-max]| give the number of nodes (or a range of numbers of nodes) you want your job to run accross
+-o|--output|/dir/to/std.out| give a file for your jobs STDOUT to be piped into (for STDERR see -e)
+-Q|--quiet ||quiet mode (won't print to STDOUT)
+-t|--time|time in minuets| set a time limit for your job
+ |--mail-user|your.email@kew.org| an email adde to be notafied of the job's status
+ |--mail-type|BEGIN END FAIL ALL| which events you want to be emailed about
 
 ## submitting an interactive job
 
@@ -84,6 +84,6 @@ If you want to cancel a job either before it runs or while it is running you can
 	scancel jobid
 
 
-|Argument| long Argument |Value|Comment|
-|-a|--array|||
+Argument| long Argument |Value|Comment
+-a|--array| | 
 
