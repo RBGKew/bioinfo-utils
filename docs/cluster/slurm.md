@@ -15,6 +15,7 @@ Partitions are the various queues which jobs can be submitted to.
 On hatta the partitions are as follows:
 
 name | time limit | nodes | relative priority*
+---- | ---------- | ----- | ------------------
 fast| 1 day | 1, 2 & 3 | 8000 
 main| 3 days | 1, 2 & 3 | 7000 
 medium| 1 week | 1, 2 & 3 | 6000  
@@ -30,7 +31,7 @@ This system works best if you submit your job to the partition with the shortest
 ## sbatch - How to submit your job
 Jobs are submited to the cluster using the sbatch command. For example:
 
-	sbatch -c 1 -p main -J test_job -t 0-3:00:00 -o /home/mclarke/test.log script.sh
+	sbatch -c 1 -p main -J test_job -t 0-3:00:00 -o /data/users_area/myname/test.log script.sh
 
 The slurm script (in this case script.sh)  can also have a header containing the same peramiters, particulary useful for frequenly run jobs:
 
@@ -39,7 +40,7 @@ The slurm script (in this case script.sh)  can also have a header containing the
 	#SBATCH -p main
 	#SBATCH -J test_job
 	#SBATCH -t 0-3:00:00
-	#SBATCH -o /home/mclarke/test.log
+	#SBATCH -o /data/users_area/myname/test.log
 	echo "hello world!"
 
 list of useful sbatch arguments:
@@ -49,7 +50,8 @@ With the header the script can be submitted :
 	sbatch script.sh
 
 
-Argument| long Argument |Value|Comment
+Argument | long Argument | Value | Comment
+-------- | ------------- | ----- | -------
 -a|--array| | 
 -c|--cpus-per-task|1-88| number of CPU cores needed per job
 -D|--chdir|/working/dir| makes the script run i the specified directory
@@ -83,7 +85,8 @@ shows submitted jobs in the queue and their status
 
 	squeue
 
-Argument | long argument |value | comment
+Argument | long argument | value | comment
+-------- | ------------- | ----- | ------
 -u|--user| your username | only show your jobs
 ## sacct
 
