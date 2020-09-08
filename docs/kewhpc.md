@@ -107,7 +107,7 @@ This is the slower, longer term sorage for your data. Its attached to both HATTA
 Please move any data stored here to a directory in /data before running analysis
 There are /science/projects and /science/users_area directories as in /data
 # Installed Software
-
+Software is installed using lmod see [this page](./software/lmod.md) to load and unload different software
 | Name | Version |
 | :------ | ------: |
 | blast | 2.10.0 |
