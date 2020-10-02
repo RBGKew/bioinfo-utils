@@ -17,7 +17,7 @@ To unload a module
 	module unload blast/2.10
 
 ##an example slurm script
-lmod allows you to use multiple versions of softwaere in the same script
+lmod allows you to use multiple versions of software in the same script
 
 	#!/bin/bash 
 	#SBATCH -c 1
