@@ -1,4 +1,4 @@
-# About HATTA
+# HATTA
 HATTA is a small (3 node, 192 core) compute cluster, which can be used by anyone at Kew. It has a variety of bioinformatics and spatial analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
 
 ## System Overview

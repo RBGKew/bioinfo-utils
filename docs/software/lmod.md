@@ -3,21 +3,18 @@ Lmod is an environment variable management software used to load and unload spec
 
 On KewHPC all software is installed as an lmod module.
 
-##using Lmod
+## Using Lmod
 To see which modules are available:
-
 	module available 
 
 To load a module:
-
 	module load blast/2.10 
 
-To unload a module
-
+To unload a module:
 	module unload blast/2.10
 
-##an example slurm script
-lmod allows you to use multiple versions of software in the same script
+## An example slurm script
+Lmod allows you to use multiple versions of software in the same script
 
 	#!/bin/bash 
 	#SBATCH -c 1
@@ -36,4 +33,3 @@ lmod allows you to use multiple versions of software in the same script
 	python ./python3.7-script.py 
 
 
- 

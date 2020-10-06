@@ -1,4 +1,4 @@
-# About KewHPC
+# KewHPC
 
 Kew HPC is our main compute cluster with 576 cores across 14 nodes.
 
@@ -111,11 +111,29 @@ Software is installed using lmod see [this page](./software/lmod.md) to load and
 | Name | Version |
 | :------ | ------: |
 | blast | 2.10.0 |
+| bowtie2 | 2.4.1 |
+| bwa | 0.7.17 |
+| clustalo | 1.2.4 |
+| emboss | 6.6.0
 | exonerate | 2.4.0 |
-| RAxML | 8.2.12 |
+| fastqc | 0.11.9 |
+| fasttree | 2.1.11 |
+| getorganelle | 1.7.1 |
+| iqtree | 1.6.12, 2.0.6 |
+| mafft | 7.471 |
+| openjdk | 14.0.2 |
+| paftools | 0.0.1 |
+| phylip | 3.697 |
+| python | 2.7.18, 3.7.9 |
+| R | 4.0.2 |
+| raxml | 8.2.12 |
 | samtools | 1.10 |
-| Slurm | 19.05.5 |
-| SPAdes | 3.14 |
+| seqkit | 0.13.2 |
+| seqtk | 1.3 |
+| slurm | 19.05.5 |
+| spades | 3.14.0 |
+| sratoolkit | 2.10.8 |
+| trimmomatic | 0.39 |
 
 
 
