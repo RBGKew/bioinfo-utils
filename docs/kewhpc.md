@@ -110,6 +110,8 @@ There are /science/projects and /science/users_area directories as in /data
 Software is installed using lmod see [this page](./software/lmod.md) to load and unload different software
 | Name | Version |
 | :------ | ------: |
+| amas | 1.0 |
+| astral | 5.7.1 |
 | blast | 2.10.0 |
 | bowtie2 | 2.4.1 |
 | bwa | 0.7.17 |
@@ -133,6 +135,7 @@ Software is installed using lmod see [this page](./software/lmod.md) to load and
 | slurm | 19.05.5 |
 | spades | 3.14.0 |
 | sratoolkit | 2.10.8 |
+| treeshrink | 1.3.5 |
 | trimmomatic | 0.39 |
 
 

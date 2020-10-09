@@ -5,7 +5,7 @@ loading the module loads all of the dependancies
 
 	module load hybpiper/1.3.1
 
-## usage example 
+## Usage Example 
 This is a basic template of how to run reads first in a bash script on KewHPC
 
 	#!/bin/bash
