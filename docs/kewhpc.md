@@ -27,7 +27,7 @@ Once you have access you can:
 
 ## Log in
 ### From Windows
-Using [PuTTY](https://putty.org), enter kewhpc into the hostname box
+Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), enter kewhpc into the hostname box
 
 Enter "yes" or "y" if asked to confirm adding KewHPC to hosts list.
 
@@ -119,24 +119,31 @@ Software is installed using lmod see [this page](./software/lmod.md) to load and
 | emboss | 6.6.0
 | exonerate | 2.4.0 |
 | fastqc | 0.11.9 |
+| fastsimcoal | 2.6.0.3 |
 | fasttree | 2.1.11 |
 | getorganelle | 1.7.1 |
 | iqtree | 1.6.12, 2.0.6 |
 | mafft | 7.471 |
+| newick-utils | 1.6 |
 | openjdk | 14.0.2 |
 | paftools | 0.0.1 |
 | phylip | 3.697 |
 | python | 2.7.18, 3.7.9 |
-| R | 4.0.2 |
+| R | 3.6.3, 4.0.2 |
 | raxml | 8.2.12 |
+| raxml-ng | 1.0.1
 | samtools | 1.10 |
 | seqkit | 0.13.2 |
 | seqtk | 1.3 |
 | slurm | 19.05.5 |
 | spades | 3.14.0 |
 | sratoolkit | 2.10.8 |
+| stacks | 2.54 |
 | treeshrink | 1.3.5 |
+| trimal | v1.4.1 |
 | trimmomatic | 0.39 |
+| vcftools | 0.1.16 |
+
 
 
 

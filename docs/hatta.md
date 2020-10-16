@@ -25,7 +25,7 @@ Once you have access you can:
 
 ## Log in
 ### From Windows
-Using [PuTTY](https://putty.org), enter hatta into the hostname box
+Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), enter hatta into the hostname box
 
 Enter "yes" or "y" if asked to confirm adding hatta to hosts list.
 
