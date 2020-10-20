@@ -14,16 +14,16 @@ This can be accessed from a browser at:
 
 or via a sftp client such as FileZilla or sftp on the command line:
 
-	host: sftp.kew.org
-	user: anonymous
-	pass: 
-    port: 22
+	Host: sftp.kew.org
+	User: anonymous
+	Pass: 
+    Port: 22
 
 ### Contributing to the public SFTP
 
 If you'd like to host data on the public please contact [Eduardo Toledo](e.toledo@kew.org), [Matthew Clarke](m.clarke@kew.org) or  [Reinis Rozkalns](r.rozkalns@kew.org)
 
-The setup is very similar to the one described below for the Private SFTP.
+The setup is similar to the one described below for the Private SFTP.
 
 ## Private SFTP
 
@@ -39,25 +39,34 @@ A username will be assigned and given access to the sftp using the public key pr
 ### Creating a private/public key pair
 
 #### Linux/MacOS - command line
-open a terminal window and check to see if you already have a ssh key pair.
+
+1. Check if you already have them
+- open a terminal window and check to see if you already have a ssh key pair.
 
 	cd ~/.ssh/
 	ls
-if there are the files id\_rsa and id\_rsa.pub you already have a key pair
-If these files don't exist type:
+
+- If there are the files id\_rsa and id\_rsa.pub you already have a key pair. 
+
+2. If these files don't exist type:
 
 	ssh-keygen
 
-enter custom file names (or leave blank for default) and a password (or blank for no password)
+3. Enter custom file names (or leave blank for default) and a password (or blank for no password)
 
-send the public key (default: id\_rsa.pub) to the administrator creating the account.
+4. Send the public key (default: id\_rsa.pub) to the administrator creating the account.
 
 #### Windows - PuTTY
 Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should be installed on Kew laptops.
+
 1. From the start menu select the PuTTY directory and open PuTTYgen
+
 2. Select Generate and move your mouse over the blank space until the key is generated. 
+
 3. Either copy the public key in the top box or the save public key button and send to the administrator setting up the account.
-4. Save the Private key locally, to be used when connecting
+
+4. Save the Private key locally, to be used when connecting.
+
 
 ### Connecting
 
@@ -79,13 +88,17 @@ for more commands read:
 	
 #### Linux/MacOS/Windows - FileZilla
 Open [FileZilla](https://filezilla-project.org/download.php?platform=win64), which should be installed on kew laptops.
+
 1. Open site manager (top left button or file > site manager or Ctrl+S)
+
 2. enter credentials:
+
 	Host: sftp.kew.org
 	Port: 22
 	Logon Type: Key file
 	User: the username provided
 	Key file: the Private Key file you saved with PuTTYgen (*.pkk) or ssh-keygen (default: /home/username/.ssh/id\_rsa)
+
 3. connect button
 
 
