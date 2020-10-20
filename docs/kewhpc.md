@@ -27,7 +27,9 @@ Once you have access you can:
 
 ## Log in
 ### From Windows
-Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), enter kewhpc into the hostname box
+Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should alrerady be installed on Kew laptops.	
+
+enter kewhpc into the hostname box
 
 Enter "yes" or "y" if asked to confirm adding KewHPC to hosts list.
 

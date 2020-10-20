@@ -39,17 +39,53 @@ A username will be assigned and given access to the sftp using the public key pr
 ### Creating a private/public key pair
 
 #### Linux/MacOS - command line
+open a terminal window and check to see if you already have a ssh key pair.
+
+	cd ~/.ssh/
+	ls
+if there are the files id\_rsa and id\_rsa.pub you already have a key pair
+If these files don't exist type:
+
+	ssh-keygen
+
+enter custom file names (or leave blank for default) and a password (or blank for no password)
+
+send the public key (default: id\_rsa.pub) to the administrator creating the account.
 
 #### Windows - PuTTY
-
-#### FileZilla 
+Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should be installed on Kew laptops.
+1. From the start menu select the PuTTY directory and open PuTTYgen
+2. Select Generate and move your mouse over the blank space until the key is generated. 
+3. Either copy the public key in the top box or the save public key button and send to the administrator setting up the account.
+4. Save the Private key locally, to be used when connecting
 
 ### Connecting
 
 #### Linux/MacOS - command line
+Once the ssh Key pair has been set connect to the sftp:
 
-#### Windows - PuTTY
+	sftp user@sftp.kew.org
 
-#### FileZilla 
+once connected use the below commands to transfer files
+
+	get file-on-sftp	#copy from sftp to local machine
+	put local-file 		#copy from local machine to sftp
+	mget file*  		#copy multiple files from sftp using glob
+	mput file*			#copy multiple files to sftp usinog glob
+
+for more commands read:
+	
+	man sftp
+	
+#### Linux/MacOS/Windows - FileZilla
+Open [FileZilla](https://filezilla-project.org/download.php?platform=win64), which should be installed on kew laptops.
+1. Open site manager (top left button or file > site manager or Ctrl+S)
+2. enter credentials:
+	Host: sftp.kew.org
+	Port: 22
+	Logon Type: Key file
+	User: the username provided
+	Key file: the Private Key file you saved with PuTTYgen (*.pkk) or ssh-keygen (default: /home/username/.ssh/id\_rsa)
+3. connect button
 
 
