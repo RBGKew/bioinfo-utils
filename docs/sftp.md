@@ -40,21 +40,16 @@ A username will be assigned and given access to the sftp using the public key pr
 
 #### Linux/MacOS - command line
 
-1. Check if you already have them
-- open a terminal window and check to see if you already have a ssh key pair.
+Open a terminal window and check to see if you already have a ssh key pair.
 
 	cd ~/.ssh/
 	ls
 
-- If there are the files id\_rsa and id\_rsa.pub you already have a key pair. 
-
-2. If these files don't exist type:
+If there are the files id\_rsa and id\_rsa.pub you already have a key pair. If these files don't exist type:
 
 	ssh-keygen
 
-3. Enter custom file names (or leave blank for default) and a password (or blank for no password)
-
-4. Send the public key (default: id\_rsa.pub) to the administrator creating the account.
+Enter custom file names (or leave blank for default) and a password (or blank for no password).Then send the public key (default: id\_rsa.pub) to the administrator creating the account.
 
 #### Windows - PuTTY
 Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should be installed on Kew laptops.
@@ -89,16 +84,21 @@ for more commands read:
 #### Linux/MacOS/Windows - FileZilla
 Open [FileZilla](https://filezilla-project.org/download.php?platform=win64), which should be installed on kew laptops.
 
-1. Open site manager (top left button or file > site manager or Ctrl+S)
+Open site manager (top left button or file > site manager or Ctrl+S)
 
-2. enter credentials:
+Enter credentials:
 
 	Host: sftp.kew.org
+
 	Port: 22
+
 	Logon Type: Key file
+
 	User: the username provided
+
 	Key file: the Private Key file you saved with PuTTYgen (*.pkk) or ssh-keygen (default: /home/username/.ssh/id\_rsa)
 
-3. connect button
+
+Click the connect button
 
 
