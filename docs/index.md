@@ -3,11 +3,8 @@ These pages are collectively maintained by staff and students at RBG Kew for the
 
 - KewHPC cluster
 - HATTA cluster
-- the Linux Workstations in the Jodrell computer room
-- Inforamton and basic help with some bioinformatic software
-
-
-These pages are public so **do not post _passwords_, _keys_, or _other sensitive information_**.
+- the Linux Workstations in the Jodrell
+- the Kew SFTP service
 
 This documentation is available on the organisation github or linked [readthedocs.org](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/) accounts. Please contact [Matt Clarke](mailto:m.clarke@kew.org) for requests.
 

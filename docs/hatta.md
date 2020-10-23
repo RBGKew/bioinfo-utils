@@ -1,60 +1,58 @@
 # HATTA
-HATTA is a small (3 node, 192 core) compute cluster, which can be used by anyone at Kew. It has a variety of bioinformatics and spatial analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
-
-## System Overview
-![Cluster Overview] (./images/hatta_overview.png)
+HATTA is a small (3 node, 192 core) compute cluster, for the use of Kew Scientists. It has a variety of bioinformatics and spatial analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
 
 ## Tech specs
-Runs Ubuntu 18.04 LTS
+hatta runs on Ubuntu 18.04 LTS with a total of 192 cores and 3.0 TB RAM a cross 3 nodes
 
-Total 192 cores and 3.0 TB RAM a cross 3 nodes
 Compute nodes 1 & 2, each with:
-
 * 4 x 22 core Intel Xeon CPU @ 2.20-3.00GHz
 * 1.0 TB RAM
 
 Compute node 3 with:
-
 * 2 x 8 core Intel Xeon CPU @ 3.20-3.60GHz
 * 1.0 TB RAM
 
-# Quick start Guide
-To get access to the bioinformatic resources contact [Matt Clarke](mailto:m.clarke@kew.org)
+## Quick start Guide
+To get access to both hatta and KewHPC contact [Matt Clarke](mailto:m.clarke@kew.org)
 
 Once you have access you can:
 
-## Log in
-### From Windows
-Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), enter hatta into the hostname box
+### Log in
+#### From Windows
+Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) in the main window enter:
+
+	Host: hatta
+	User: yourkewuser
+    Port: 22
 
 Enter "yes" or "y" if asked to confirm adding hatta to hosts list.
 
-log in using your username and password
+Log in using your kew password when prompted
 
-### From MacOS / Linux
+#### From MacOS / Linux
 
-open a terminal window and type
+Open a terminal window and type:
 
 	ssh username@hatta
 
 Type "yes" if prompted to confirm adding hatta to your hosts list
 
-enter your password.
+Enter your password.
 
-## Transfer Data
-### From Windows
-using an SFTP client such as [FileZilla](https://filezilla-project.org/download.php?platform=win64)
+### Transfer Data
+#### From Windows
+Using an SFTP client such as [FileZilla](https://filezilla-project.org/download.php?platform=win64)
 
-In Filezilla use the Quickconnect bar:
-Host: sftp://hatta 
-Username: your Kew username
-Password: your Kew password
-Port: 22 
+In Filezilla use the Quickconnect bar or Site Manager and enter:
+
+	Host: sftp://hatta 
+	Username: your Kew username
+	Password: your Kew password
+	Port: 22 
  
-### From MacOS / Linux
-[FileZilla](https://filezilla-project.org) also works the same on Linux and Mac.
+#### From MacOS / Linux
+[FileZilla](https://filezilla-project.org) works the same on as on Windows but for larger files or whole directories you can use rsync via the terminal.
 
-For larger files or many files you can use rsync via the terminal
 Copying to hatta:
 
 	rsync -avP /local/file/or/directory username@hatta://directory/to/copy/to
@@ -66,7 +64,7 @@ Copying from hatta:
 If you want to copy a directories contents and not the directory itself add a trailing "/" to the first argument.
 If the rsync command is interupted just re-run the exact command and its should continue from the file it was last transfering.
 
-## Submit Jobs
+### Submit Jobs
 HATTA uses slurm to manage job submissions
 to submit jobs you need to create a submission script
 for example test_script.sh: 
@@ -88,25 +86,19 @@ you can see the jobs currently running by using the command
 	squeue
 
 For more details see [this page](./software/slurm.md) or the [slurm documenation](https://slurm.schedmd.com/)
-# Data Storage
-There are 3 main areas where you can store data
+## Data Storage
+There are 3 main places you can store your data /home, /data and /science.
 
-## /home
-Your home directory is the place you'll land when you login.
-this is a good place to save your scripts and some configuration files.
-It is limited to 4GB per user so it's best not to store any data or programs here.
+For access to a projects group and directories you need to contact [Matt Clarke](mailto:m.clarke@kew.org) and get permission form the groups owner (usually the associated team leader).
 
-## /data
-This is the cluster attached storage, Its fast and the best place to store the data your currently analysing
-there are 2 main areas /data/projects for shared data and analysis /data/users_area for single user data and analysis.
+### /home 
+Your Home directory is the place you'll land when you login. This is a god place to save your scripts and some configuration files. It is Limited to 4GB so it's best not to store any data or programs here.
+### /data
+This is the cluster attached storage, Its fast and the best place to store the data you're currently analysing. There are 2 main areas /data/projects for shared data and analysis /data/users_area for single user data and analysis.
+### /science
+This is the slower, longer term sorage for your data. Its attached to both HATTA and KewHPC allowing datta to be accessed by both machines. Please move any data stored here to a directory in /data before running analysis. There are /science/projects and /science/users_area directories as in /data
 
-If you require a new group or access to a current one contact [Matt Clarke](mailto:m.clarke@kew.org)
-## /science
-This is the slower, longer term sorage for your data. Its attached to both HATTA and KewHPC allowing datta to be accessed by both machines.
-Please move any data stored here to a directory in /data before running analysis
-there are /science/projects and /science/users_area directories as in /data
-
-# Installed Software
+## Installed Software
 
 | Name | Version |
 | :------ | ------: |

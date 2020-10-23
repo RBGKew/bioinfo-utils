@@ -116,22 +116,22 @@ To see th active partition list use:
 
 ### KewHPC
 
-name | time limit | nodes | relative priority*
----- | ---------- | ----- | ------------------
-short | 1 day | nodes 1-12 | 5
-all | 3 days | nodes 1-12, hmem 1-2 | 3   
-long | 30 days | nodes 1-12 | 1 
-hmem | 14 days | hmem 1-2 | 6
+Name | Time Limit | nodes | relative priority | Default
+---- | ---------- | ----- | ----------------- | ------
+short | 1 day | nodes 1-12 | 5 |  |
+all | 3 days | nodes 1-12, hmem 1-2 | 3 | Yes |
+long | 30 days | nodes 1-12 | 1 |  |
+hmem | 14 days | hmem 1-2 | 6 |  |
 
 ### HATTA
 
-name | time limit | nodes | relative priority*
----- | ---------- | ----- | ------------------
-fast| 1 day | 1, 2 & 3 | 8000 
-main| 3 days | 1, 2 & 3 | 7000 
-medium| 1 week | 1, 2 & 3 | 6000  
-long| 2 weeks | 1, 2 & 3 | 4000 
-dungeon| 3.4 weeks | 1, 2 & 3 | 2000 
+Name | Time Limit | Nodes | Relative Priority | Default
+---- | ---------- | ----- | ----------------- | -------
+fast| 1 day | 1, 2 & 3 | 8000 | |
+main| 3 days | 1, 2 & 3 | 7000 | | Yes |
+medium| 1 week | 1, 2 & 3 | 6000 |  |
+long| 2 weeks | 1, 2 & 3 | 4000 | |
+dungeon| 3.4 weeks | 1, 2 & 3 | 2000 | |
 
 ## Fairshare Policies
 

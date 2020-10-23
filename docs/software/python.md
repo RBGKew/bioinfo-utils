@@ -2,11 +2,9 @@
 
 There are 2 version of python installed on Kew HPC 2.7.18 and 3.7.9
 
-
-
 ## installed Modules 
 
-Many commonly used python modules have previously been installed, If you need any others ask [Matt Clarke](mailto: m.clarke@kew.org) to install them centraly, or see the secion on pip below to install to a local lib.  
+Many commonly used python modules have been centrally installed, If you need any others ask [Matt Clarke](mailto: m.clarke@kew.org) to install them centrally, or install to a personal local lib in /data/users_area.  
 
 ###Python 2.7 modules
 |Package | Version |
@@ -64,7 +62,3 @@ Many commonly used python modules have previously been installed, If you need an
 | TREESHRINK | 1.3.5 |
 | urllib3 | 1.25.10 |
 | xopen | 0.8.4 |
-
-## Installing modules locally - pip
-
-## Loading whole environemnts - Anaconda
