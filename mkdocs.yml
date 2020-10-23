@@ -1,0 +1,11 @@
+site_name: "Kew Bioinformatics Documentation"
+nav: 
+        - Home: index.md
+        - KewHPC : kewhpc.md
+        - HATTA : hatta.md
+        - Workstations : workstations.md
+        - Software : software.md
+        - SFTP : sftp.md
+        - About : about.md
+
+theme: readthedocs
