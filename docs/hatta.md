@@ -5,10 +5,12 @@ HATTA is a small (3 node, 192 core) compute cluster, for the use of Kew Scientis
 hatta runs on Ubuntu 18.04 LTS with a total of 192 cores and 3.0 TB RAM a cross 3 nodes
 
 Compute nodes 1 & 2, each with:
+
 * 4 x 22 core Intel Xeon CPU @ 2.20-3.00GHz
 * 1.0 TB RAM
 
 Compute node 3 with:
+
 * 2 x 8 core Intel Xeon CPU @ 3.20-3.60GHz
 * 1.0 TB RAM
 
