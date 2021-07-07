@@ -1,14 +1,20 @@
 # HATTA
+
+*Due to an attached storage faiure hatta is offline indefinitely*
+
+
 HATTA is a small (3 node, 192 core) compute cluster, for the use of Kew Scientists. It has a variety of bioinformatics and spatial analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
 
 ## Tech specs
 hatta runs on Ubuntu 18.04 LTS with a total of 192 cores and 3.0 TB RAM a cross 3 nodes
 
 Compute nodes 1 & 2, each with:
+
 * 4 x 22 core Intel Xeon CPU @ 2.20-3.00GHz
 * 1.0 TB RAM
 
 Compute node 3 with:
+
 * 2 x 8 core Intel Xeon CPU @ 3.20-3.60GHz
 * 1.0 TB RAM
 
@@ -89,7 +95,7 @@ For more details see [this page](./software/slurm.md) or the [slurm documenation
 ## Data Storage
 There are 3 main places you can store your data /home, /data and /science.
 
-For access to a projects group and directories you need to contact [Matt Clarke](mailto:m.clarke@kew.org) and get permission form the groups owner (usually the associated team leader).
+For access to a project groups and directories you need to contact [Matt Clarke](mailto:m.clarke@kew.org) and get permission form the groups owner (usually the associated team leader).
 
 ### /home 
 Your Home directory is the place you'll land when you login. This is a god place to save your scripts and some configuration files. It is Limited to 4GB so it's best not to store any data or programs here.

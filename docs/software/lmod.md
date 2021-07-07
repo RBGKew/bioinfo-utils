@@ -5,12 +5,15 @@ On KewHPC all software is installed as an lmod module.
 
 ## Using Lmod
 To see which modules are available:
+
 	module available 
 
 To load a module:
+
 	module load blast/2.10 
 
 To unload a module:
+
 	module unload blast/2.10
 
 ## An example slurm script

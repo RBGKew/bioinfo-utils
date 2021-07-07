@@ -8,10 +8,12 @@ It has a variety of bioinformatic analysis packages installed. To get access, or
 KewHPC runs on CentOS 7.7 with a total of 576 cores and 7.6TB RAM across 14 nodes
 
 12x Compute nodes with:
+
 * 2 x18 core Intel Xeon CPU @ 2.6GHz
 * 384 GB RAM
 
 2 x High Memory nodes with:
+
 * 4 x 18  core Intel Xeon CPU @ 2.6GHz
 * 1.5 TB RAM
 
@@ -49,8 +51,8 @@ Using an SFTP client such as [FileZilla](https://filezilla-project.org/download.
 In Filezilla use the Quickconnect bar or Site Manager and enter:
 
 	Host: sftp://kewhpc
-	Username: your Kew username
-	Password: your Kew password
+	Username: yourkewusername
+	Password: yourkewpassword
 	Port: 22 
 
 #### From MacOS / Linux
@@ -93,14 +95,21 @@ For more details see [this page](./software/slurm.md) or the [slurm documenation
 ## Data Storage
 There are 3 main places you can store your data /home, /data and /science.
 
-For access to a projects group and directories you need to contact [Matt Clarke](mailto:m.clarke@kew.org) and get permission form the groups owner (usually the associated team leader).
+| Location | Size | Speed | Usage | Availability | Redundancy |
+|----------|------|-------|-------|--------------|-------------|
+| /home | 10GB per user | Fast | Config files, scripts and documents | login01, node001-012, hmem01-02 | Not backed up, keep a copy of scripts on your local machine or on /science |
+| /data | 340TB Total | Fast | Data and scripts for jobs running on KewHPC | login01, node001-012, hmem01-02 | Not backed up, keep a copy of irreplaceable data on /science |
+| /science | 102TB Total | Slower | Data and scripts not currenly in use, but which need keeping accessable | login01 | Snapshotted with a mirror at the Wakehurst site |
 
-### /home 
-Your Home directory is the place you'll land when you login. This is a god place to save your scripts and some configuration files. It is Limited to 10GB so it's best not to store any data or programs here.
-### /data
-This is the cluster attached storage, Its fast and the best place to store the data you're currently analysing. There are 2 main areas /data/projects for shared data and analysis /data/users_area for single user data and analysis.
-### /science
-This is the slower, longer term sorage for your data. Its attached to both HATTA and KewHPC allowing datta to be accessed by both machines. Please move any data stored here to a directory in /data before running analysis. There are /science/projects and /science/users_area directories as in /data
+There are 2 main areas in /data and /science.
+
+### projects
+For data shared for a specific project. 
+To access an existing group or to request a new project directory and group you need to contact [Matt Clarke](mailto:m.clarke@kew.org) and get permission form the groups owner (usually the associated team leader).
+
+### users_area
+A place for an individual user to run analyses (in the case of /data/users_area) and store data only needed by them.
+
 ## Installed Software
 
 Software is installed using lmod see [this page](./software/lmod.md) to load and unload different software
