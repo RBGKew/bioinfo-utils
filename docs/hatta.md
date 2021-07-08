@@ -1,6 +1,6 @@
 # HATTA
 
-*Due to an attached storage faiure hatta is offline indefinitely*
+*Due to an attached storage failure hatta is offline indefinitely*
 
 
 HATTA is a small (3 node, 192 core) compute cluster, for the use of Kew Scientists. It has a variety of bioinformatics and spatial analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
