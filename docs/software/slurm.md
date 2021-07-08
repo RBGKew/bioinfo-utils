@@ -128,7 +128,7 @@ hmem | 14 days | hmem 1-2 | 6 |  |
 Name | Time Limit | Nodes | Relative Priority | Default
 ---- | ---------- | ----- | ----------------- | -------
 fast| 1 day | 1, 2 & 3 | 8000 | |
-main| 3 days | 1, 2 & 3 | 7000 | | Yes |
+main| 3 days | 1, 2 & 3 | 7000 | Yes |
 medium| 1 week | 1, 2 & 3 | 6000 |  |
 long| 2 weeks | 1, 2 & 3 | 4000 | |
 dungeon| 3.4 weeks | 1, 2 & 3 | 2000 | |
@@ -143,9 +143,9 @@ If your job is waiting in the queue for a long time it could be that:
 
 - you've submitted alot of jobs recently and your priority factor has been temporarily lowered
 - you're asking for a lot of resources per job reducing your priorty factor.
--- try reducing the required number of cores per job
+	- try reducing the required number of cores per job
 - you've submited to a low priority partition (long/dungeon)
--- submit to a higher prioity partition if time restrictions allow
+	- submit to a higher prioity partition if time restrictions allow
 
 If this isn't the case please contact [Matt Clarke](mailto:m.clarke@kew.org)
 
