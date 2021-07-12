@@ -118,35 +118,57 @@ Software is installed using lmod see [this page](./software/lmod.md) to load and
 | :------ | ------: |
 | amas | 1.0 |
 | astral | 5.7.1 |
+| anaconda | 2020.11 |
 | blast | 2.10.0 |
+| boost | 1.76.0 |
 | bowtie2 | 2.4.1 |
 | bwa | 0.7.17 |
 | clustalo | 1.2.4 |
-| emboss | 6.6.0
+| cgal | 5.0.4 |
+| dedup | 0.12.8 |
+| diamond | 2.0.9 |
+| emboss | 6.6.0 |
 | exonerate | 2.4.0 |
 | fastqc | 0.11.9 |
 | fastsimcoal | 2.6.0.3 |
 | fasttree | 2.1.11 |
+| fineradstructure | 0.3.2 |
+| gatk | 4.2.0.0 |
+| gcc | 9.3.0 |
+| gdal | 2.4.2, 3.1.1, 3.4.1 |
+| geos | 3.7, 3.8.1|
 | getorganelle | 1.7.1 |
+| gnu-parallel | 20200722 |
+| hmmer | 3.3.2 |
 | [hybpiper](./software/hybpiper.md) | 1.3.1 |
 | iqtree | 1.6.12, 2.0.6 |
+| json-c | 0.14 |    
 | mafft | 7.471 |
 | newick-utils | 1.6 |
 | openjdk | 11, 14.0.2 |
 | paftools | 0.0.1 |
 | paml | 4.9j |
 | phylip | 3.697 |
+| phyutility | 2.7.1 |
+| postgis | 3.0.1 |
+| postgresql | 12.3 |
+| proj | 6.2 |
+| protobuf-c | 1.3.3 |
+| protobuf | 2.6.1 |
 | [python](./software/python.md) | 2.7.18, 3.7.9 |
 | R | 3.6.3, 4.0.2 |
 | raxml | 8.2.12 |
 | raxml-ng | 1.0.1 |
+| rdptools | 2.0.3 |
 | samtools | 1.10 |
 | seqkit | 0.13.2 |
 | seqtk | 1.3 |
+| sfcgal | 1.3.8 |
 | [slurm](./software/slurm.md) | 19.05.5 |
 | spades | 3.14.0 |
 | sratoolkit | 2.10.8 |
 | stacks | 2.54 |
+| structure | 2.3.4 |
 | treeshrink | 1.3.5 |
 | trimal | v1.4.1 |
 | trimmomatic | 0.39 |

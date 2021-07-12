@@ -10,11 +10,11 @@ To use GATK first load the module
 
 Then activate the conda environment. If you've not used conda before initalise it as described [here](./software/anaconda.md)
 
-	source activate gatk
+	conda activate gatk
 
 do deactivate the conda environment:
 
-	source deactivate
+	conda deactivate
 
 Now you can see the available tools:
 	
