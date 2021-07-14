@@ -1,12 +1,12 @@
 # Python
 
-There are 2 version of python installed on Kew HPC 2.7.18 and 3.7.9
+There are 2 version of python installed on KewHPC are 2.7.18 and 3.7.9
 
-## installed Modules 
+## Installed Modules 
 
-Many commonly used python modules have been centrally installed, If you need any others ask [Matt Clarke](mailto: m.clarke@kew.org) to install them centrally, or install to a personal local lib in /data/users_area.  
+Many commonly used python modules have been centrally installed. If you need any others ask [Matt Clarke](mailto: m.clarke@kew.org) to install them centrally, or install to a personal local lib in /data/users_area.  
 
-###Python 2.7 modules
+###Python 2.7 Modules
 |Package | Version |
 | :----- | ------: |
 | biopython | 1.76 |
@@ -18,7 +18,7 @@ Many commonly used python modules have been centrally installed, If you need any
 | setuptools | 41.2.0 |
 | six | 1.15.0 |
 
-###Python 3.7 modules
+###Python 3.7 Modules
 | Package | Version |
 | :------ | ------: |
 | amas | 1.0 |
