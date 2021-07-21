@@ -458,3 +458,42 @@ Many commonly used R modules have been centrally installed. If you need any othe
 | zeallot | 0.1.0 |
 | zip | 2.1.1 |
 | zoo | 1.8-9 |
+
+## Installing Modules to Local Library
+
+You can install packages locally in your /data/users_area or /home. This is espaccially usefull if you need a specific version or are developing an R module.
+
+### Installing to Local Lib
+
+Load up the version of R you need and entert the interactive R terminal.
+
+	module load R/3.6.3
+	R
+
+Specify the location of your local library with "lib=".
+
+	install.packages("ggplot2",lib="/data/users_area/usr00kg/R_local_lib")
+	
+
+### Loading from Local Lib
+
+There are two ways of doing this:
+
+#### Perminantly Loading the Lib
+ This is done by adding your library to the "R_LIBS" variable by adding the following lines to the end of your ~/.bashrc file.
+
+	if [ -n $R_LIBS ]; then
+		export R_LIBS=/data/users_area/usr00kg/R_local_lib:$R_LIBS
+	else
+		export R_LIBS=/data/users_area/usr00kg/R_local_lib
+	fi
+
+#### Within Your R script
+
+By specifying the library when loading the library
+
+	library("ggplot2", lib.loc="/data/users_area/usr00kg/R_local_lib")
+
+
+
+
