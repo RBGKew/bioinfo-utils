@@ -24,15 +24,22 @@ Once you have access you can:
 
 ### Log in
 #### From Windows
-Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) in the main window enter:
+First install and open [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+Then in the PuTTY Configureation Window:
 
-	Host: kewhpc
-	User: yourkewuser
-    Port: 22
+fill in the "Host Name (or IP address)" box with:
 
-Enter "yes" or "y" if asked to confirm adding hatta to hosts list.
+	kewhpc
 
-Log in using your kew password when prompted
+And under "Port" make sure it says:
+
+	22
+ 
+Then click "Open"
+
+You'll then be shown a "PuTTY Security Alert" to which you click "Accept"
+
+Then enter your Kew username and password when prompted.
 
 #### From MacOS / Linux
 

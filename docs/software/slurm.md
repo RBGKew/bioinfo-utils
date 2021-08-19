@@ -51,7 +51,7 @@ here is a list of some recommended arguments which can be used on both the comma
 
 Array jobs can beused to submit many jobs with similar tasks
 
-The example here runs analysis on selected inputfiles listed in a text file:
+The example here runs analysis on eather a list of inputfiles in a text file or file :
 
 	#!/bin/bash 
 	#SBATCH -c 1
@@ -62,16 +62,20 @@ The example here runs analysis on selected inputfiles listed in a text file:
 	#SBATCH -o /data/users_area/myname/arraytest_%A_%a.out
 	#SBATCH -e /data/users_area/myname/arraytest_%A_%a.err
 	
+	#from text file
 	inputfiles=( $( cat ./list_of_inputfiles.txt ) )
 
-	analysis_program --input=${inputfiles[$SLURM_ARRAY_TASK_ID]} --output=${inputfiles[$SLURM_ARRAY_TASK_ID]}_analysis.txt
+	#uncomment to analyse all *.fq.gz files in directory
+	#inputfiles=( $( ls /data/users_area/usr00kg/input_files | grep *.fq.gz ) )
+
+	analysis_program --input=/data/usersarea/usr00kg/input_files/${inputfiles[$SLURM_ARRAY_TASK_ID]} --output=/data/usersarea/usr00kg/output_files/${inputfiles[$SLURM_ARRAY_TASK_ID]}_analysis.txt
 
 The #SBATCH -a 0-6,8,10%3 line mean that aray elements 0,12,3,4,5,6,8 and 10 will be run maximum 3 at a time (%3)
 elsewhere in the script %A is used to  show the Jobid of the array job and %a is the numbered element of the array
 
 the numbered element of the array can be accessed in the bash script using the variable $SLURM_ARRAY_TASK_ID
 
-There are many other Slurm variables availble for use in scriptsas seen [here](https://slurm.schedmd.com/sbatch.html#lbAK) 
+There are many other Slurm variables availble for use in scripts as seen [here](https://slurm.schedmd.com/sbatch.html#lbAK) 
 
 ## Interactive Job submission - salloc, srun
 
