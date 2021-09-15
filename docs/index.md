@@ -1,4 +1,4 @@
-# Welcome to the Kew Bioinformatics Documantation
+# Welcome to the Kew Bioinformatics Documentation
 These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain useful information about:
 
 - KewHPC cluster
@@ -13,4 +13,3 @@ This documentation is available on the organisation github or linked [readthedoc
 # Licence and legal notes
 - These pages, scripts and all content hosted in this repository is licensed for public reuse under the [Creative Commons BY-NC-SA 3.0 License](http://creativecommons.org/licenses/by-nc-sa/3.0). License may be changed or withdrawn at any time. 
 - This repository is intended to assist internal users only and no warranty of any kind is implied by this or any other release of this code/information.
-
