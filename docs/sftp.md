@@ -1,10 +1,10 @@
 # Kew SFTP service 
 
-There are two servaces provided by the kew SFTP:
+There are two services provided by the kew SFTP:
 
 - Public access to Kew data sets and resources
 
-- Private sharing of data between Kew and our colaborators
+- Private sharing of data between Kew and our collaborators
 
 ## Public Kew SFTP
 
@@ -27,7 +27,7 @@ The setup is similar to the one described below for the Private SFTP.
 
 ## Private SFTP
 
-This service allows Kew staff to send and recieve data as well as private sharing of colaborateive documents
+This service allows Kew staff to send and receive data as well as private sharing of collaborative documents
 
 In order to set up the SFTP accounts contact one (or all) of [Eduardo Toledo](mailto:e.toledo@kew.org), [Matthew Clarke](m.clarke@kew.org) or  [Reinis Rozkalns](mailto:r.rozkalns@kew.org).
 
@@ -96,5 +96,4 @@ Enter credentials:
 
 
 Click the connect button
-
 
