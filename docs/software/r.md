@@ -461,11 +461,11 @@ Many commonly used R modules have been centrally installed. If you need any othe
 
 ## Installing Modules to Local Library
 
-You can install packages locally in your /data/users_area or /home. This is espaccially usefull if you need a specific version or are developing an R module.
+You can install packages locally in your /data/users_area or /home. This is especially useful if you need a specific version or are developing an R module.
 
 ### Installing to Local Lib
 
-Load up the version of R you need and entert the interactive R terminal.
+Load up the version of R you need and enter the interactive R terminal.
 
 	module load R/3.6.3
 	R
@@ -479,7 +479,7 @@ Specify the location of your local library with "lib=".
 
 There are two ways of doing this:
 
-#### Perminantly Loading the Lib
+#### Permanently Loading the Lib
  This is done by adding your library to the "R_LIBS" variable by adding the following lines to the end of your ~/.bashrc file.
 
 	if [ -n $R_LIBS ]; then
@@ -493,7 +493,6 @@ There are two ways of doing this:
 By specifying the library when loading the library
 
 	library("ggplot2", lib.loc="/data/users_area/usr00kg/R_local_lib")
-
 
 
 

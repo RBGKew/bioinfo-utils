@@ -74,7 +74,7 @@ Copying from kewhpc:
 	rsync -avP username@kewhpc://file/or/directory/to/copy /local/destination/for/files
 
 If you want to copy a directories contents and not the directory itself add a trailing "/" to the first argument.
-If the rsync command is interupted just re-run the exact command and its should continue from the file it was last transfering.
+If the rsync command is interrupted just re-run the exact command and its should continue from the file it was last transferring.
 
 ### Submit Jobs
 KewHPC uses slurm to manage job submissions
@@ -97,7 +97,7 @@ you can see the jobs currently running by using the command
 
 	squeue
 
-For more details see [this page](./software/slurm.md) or the [slurm documenation](https://slurm.schedmd.com/)
+For more details see [this page](./software/slurm.md) or the [slurm documentation](https://slurm.schedmd.com/)
 
 ## Data Storage
 There are 3 main places you can store your data /home, /data and /science.
@@ -106,7 +106,7 @@ There are 3 main places you can store your data /home, /data and /science.
 |----------|------|-------|-------|--------------|-------------|
 | /home | 10GB per user | Fast | Config files, scripts and documents | login01, node001-012, hmem01-02 | Not backed up, keep a copy of scripts on your local machine or on /science |
 | /data | 340TB Total | Fast | Data and scripts for jobs running on KewHPC | login01, node001-012, hmem01-02 | Not backed up, keep a copy of irreplaceable data on /science |
-| /science | 102TB Total | Slower | Data and scripts not currenly in use, but which need keeping accessable | login01 | Snapshotted with a mirror at the Wakehurst site |
+| /science | 102TB Total | Slower | Data and scripts not currently in use, but which need keeping accessible | login01 | Snap-shotted with a mirror at the Wakehurst site |
 
 There are 2 main areas in /data and /science.
 
@@ -180,7 +180,6 @@ Software is installed using lmod see [this page](./software/lmod.md) to load and
 | trimal | v1.4.1 |
 | trimmomatic | 0.39 |
 | vcftools | 0.1.16 |
-
 
 
 

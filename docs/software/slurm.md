@@ -1,6 +1,6 @@
 #SLURM
 
-SLURM (Simple Linux Utility for Resource Management) is a workload mangement system for scheduling jobs
+SLURM (Simple Linux Utility for Resource Management) is a workload management system for scheduling jobs
 
 #Submitting Jobs
 
@@ -8,16 +8,16 @@ In order to take advantage of the computational power of the cluster you'll need
 
 ## Batch Job Submission - sbatch
 
-Most Jobs on the cluster are subitted using batch scripts. They can be a simple bash script:
+Most Jobs on the cluster are submitted using batch scripts. They can be a simple bash script:
 
 	#!/bin/bash
 	echo "hello world"
 
-submitted with commandline arguments to sbatch
+submitted with command line arguments to sbatch
 
 	sbatch -c 1 -p main -J test_job -t 0-3:00:00 -o /data/users_area/myname/test.log script.sh
 
-or can have arguments incorperated in to the script header (recommended if the script is to be run multiple times)
+or can have arguments incorporated in to the script header (recommended if the script is to be run multiple times)
 
 	#!/bin/bash 
 	#SBATCH -c 1
@@ -41,17 +41,17 @@ here is a list of some recommended arguments which can be used on both the comma
 |-e|--error| /dir/to/std.err| give a file for your jobs STDERR output to be piped into (for STDOUT see -o) |
 |-J|--job-name| "job_name"| gives your job a name |
 |-n|--ntasks | 3 | this is for multiprocess jobs. multiplies with --cpus-per-task |
-|-N|--nodes| 1-3 | give the number of nodes (or a minimum and maximum number of nodes) you want your job to run accross |
+|-N|--nodes| 1-3 | give the number of nodes (or a minimum and maximum number of nodes) you want your job to run across |
 |-o|--output| /dir/to/std.out | give a file for your jobs STDOUT to be piped into (for STDERR see -e) |
-|-p|--partition| partition name | select witch partition to submid your job to ( see "Partitions" below ) |
+|-p|--partition| partition name | select witch partition to submit your job to ( see "Partitions" below ) |
 |-Q|--quiet || quiet mode (won't print to STDOUT) |
 |-t|--time| time in minuets | set a time limit for your job |
 
 ### Array Jobs 
 
-Array jobs can beused to submit many jobs with similar tasks
+Array jobs can be used to submit many jobs with similar tasks
 
-The example here runs analysis on eather a list of inputfiles in a text file or file :
+The example here runs analysis on either a list of input files in a text file or file:
 
 	#!/bin/bash 
 	#SBATCH -c 1
@@ -70,16 +70,16 @@ The example here runs analysis on eather a list of inputfiles in a text file or 
 
 	analysis_program --input=/data/usersarea/usr00kg/input_files/${inputfiles[$SLURM_ARRAY_TASK_ID]} --output=/data/usersarea/usr00kg/output_files/${inputfiles[$SLURM_ARRAY_TASK_ID]}_analysis.txt
 
-The #SBATCH -a 0-6,8,10%3 line mean that aray elements 0,12,3,4,5,6,8 and 10 will be run maximum 3 at a time (%3)
-elsewhere in the script %A is used to  show the Jobid of the array job and %a is the numbered element of the array
+The #SBATCH -a 0-6,8,10%3 line mean that array elements 0,12,3,4,5,6,8 and 10 will be run maximum 3 at a time (%3)
+elsewhere in the script %A is used to show the Jobid of the array job and %a is the numbered element of the array
 
 the numbered element of the array can be accessed in the bash script using the variable $SLURM_ARRAY_TASK_ID
 
-There are many other Slurm variables availble for use in scripts as seen [here](https://slurm.schedmd.com/sbatch.html#lbAK) 
+There are many other Slurm variables available for use in scripts as seen [here](https://slurm.schedmd.com/sbatch.html#lbAK) 
 
 ## Interactive Job submission - salloc, srun
 
-It is possible to log in to node interactivly. This can be usefull for testing
+It is possible to log in to node interactively. This can be useful for testing
 
 in slurm you need to request a node:
 
@@ -97,7 +97,7 @@ To show a list of the jobs currently queued and running on the cluster:
 
 	squeue
 
-If you can't find your job on squeue it's likley already finished (or failed). 
+If you can't find your job on squeue it's likely already finished (or failed). 
 
 To see all of the jobs you've submitted with their state and exit code:
 
@@ -114,7 +114,7 @@ If you want to cancel a job either before it runs or while it is running you can
 Partitions are the different queues you can submit jobs too
 The key differences are the time limits and priority, short jobs will wait less time in the queue when the cluster is busy but must complete within 24hrs
 If unsure just use the default of all for KewHPC and main for HATTA and change if needed.
-To see th active partition list use:
+To see the active partition list use:
 
 	sinfo
 
@@ -145,12 +145,11 @@ As a user submits jobs their users priority factor starts to drop so that anothe
 
 If your job is waiting in the queue for a long time it could be that:
 
-- you've submitted alot of jobs recently and your priority factor has been temporarily lowered
-- you're asking for a lot of resources per job reducing your priorty factor.
+- you've submitted a lot of jobs recently and your priority factor has been temporarily lowered
+- you're asking for a lot of resources per job reducing your priority factor.
 	- try reducing the required number of cores per job
-- you've submited to a low priority partition (long/dungeon)
-	- submit to a higher prioity partition if time restrictions allow
+- you've submitted to a low priority partition (long/dungeon)
+	- submit to a higher priority partition if time restrictions allow
 
 If this isn't the case please contact [Matt Clarke](mailto:m.clarke@kew.org)
-
 

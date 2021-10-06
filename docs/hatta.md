@@ -33,7 +33,7 @@ Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) in
 
 Enter "yes" or "y" if asked to confirm adding hatta to hosts list.
 
-Log in using your kew password when prompted
+Log in using your Kew password when prompted
 
 #### From MacOS / Linux
 
@@ -68,7 +68,7 @@ Copying from hatta:
 	rsync -avP username@hatta://file/or/directory/to/copy /local/destination/for/files
 
 If you want to copy a directories contents and not the directory itself add a trailing "/" to the first argument.
-If the rsync command is interupted just re-run the exact command and its should continue from the file it was last transfering.
+If the rsync command is interrupted just re-run the exact command and its should continue from the file it was last transferring.
 
 ### Submit Jobs
 HATTA uses slurm to manage job submissions
@@ -91,7 +91,7 @@ you can see the jobs currently running by using the command
 
 	squeue
 
-For more details see [this page](./software/slurm.md) or the [slurm documenation](https://slurm.schedmd.com/)
+For more details see [this page](./software/slurm.md) or the [slurm documentation](https://slurm.schedmd.com/)
 ## Data Storage
 There are 3 main places you can store your data /home, /data and /science.
 
@@ -102,7 +102,7 @@ Your Home directory is the place you'll land when you login. This is a god place
 ### /data
 This is the cluster attached storage, Its fast and the best place to store the data you're currently analysing. There are 2 main areas /data/projects for shared data and analysis /data/users_area for single user data and analysis.
 ### /science
-This is the slower, longer term sorage for your data. Its attached to both HATTA and KewHPC allowing datta to be accessed by both machines. Please move any data stored here to a directory in /data before running analysis. There are /science/projects and /science/users_area directories as in /data
+This is the slower, longer term storage for your data. Its attached to both HATTA and KewHPC allowing data to be accessed by both machines. Please move any data stored here to a directory in /data before running analysis. There are /science/projects and /science/users_area directories as in /data
 
 ## Installed Software
 
@@ -160,4 +160,3 @@ This is the slower, longer term sorage for your data. Its attached to both HATTA
 | trimAL | 1.2rev59 |
 | trimomatic | (broken?) |
 | VCFtools | 0.1.16 |
-

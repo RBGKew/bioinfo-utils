@@ -1,7 +1,7 @@
 # HybPiper
 
 HybPiper has been centrally installed on the cluster using a wrapper script, this slightly changes how it operates.
-loading the module loads all of the dependancies
+loading the module loads all of the dependencies
 
 	module load hybpiper/1.3.1
 
@@ -25,4 +25,3 @@ This is a basic template of how to run reads first in a bash script on KewHPC
 							--prefix seqdata \
 							--cov_cutoff 4 
 	hybpiper cleanup $name
-
