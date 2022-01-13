@@ -20,7 +20,7 @@ KewHPC runs on CentOS 7.7 with a total of 576 cores and 7.6TB RAM across 14 node
 ## Quick Start Guide
 To get access to the bioinformatic resources contact [Matt Clarke](mailto:m.clarke@kew.org)
 
-Once you have access you can:
+From within Kews network you can simply connect using the instructions below. If you need remote access follow [this](./remote_access.md) guide
 
 ### Log in
 #### From Windows
@@ -106,7 +106,7 @@ There are 3 main places you can store your data /home, /data and /science.
 |----------|------|-------|-------|--------------|-------------|
 | /home | 10GB per user | Fast | Config files, scripts and documents | login01, node001-012, hmem01-02 | Not backed up, keep a copy of scripts on your local machine or on /science |
 | /data | 340TB Total | Fast | Data and scripts for jobs running on KewHPC | login01, node001-012, hmem01-02 | Not backed up, keep a copy of irreplaceable data on /science |
-| /science | 102TB Total | Slower | Data and scripts not currently in use, but which need keeping accessible | login01 | Snap-shotted with a mirror at the Wakehurst site |
+| /science | 139TB Total | Slower | Data and scripts not currently in use, but which need keeping accessible | login01 | Snap-shotted with a mirror at the Wakehurst site |
 
 There are 2 main areas in /data and /science.
 

@@ -9,7 +9,7 @@ loading the module loads all of the dependencies
 This is a basic template of how to run reads first in a bash script on KewHPC
 
 	#!/bin/bash
-	#SBATCH -j hybpiper_example
+	#SBATCH -J hybpiper_example
 	#SBATCH -e /data/users_area/myuser/errout/hybpiper_%A.err
 	#SBATCH -o /data/users_area/myuser/errout/hybpiper_%A.out
 	#SBATCH -c 8 
