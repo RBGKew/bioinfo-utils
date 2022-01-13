@@ -1,9 +1,9 @@
 # Remote Access
 
-To use Kew's computational resources remotely you'll need to connect to one of the below VPN services.
+To use Kew's computational resources remotely you'll need to connect to one of the below VPN services. The First 2 services are for Kew staff members only with the third, DMZ VPN, giving direct access to KewHPC for external collaborators.
 
 
-## KewVPN 
+## Kew VPN 
 
 Kew Provides 2 VPN services for Kew staff to connect to Kew services remotely from their Kew issued laptop.
 
@@ -47,7 +47,7 @@ The enter your Kew username and password and "Sign In".
 ![Your username and password please](GlobalProtect2.jpg)
 
 
-## KewHPC DMZ VPN
+## KewHPC DMZ VPN  
 
 This is a VPN service specifically for connecting to KewHPC for both Kew staff and external collaborators. It uses Pulse Secure so if you already have the Pulse Secure Client installed skip to the last step.
 
@@ -84,4 +84,4 @@ If a collaborator requires access to KewHPC to run analysis an account can be cr
 * Account expiry date (default 6 months from account creation)
 * Authorisation from Paul Kersey
 
-The account will expire automatically or if the sponsor leaves Kew. The account can be extended by the sponsor, with Authorisation from Paul Kersey.
+The account will expire automatically or if the sponsor leaves Kew. The account can be extended by the sponsor, with authorisation from Paul Kersey.
