@@ -5,7 +5,7 @@ To use Kew's computational resources remotely you'll need to connect to one of t
 
 ## Kew VPN 
 
-Kew Provides 2 VPN services for Kew staff to connect to Kew services remotely from their Kew issued laptop.
+Kew Provides 2 VPN services for Kew staff to connect to Kew services remotely from their Kew issued laptop. To access KewHPC from a non-Kew machine please use the DMZ VPN
 
 For access to either you'll need to contact [IT services](mailto:support@kew.org)
 
@@ -51,7 +51,7 @@ The enter your Kew username and password and "Sign In".
 
 This is a VPN service specifically for connecting to KewHPC for both Kew staff and external collaborators. It uses Pulse Secure so if you already have the Pulse Secure Client installed skip to the last step.
 
-Using any web browser go to [dmzgate.kew.org](https://dmzgate.kew.org) and log in with your kew username prefixed with "AD\" (e.g. AD\usr00kg ) and password.
+Using any web browser go to [https://dmzgate.dmz.kew.org](https://dmzgate.dmz.kew.org) and log in with your kew username prefixed with "AD\" (e.g. AD\usr00kg ) and password.
 
 Once logged in Click the "start" button.
 
@@ -65,7 +65,7 @@ Once Pulsesecure is installed open pulse secure if its not already then add a ne
 
 ![File > Connections > Add](PulseSecure3.jpg)
 
-In the new window name your connection and set the server URL to dmzgate.kew.org and click "Connect".
+In the new window name your connection and set the server URL to "dmzgate.dmz.kew.org" and click "Connect".
 
 ![dmzgate.kew.org](PulseSecureDMZ2.jpg)
 
