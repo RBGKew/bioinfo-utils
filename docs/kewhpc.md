@@ -27,19 +27,11 @@ From within Kews network you can simply connect using the instructions below. If
 First install and open [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 Then in the PuTTY Configureation Window:
 
-fill in the "Host Name (or IP address)" box with:
-
-	kewhpc
-or
-	kpphpclogin01.dmz.kew.org
-
-And under "Port" make sure it says:
-
-	22
+Fill in the "Host Name (or IP address)" box with `kewhpc` or `kpphpclogin01.dmz.kew.org` and confirm the the port is `22`
  
-Then click "Open"
+Then click `Open`
 
-You'll then be shown a "PuTTY Security Alert" to which you click "Accept"
+You'll then be shown a "PuTTY Security Alert" to which you click `Accept`
 
 Then enter your Kew username and password when prompted.
 
