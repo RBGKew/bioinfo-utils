@@ -31,7 +31,7 @@ fill in the "Host Name (or IP address)" box with:
 
 	kewhpc
 or
-	`kpphpclogin01.dmz.kew.org`
+	kpphpclogin01.dmz.kew.org
 
 And under "Port" make sure it says:
 
