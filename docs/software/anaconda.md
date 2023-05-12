@@ -16,13 +16,13 @@ You should now see "(base)" before your username at the command prompt.
 
 ## Creating and Switching Environments
 
-To load the conda environment I've made move the attached .yml file to your pwd and run:
+To create a new environment using `-p` to specify the location of your new environment:
 
-	conda env create -n my_env
+	conda create -p /data/users_area/usr00kg/conda_envs -n my_env
 
 To load the "my_env" environment use:
 
-	conda activate my_env
+	conda activate /data/users_area/usr00kg/conda_envs/my_env
 
 and to move back to the "base" environment:
 
