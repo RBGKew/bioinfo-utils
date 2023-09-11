@@ -18,7 +18,7 @@ open a terminal window and type
 	ssh username@kewhpc 
  or 
 
- 	ssh username@kpplogin01.dmz.kew.org
+ 	ssh username@kpphpclogin01.dmz.kew.org
 
 Type "yes" if prompted to confirm adding hatta to your hosts listperfomace
 
