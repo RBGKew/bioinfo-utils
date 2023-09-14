@@ -6,7 +6,6 @@ If you're familliar with SSH here's the information you need:
 
     host: kewhpc.ad.kew.org
     host aliases: kewhpc, kpphpclogin01.dmz.kew.org
-
     port: 22
     username: your kew user name (e.g. usr00kg)
     password: your kew password
@@ -21,7 +20,6 @@ You'll need to have an SSH client installed on the machine you intend to use to 
 
 On MacOS and all commmon linux distributions this is pre-installed. You can access this by opening a terminal window and typing the command:
 
-
     ssh usr00kg@kewhpc.ad.kew.org
 
 Replace "usr00kg" with your kew username
@@ -33,12 +31,12 @@ If connecting for the first time on you'll then be asked to verify the authentic
 
 Unlike MacOS and Linux, Windows dowsn't come with an SSH client by default. Kew issued computers do usually have PuTTY preinstalled. If no client is present you'll need to install on of either [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXterm](https://mobaxterm.mobatek.net/download.html) .
 
-***PuTTY***
-![PuTTY](images/putty.jpg)
+**PuTTY**
+![PuTTY](docs/images/putty.jpg)
 On opening putty you'll see this window. enter the host `kewhpc.ad.kew.org` and check that the port is `22` then click open. If connecting for the first time on you'll get a Security Alert Popup. If the fingerprint given matches this one `SHA256:YJNuet435XWBK1JQpZEJ3+u9d7M7MkKYbmTc1ogUVPg` confrim by clicking `yes` and then your username and password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
-***MobaXterm***
-![mobaxterm](images/mobaxterm.jpg)
+**MobaXterm**
+![mobaxterm](docs/images/mobaxterm.jpg)
 On opening MobaXterm click on `Session` and then `SSH` in the new window. You should now see the fields in the image above. Fill in the remote host `kewhpc.ad.kew.org`, your username and check that the port is `22`. If connecting for the first time on you'll then be asked to verify the authenticityof the server (KewHPC). If the fingerprint given matches this one `SHA256:YJNuet435XWBK1JQpZEJ3+u9d7M7MkKYbmTc1ogUVPg` confrim by  typing `yes` and then your password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
 #### GUI applications 
