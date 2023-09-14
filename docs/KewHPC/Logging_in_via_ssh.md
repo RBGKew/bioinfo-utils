@@ -32,11 +32,11 @@ If connecting for the first time on you'll then be asked to verify the authentic
 Unlike MacOS and Linux, Windows dowsn't come with an SSH client by default. Kew issued computers do usually have PuTTY preinstalled. If no client is present you'll need to install on of either [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXterm](https://mobaxterm.mobatek.net/download.html) .
 
 **PuTTY**
-![PuTTY](docs/images/putty.jpg)
+![PuTTY](/docs/images/putty.jpg)
 On opening putty you'll see this window. enter the host `kewhpc.ad.kew.org` and check that the port is `22` then click open. If connecting for the first time on you'll get a Security Alert Popup. If the fingerprint given matches this one `SHA256:YJNuet435XWBK1JQpZEJ3+u9d7M7MkKYbmTc1ogUVPg` confrim by clicking `yes` and then your username and password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
 **MobaXterm**
-![mobaxterm](docs/images/mobaxterm.jpg)
+![mobaxterm](/docs/images/mobaxterm.jpg)
 On opening MobaXterm click on `Session` and then `SSH` in the new window. You should now see the fields in the image above. Fill in the remote host `kewhpc.ad.kew.org`, your username and check that the port is `22`. If connecting for the first time on you'll then be asked to verify the authenticityof the server (KewHPC). If the fingerprint given matches this one `SHA256:YJNuet435XWBK1JQpZEJ3+u9d7M7MkKYbmTc1ogUVPg` confrim by  typing `yes` and then your password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
 #### GUI applications 
