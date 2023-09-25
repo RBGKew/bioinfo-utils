@@ -1,22 +1,40 @@
 site_name: "Kew Bioinformatics Documentation"
-nav: 
-- Kew Bioinformatics Resources: index.md
-- KewHPC :
-  - Overview : KewHPC/Overview.md
-  - Getting Connected: KewHPC/Logging_in_via_ssh.md
-  - Transfering Files: KewHPC/Transfer_data_via_sftp.md
-  - Data Storage: KewHPC/Where_to_store_data.md
-  - Running Jobs: software/slurm.md
-  - Using Software: software/lmod.md
-  - Environment Management and Containers:
-- Remote Access: Other_Services/remote_access.md
-- Sharing Data : Other_Services/sftp.md
-- Software Examples:
-  - GATK: software/gatk.md
-  - HybPiper: software/hybpiper.md
-  - Ipyrad: software/ipyrad.md
-  - Python: software/python.md
-  - R: software/r.md
-  - Trimmomatic: software/trimmomatic.md
+site_url: https://rbg-kew-bioinformatics-utils.readthedocs.io
 
-theme: readthedocs
+theme: 
+  name: readthedocs
+  highlightjs: true
+
+plugins: 
+  - search
+  - mkdocstrings:
+      handelers:
+        python:
+          option:docstring_style: sphinx
+markdown evtentions:
+  - markdown_include.include:
+      base_path: .
+  - admonition
+
+
+nav: 
+  - Kew Bioinformatics Resources: index.md
+  - KewHPC:
+    - System Description: KewHPC/Overview.md
+    - Getting Connected: KewHPC/Logging_in_via_ssh.md
+    - Transfering Files: KewHPC/Transfer_data_via_sftp.md
+    - Data Storage: KewHPC/Where_to_store_data.md
+    - Running Jobs: software/slurm.md
+    - Using Software: software/lmod.md
+    - Environment Management and Containers: index.md
+  - Other Services:
+    - Remote Access: Other_Services/remote_access.md
+    - Sharing Data : Other_Services/sftp.md
+  - Software Examples:
+    - GATK: software/gatk.md
+    - HybPiper: software/hybpiper.md
+    - Ipyrad: software/ipyrad.md
+    - Python: software/python.md
+    - R: software/r.md
+    - Trimmomatic: software/trimmomatic.md
+
