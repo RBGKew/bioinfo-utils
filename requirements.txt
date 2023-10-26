@@ -1,1 +1,1 @@
-mkdocsstrings
+mkdocstrings
