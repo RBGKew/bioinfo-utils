@@ -39,7 +39,7 @@ On opening putty you'll see this window. enter the host `kewhpc.ad.kew.org` and 
 
 **MobaXterm**
 
-![mobaxterm](/images/mobaxterm.jpg)
+![mobaxterm](mobaxterm.jpg)
 
 On opening MobaXterm click on `Session` and then `SSH` in the new window. You should now see the fields in the image above. Fill in the remote host `kewhpc.ad.kew.org`, your username and check that the port is `22`. If connecting for the first time on you'll then be asked to verify the authenticityof the server (KewHPC). If the fingerprint given matches this one `SHA256:YJNuet435XWBK1JQpZEJ3+u9d7M7MkKYbmTc1ogUVPg` confrim by  typing `yes` and then your password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
