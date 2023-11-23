@@ -59,3 +59,5 @@ For PuTTY and MobaXterm  select the check box for X11 forwarding the the Advance
 **While offsite I get the error "ssh: Could not resolve hostname"** Check that your VPN is properly connected or try an different host alias ("kewhpc" doesn't work while connected to the DMZ VPN)
 
 If you're still having connection issues contact [Matt Clarke](m.clarke@kew.org).
+
+
