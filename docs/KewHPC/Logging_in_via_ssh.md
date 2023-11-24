@@ -60,4 +60,10 @@ For PuTTY and MobaXterm  select the check box for X11 forwarding the the Advance
 
 If you're still having connection issues contact [Matt Clarke](m.clarke@kew.org).
 
+**Network issues:** Check that your WiFi and VPN connections are matching the below table 
+
+| Location | Kew Machine | Non-Kew Machine |
+|:-|----|----|
+| Kew/Wakehurst | KewCorp WiFi, No VPN | Eduroam WiFi, DMZ VPN |
+| Offsite | Any stable WiFi, GlobalProtect VPN | Any stable WiFi, DMZ VPN |
 
