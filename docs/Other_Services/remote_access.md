@@ -13,7 +13,7 @@ For access to either you'll need to contact [IT services](mailto:support@kew.org
 
 Using any web browser go to [kgpvpn.kew.org](https://kgpvpn.kew.org) and log in with your kew username and password.
 
-Once logged in click the link for your Operating System, Download and Install the Global Protect Client. Then enter the Portal name kvpn1.kew.org
+Once logged in click the link for your Operating System, Download and Install the Global Protect Client. Then enter the Portal name kgpvpn.kew.org
 
 ![kgpvpn.kew.org](GlobalProtect1.jpg)
 
@@ -21,6 +21,7 @@ The enter your Kew username and password and "Sign In".
 
 ![Your username and password please](GlobalProtect2.jpg)
 
+There is also a VPN to the Wakehurst Site, to use it replace kgpvpn.kew.org with wgpvpn.kew.org
 
 ## KewHPC DMZ VPN  
 

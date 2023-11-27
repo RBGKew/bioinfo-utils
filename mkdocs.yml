@@ -23,13 +23,14 @@ nav:
     - Getting Connected: KewHPC/Logging_in_via_ssh.md
     - Transfering Files: KewHPC/Transfer_data_via_sftp.md
     - Data Storage: KewHPC/Where_to_store_data.md
-    - Running Jobs: KewHPC/Runnning_Analysis_with_SLURM.md
+    - Running Jobs: KewHPC/Running_Analysis_with_SLURM.md
     - Using Software: KewHPC/Using_Software_with_LMOD.md
 #    - Environment Management and Containers: conda_singularity.md
   - Other Services:
     - Remote Access: Other_Services/remote_access.md
     - Sharing Data : Other_Services/External_SFTP_Service.md
   - Software Examples:
+    - anaconda: software/anaconda.md
     - GATK: software/gatk.md
     - HybPiper: software/hybpiper.md
     - Ipyrad: software/ipyrad.md
