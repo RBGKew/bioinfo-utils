@@ -25,7 +25,7 @@ nav:
     - Data Storage: KewHPC/Where_to_store_data.md
     - Running Jobs: KewHPC/Runnning_Analysis_with_SLURM.md
     - Using Software: KewHPC/Using_Software_with_LMOD.md
-    - Environment Management and Containers: conda_singularity.md
+#    - Environment Management and Containers: conda_singularity.md
   - Other Services:
     - Remote Access: Other_Services/remote_access.md
     - Sharing Data : Other_Services/External_SFTP_Service.md
