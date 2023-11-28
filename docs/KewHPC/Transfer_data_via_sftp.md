@@ -4,7 +4,7 @@ Using an SFTP client such as [FileZilla](https://filezilla-project.org/download.
 
 In Filezilla use the Quickconnect bar or Site Manager and enter:
 
-	Host: sftp://kewhpc
+	Host: sftp://kewhpc.ad.kew.org
 	Username: yourkewusername
 	Password: yourkewpassword
 	Port: 22 
@@ -14,11 +14,11 @@ In Filezilla use the Quickconnect bar or Site Manager and enter:
 
 Copying to kewhpc:
 
-	rsync -avP /local/file/or/directory username@kewhpc://directory/to/copy/to
+	rsync -avP /local/file/or/directory username@kewhpc.ad.kew.org://directory/to/copy/to
 
 Copying from kewhpc:
 
-	rsync -avP username@kewhpc://file/or/directory/to/copy /local/destination/for/files
+	rsync -avP username@kewhpc.ad.kew.org://file/or/directory/to/copy /local/destination/for/files
 
 If you want to copy a directories contents and not the directory itself add a trailing "/" to the first argument.
 If the rsync command is interrupted just re-run the exact command and its should continue from the file it was last transferring.

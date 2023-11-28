@@ -9,7 +9,7 @@ To use ipyrad, first load the anaconda module
 
 	module load anaconda/2020.11
 
-Then activate the conda environment. If you've not used conda before initialise it as described [here](./software/anaconda.md)
+Then activate the conda environment. If you've not used conda before initialise it as described [here](/software/anaconda)
 
 	conda activate ipyrad
 

@@ -1,11 +1,41 @@
 site_name: "Kew Bioinformatics Documentation"
-nav: 
-        - Home: index.md
-        - KewHPC : kewhpc.md
-        - HATTA : hatta.md
-        - Workstations : workstations.md
-        - Software : software.md
-        - SFTP : sftp.md
-        - About : about.md
+site_url: https://rbg-kew-bioinformatics-utils.readthedocs.io
 
-theme: readthedocs
+theme: 
+  name: readthedocs
+  highlightjs: true
+
+plugins: 
+  - search
+  - mkdocstrings:
+      handelers:
+        python:
+          option:docstring_style: sphinx
+markdown evtentions:
+  - markdown_include.include:
+      base_path: .
+  - admonition
+
+
+nav: 
+  - KewHPC:
+    - System Description: KewHPC/Overview.md
+    - Getting Connected: KewHPC/Logging_in_via_ssh.md
+    - Transfering Files: KewHPC/Transfer_data_via_sftp.md
+    - Data Storage: KewHPC/Where_to_store_data.md
+    - Running Jobs: KewHPC/Running_Analysis_with_SLURM.md
+    - Using Software: KewHPC/Using_Software_with_LMOD.md
+#    - Environment Management and Containers: conda_singularity.md
+  - Other Services:
+    - Remote Access: Other_Services/remote_access.md
+    - Sharing Data : Other_Services/External_SFTP_Service.md
+  - Tutorials:
+    - Anaconda: software/anaconda.md
+#    - BASH (Linux Command Line): software/bash.md
+    - GATK: software/gatk.md
+    - HybPiper: software/hybpiper.md
+    - Ipyrad: software/ipyrad.md
+    - Python: software/python.md
+    - R: software/r.md
+    - Trimmomatic: software/trimmomatic.md
+

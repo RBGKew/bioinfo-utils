@@ -6,7 +6,7 @@ There are 3 main places you can store your data /home, /data and /science.
 |----------|------|-------|-------|--------------|-------------|
 | /home | 10GB per user | Fast | Config files, scripts and documents | login01, node001-012, hmem01-02 | Not backed up, keep a copy of scripts on your local machine or on /science |
 | /data | 340TB Total | Fast | Data and scripts for jobs running on KewHPC | login01, node001-012, hmem01-02 | Not backed up, keep a copy of irreplaceable data on /science |
-| /science | 139TB Total | Slower | Data and scripts not currently in use, but which need keeping accessible | login01 | Snap-shotted with a mirror at the Wakehurst site |
+| /science | 238TB Total | Slower | Data and scripts not currently in use, but which need keeping accessible | login01 | Daily snapshot taken at 8pm (kept for 16 days). Mirrored between Kew and  Wakehurst |
 
 There are 2 main areas in /data and /science.
 

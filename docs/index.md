@@ -1,15 +1,25 @@
-# Welcome to the Kew Bioinformatics Documentation
-These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain useful information about:
+# Kew Bioinformatics Documentation
 
-- KewHPC cluster
-- HATTA cluster
-- the Linux Workstations in the Jodrell
-- the Kew SFTP service
+## KewHPC
 
-This documentation is available on the organisation github or linked [readthedocs.org](http://rbg-kew-bioinformatics-utils.readthedocs.io/en/latest/) accounts. Please contact [Matt Clarke](mailto:m.clarke@kew.org) for requests.
+* [Sytem Description](./KewHPC/Overview.md)   
+* [Getting Connected](./KewHPC/Logging_in_via_ssh.md)
+* [Transfer File](./KewHPC/Transfer_data_via_sftp.md)
+* [Data Storage](./KewHPC/Where_to_store_data.md)
+* [Running Jobs](./KewHPC/Running_Analysis_with_SLURM.md)
+* [Loading Software](./KewHPC/Using_Software_with_LMOD.md)
+* [Environment Management & Containers]()
 
----
+## Other Services
 
-# Licence and legal notes
-- These pages, scripts and all content hosted in this repository is licensed for public reuse under the [Creative Commons BY-NC-SA 3.0 License](http://creativecommons.org/licenses/by-nc-sa/3.0). License may be changed or withdrawn at any time. 
-- This repository is intended to assist internal users only and no warranty of any kind is implied by this or any other release of this code/information.
+* [Remote Access](./Other_Services/remote_access.md)
+* [Shareing Data](./Other_Services/External_SFTP_Service.md)
+
+## Software Examples
+
+* [GATK](./software/gatk.md)
+* [HybPiper](./software/hybpiper.md)
+* [Ipyrad](./software/ipyrad.md)
+* [Python](./software/python.md)
+* [R](./software/R.md)
+* [Trimmomatic](./software/trimmomatic.md)

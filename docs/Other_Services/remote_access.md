@@ -9,43 +9,19 @@ Kew Provides 2 VPN services for Kew staff to connect to Kew services remotely fr
 
 For access to either you'll need to contact [IT services](mailto:support@kew.org)
 
-### PulseSecure
-
-Using any web browser go to [backgate.kew.org](https://backgate.kew.org) and log in with your kew username and password, with the realm as "AD".
-
-Once logged in Click the "start" button.
-
-![Client Application Sessions > Pulse Secure > Start](PulseSecure1.jpg)
-
-Then hit the download button, save and install the Pulse Secure client.
-
-![Download > Save > Run PulseSecureAppLauncher.msi](PulseSecure2.jpg)
-
-Once Pulsesecure is installed open pulse secure if its not already then add a new connection ("+" or File > Connections > Add)
-
-![File > Connections > Add](PulseSecure3.jpg)
-
-In the new window name your connection and set the server URL to backgate.kew.org and click "Connect".
-
-![backgate.kew.org](PulseSecure4.jpg)
-
-Select the Realm "AD" and enter your user name and password when prompted
-
-
-*There are limited simultaneous licences for the Pulse Secure VPN so if you get an error saying it's at capacity try one of the other methods. For the same reason you should log out as soon as you're done to allow others to login.*
-
 ### GlobalProtect
 
-Using any web browser go to [kvpn1.kew.org](https://kvpn1.kew.org) and log in with your kew username and password.
+Using any web browser go to [kgpvpn.kew.org](https://kgpvpn.kew.org) and log in with your kew username and password.
 
-Once logged in click the link for your Operating System, Download and Install the Global Protect Client. Then enter the Portal name kvpn1.kew.org
+Once logged in click the link for your Operating System, Download and Install the Global Protect Client. Then enter the Portal name kgpvpn.kew.org
 
-![kvpn1.kew.org](GlobalProtect1.jpg)
+![kgpvpn.kew.org](GlobalProtect1.jpg)
 
 The enter your Kew username and password and "Sign In".
 
 ![Your username and password please](GlobalProtect2.jpg)
 
+There is also a VPN to the Wakehurst Site, to use it replace kgpvpn.kew.org with wgpvpn.kew.org
 
 ## KewHPC DMZ VPN  
 

@@ -120,22 +120,13 @@ To see the active partition list use:
 
 ### KewHPC
 
-Name | Time Limit | nodes | relative priority | Default
----- | ---------- | ----- | ----------------- | ------
-short | 1 day | nodes 1-12 | 5 |  |
-all | 3 days | nodes 1-12, hmem 1-2 | 3 | Yes |
-long | 30 days | nodes 1-12 | 1 |  |
-hmem | 14 days | hmem 1-2 | 6 |  |
-
-### HATTA
-
 Name | Time Limit | Nodes | Relative Priority | Default
----- | ---------- | ----- | ----------------- | -------
-fast| 1 day | 1, 2 & 3 | 8000 | |
-main| 3 days | 1, 2 & 3 | 7000 | Yes |
-medium| 1 week | 1, 2 & 3 | 6000 |  |
-long| 2 weeks | 1, 2 & 3 | 4000 | |
-dungeon| 3.4 weeks | 1, 2 & 3 | 2000 | |
+---- | ---------- | ----- | ----------------- | ------
+short | 1 day | nodes 1-12 | High | No |
+all | 3 days | nodes 1-12, hmem 1-2 | Medium | Yes |
+long | 30 days | nodes 1-12 | Low | No |
+hmem | 14 days | hmem 1-2 | High | No |
+
 
 ## Fairshare Policies
 
@@ -150,6 +141,4 @@ If your job is waiting in the queue for a long time it could be that:
 	- try reducing the required number of cores per job
 - you've submitted to a low priority partition (long/dungeon)
 	- submit to a higher priority partition if time restrictions allow
-
-If this isn't the case please contact [Matt Clarke](mailto:m.clarke@kew.org)
 
