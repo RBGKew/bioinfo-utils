@@ -29,8 +29,9 @@ nav:
   - Other Services:
     - Remote Access: Other_Services/remote_access.md
     - Sharing Data : Other_Services/External_SFTP_Service.md
-  - Software Examples:
-    - anaconda: software/anaconda.md
+  - Tutorials:
+    - Anaconda: software/anaconda.md
+#    - BASH (Linux Command Line): software/bash.md
     - GATK: software/gatk.md
     - HybPiper: software/hybpiper.md
     - Ipyrad: software/ipyrad.md

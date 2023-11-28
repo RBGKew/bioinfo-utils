@@ -1,7 +1,7 @@
 # KewHPC
 ## Overview
 
-KewHPC is our onsite compute cluster for use by Kew Sceince staff, students and collaborators. It has a command line linux interface bash, job scheduler [slurm](/KewHPC/Running_Analysis_with_SLURM) and has a variety of bioinformatic analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
+KewHPC is our onsite compute cluster for use by Kew Sceince staff, students and collaborators. It has a command line linux interface bash, job scheduler slurm and has a variety of bioinformatic analysis packages installed. To get access, or for general queries/software requests, please contact [Matt Clarke](mailto:m.clarke@kew.org).
 
 ![SystemLayout](./kewhpc_diagram.jpg)
 

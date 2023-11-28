@@ -1,14 +1,33 @@
 # R
-There are 2 version of R installed on KewHPC are 3.6.3 and 4.0.2
+There are 3 version of R installed on KewHPC are 3.6.3, 4.0.2 and 4.1.2
 
-## Installed Modules 
+## Running R on KewHPC
+In order to us R on KewHPC You'll need both a batch script such as this:
 
-Many commonly used R moules have been centrally installed. If you need any others ask [Matt Clarke](mailto: m.clarke@kew.org) to install them centrally, or install to a personal local lib in your /data/users_area/ directory.  
+    #!/bin/bash 
+    #SBATCH -c 1
+    #SBATCH -p all
+    #SBATCH -J R_job
+    #SBATCH -o /data/users_area/usr00kg/Rscript.out
+    #SBATCH -e /data/users_area/usr00kg/Rscript.err
+    
+    module load R/4.0.2
 
+    Rscript job_script.R argument1 argument2
 
-## Installing Modules to Local Library
+and an R script contaning your analysis:
 
-You can install packages locally in your /data/users_area or /home. This is especially useful if you need a specific version or are developing an R module.
+    #!/usr/bin/env Rscript
+    args <- commandArgs(TRUE)
+    
+    argument1 = args[1]
+    ....
+    ....
+    etc.
+
+## Modules 
+
+Many commonly used R moules have been centrally installed. If you need any others ask [Matt Clarke](mailto: m.clarke@kew.org) to install them centrally. You can also install packages locally in your /data/users_area or /home. This is especially useful if you need a specific version or are developing an R module.
 
 ### Installing to Local Lib
 
