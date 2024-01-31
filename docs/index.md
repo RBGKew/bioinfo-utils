@@ -1,5 +1,11 @@
 # Kew Bioinformatics Documentation
 
+This documentation is intended to help new users of the KewHPC system and as an ongoing reference. For further Help or if some thing is not covered here please contact [Matt Clarke](mailto:m.clarke@kew.org). Kew staff can also use the crop diverity cluster (gruffalo) at the James Hutton Institute. For help with accessing or using it thier documentation is here: [help.cropdiversity.ac.uk](https://help.cropdiversity.ac.uk/)
+
+
+####New users should first contact [Matt Clarke](mailto:m.clarke@kew.org) to have their accouts activated.
+
+
 ## KewHPC
 
 * [Sytem Description](./KewHPC/Overview.md)   
