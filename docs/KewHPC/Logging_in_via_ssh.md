@@ -14,7 +14,7 @@ If you are new to SSH or need to set up an SSH client keep reading.
 
 #### SSH On Windows
 
-Unlike MacOS and Linux, Windows dowsn't come with an SSH client by default. Kew issued computers do usually have PuTTY preinstalled. If no client is present you'll need to install on of either [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXterm](https://mobaxterm.mobatek.net/download.html) .
+Kew issued computers do usually have PuTTY preinstalled. If no client is present you'll need to install one of either [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXterm](https://mobaxterm.mobatek.net/download.html) .
 
 **PuTTY**
 
