@@ -49,7 +49,7 @@ Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), w
 
 4. Save the Private key locally, to be used when connecting.
 
-#### Linux/MacOS - command line
+#### MacOS/Linux - command line
 
 Open a terminal window and check to see if you already have a ssh key pair.
 
@@ -65,7 +65,23 @@ Enter custom file names (or leave blank for default) and a password (or blank fo
 
 ### Connecting
 
-#### Linux/MacOS - command line
+#### Windows/MacOS/Linux - FileZilla
+Open [FileZilla](https://filezilla-project.org/download.php?platform=win64), which should be installed on kew laptops.
+
+Open site manager (top left button or file > site manager or Ctrl+S)
+
+Enter credentials:
+
+	Host: sftp.kew.org
+	Port: 22
+	Logon Type: Key file
+	User: the username provided
+	Key file: the Private Key file you saved with PuTTYgen (*.pkk) or ssh-keygen (default: /home/username/.ssh/id\_rsa)
+
+
+Click the connect button
+
+#### MacOS/Linux - command line
 Once the ssh Key pair has been set connect to the sftp:
 
 	sftp user@sftp.kew.org
@@ -81,19 +97,4 @@ for more commands read:
 	
 	man sftp
 	
-#### Linux/MacOS/Windows - FileZilla
-Open [FileZilla](https://filezilla-project.org/download.php?platform=win64), which should be installed on kew laptops.
-
-Open site manager (top left button or file > site manager or Ctrl+S)
-
-Enter credentials:
-
-	Host: sftp.kew.org
-	Port: 22
-	Logon Type: Key file
-	User: the username provided
-	Key file: the Private Key file you saved with PuTTYgen (*.pkk) or ssh-keygen (default: /home/username/.ssh/id\_rsa)
-
-
-Click the connect button
 
