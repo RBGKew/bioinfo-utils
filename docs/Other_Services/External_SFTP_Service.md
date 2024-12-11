@@ -38,6 +38,17 @@ A username will be assigned and given access to the sftp using the public key pr
 
 ### Creating a private/public key pair
 
+#### Windows - PuTTY
+Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should be installed on Kew laptops.
+
+1. From the start menu select the PuTTY directory and open PuTTYgen
+
+2. Select Generate and move your mouse over the blank space until the key is generated. 
+
+3. Either copy the public key in the top box or the save public key button and send to the administrator setting up the account.
+
+4. Save the Private key locally, to be used when connecting.
+
 #### Linux/MacOS - command line
 
 Open a terminal window and check to see if you already have a ssh key pair.
@@ -50,17 +61,6 @@ If there are the files id\_rsa and id\_rsa.pub you already have a key pair. If t
 	ssh-keygen
 
 Enter custom file names (or leave blank for default) and a password (or blank for no password). Then send the public key (default: id\_rsa.pub) to the administrator creating the account.
-
-#### Windows - PuTTY
-Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should be installed on Kew laptops.
-
-1. From the start menu select the PuTTY directory and open PuTTYgen
-
-2. Select Generate and move your mouse over the blank space until the key is generated. 
-
-3. Either copy the public key in the top box or the save public key button and send to the administrator setting up the account.
-
-4. Save the Private key locally, to be used when connecting.
 
 
 ### Connecting
