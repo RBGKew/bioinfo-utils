@@ -12,24 +12,9 @@ If you're familliar with SSH here's the information you need:
 
 If you are new to SSH or need to set up an SSH client keep reading.
 
-
-#### SSH On MacOS and Linux
-
-You'll need to have an SSH client installed on the machine you intend to use to access KewHPC. 
-
-
-On MacOS and all commmon linux distributions this is pre-installed. You can access this by opening a terminal window and typing the command:
-
-    ssh usr00kg@kewhpc.ad.kew.org
-
-Replace "usr00kg" with your kew username
-
-If connecting for the first time on you'll then be asked to verify the authenticityof the server (KewHPC). If the fingerprint given matches this one `SHA256:x6Vnxl0lgeIY/b65+1RpLKA+Q7rK+yezJRZPJ5Oq5A8` confrim by  typing `yes` and then your password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
-
-
 #### SSH On Windows
 
-Unlike MacOS and Linux, Windows dowsn't come with an SSH client by default. Kew issued computers do usually have PuTTY preinstalled. If no client is present you'll need to install on of either [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXterm](https://mobaxterm.mobatek.net/download.html) .
+Kew issued computers do usually have PuTTY preinstalled. If no client is present you'll need to install one of either [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXterm](https://mobaxterm.mobatek.net/download.html) .
 
 **PuTTY**
 
@@ -42,6 +27,19 @@ On opening putty you'll see this window. enter the host `kewhpc.ad.kew.org` and 
 ![mobaxterm](mobaxterm.jpg)
 
 On opening MobaXterm click on `Session` and then `SSH` in the new window. You should now see the fields in the image above. Fill in the remote host `kewhpc.ad.kew.org`, your username and check that the port is `22`. If connecting for the first time on you'll then be asked to verify the authenticityof the server (KewHPC). If the fingerprint given matches this one `SHA256:x6Vnxl0lgeIY/b65+1RpLKA+Q7rK+yezJRZPJ5Oq5A8` confrim by  typing `yes` and then your password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
+
+#### SSH On MacOS and Linux
+
+You'll need to have an SSH client installed on the machine you intend to use to access KewHPC. 
+
+
+On MacOS and all commmon linux distributions this is pre-installed. You can access this by opening a terminal window and typing the command:
+
+    ssh usr00kg@kewhpc.ad.kew.org
+
+Replace "usr00kg" with your kew username
+
+If connecting for the first time on you'll then be asked to verify the authenticityof the server (KewHPC). If the fingerprint given matches this one `SHA256:YJNuet435XWBK1JQpZEJ3+u9d7M7MkKYbmTc1ogUVPg` confrim by  typing `yes` and then your password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
 #### GUI applications 
 
