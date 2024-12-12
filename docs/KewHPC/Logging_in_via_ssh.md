@@ -20,7 +20,7 @@ Kew issued computers do usually have PuTTY preinstalled. If no client is present
 
 ![PuTTY](putty.jpg)
 
-On opening putty you'll see this window. enter the host `kewhpc.ad.kew.org` and check that the port is `22` then click open. If connecting for the first time on you'll get a Security Alert Popup. If the fingerprint given matches this one `SHA256:x6Vnxl0lgeIY/b65+1RpLKA+Q7rK+yezJRZPJ5Oq5A8` confrim by clicking `yes` and then your username and password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
+On opening putty you'll see this window. enter the host `kewhpc.ad.kew.org` and check that the port is `22` then click open. If connecting for the first time on you'll get a Security Alert Popup. If the fingerprint given matches `SHA256:x6Vnxl0lgeIY/b65+1RpLKA+Q7rK+yezJRZPJ5Oq5A8` or `SHA256:J52pY1ExJxOfXJXPGAGEkXtGTc+hvacY92zvKFVGMjg` confrim by clicking `yes` and then your username and password when prompted. If the fingerprint doesn't match contact [Matt Clarke](mailto:m.clarke@kew.org) or [IT service desk](mailto:support@kew.org) as your connection to KewHPC may not be secure.
 
 **MobaXterm**
 
