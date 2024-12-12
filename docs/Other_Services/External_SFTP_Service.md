@@ -38,6 +38,8 @@ A username will be assigned and given access to the sftp using the public key pr
 
 ### Creating a private/public key pair
 
+The SFTP server uses key authentication as an alternative to passwords. Below are instructions for creating the matched pair of keys: A public key to be put on the server and a private key to be kept by the user logging in. Like a password the private key should be kept securely and never shared.
+
 #### Windows - PuTTY
 Using [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), which should be installed on Kew laptops.
 
