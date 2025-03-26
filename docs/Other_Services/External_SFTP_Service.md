@@ -84,9 +84,9 @@ Enter credentials:
 Click the connect button
 
 #### MacOS/Linux - command line
-Once the ssh Key pair has been set connect to the sftp:
+Once the ssh Key pair has been set you can connect to the sftp specifying the private key:
 
-	sftp user@sftp.kew.org
+	sftp -i /home/.ssh/private_key user@sftp.kew.org
 
 once connected use the below commands to transfer files
 
