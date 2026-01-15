@@ -12,11 +12,11 @@ In Filezilla use the Quickconnect bar or Site Manager and enter:
 #### From MacOS / Linux
 [FileZilla](https://filezilla-project.org) works the same on as on Windows but for larger files or whole directories you can use rsync via the terminal.
 
-Copying to kewhpc:
+Copying to KewHPC:
 
 	rsync -avP /local/file/or/directory username@kewhpc.ad.kew.org://directory/to/copy/to
 
-Copying from kewhpc:
+Copying from KewHPC:
 
 	rsync -avP username@kewhpc.ad.kew.org://file/or/directory/to/copy /local/destination/for/files
 
