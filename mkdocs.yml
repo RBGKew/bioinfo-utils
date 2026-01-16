@@ -18,17 +18,9 @@ markdown evtentions:
 
 
 nav: 
-  - KewHPC:
-    - System Description: KewHPC/Overview.md
-    - Getting Connected: KewHPC/Logging_in_via_ssh.md
-    - Transferring Files: KewHPC/Transfer_data_via_sftp.md
-    - Data Storage: KewHPC/Where_to_store_data.md
-    - Running Jobs: KewHPC/Running_Analysis_with_SLURM.md
-    - Using Software: KewHPC/Using_Software_with_LMOD.md
-#    - Environment Management and Containers: conda_singularity.md
-  - Other Services:
-    - Remote Access: Other_Services/remote_access.md
-    - Sharing Data : Other_Services/External_SFTP_Service.md
+  - Services:
+    - KewStorage : Services/KewStorage.md
+    - SFTP.kew.org : Services/External_SFTP_Service.md
   - Tutorials:
     - Anaconda: software/anaconda.md
 #    - BASH (Linux Command Line): software/bash.md
