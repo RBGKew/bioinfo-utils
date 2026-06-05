@@ -19,15 +19,10 @@ markdown evtentions:
 
 nav: 
   - Services:
-    - KewStorage : Services/KewStorage.md
-    - SFTP.kew.org : Services/External_SFTP_Service.md
+    - HPC : services/cropdiversityhpc.md
+    - KewStorage : services/hpcstorage.md
+    - SFTP : services/SFTP_service.md
   - Tutorials:
-    - Anaconda: software/anaconda.md
-#    - BASH (Linux Command Line): software/bash.md
-    - GATK: software/gatk.md
-    - HybPiper: software/hybpiper.md
-    - Ipyrad: software/ipyrad.md
-    - Python: software/python.md
-    - R: software/r.md
-    - Trimmomatic: software/trimmomatic.md
-
+    - Key pairs: tutorials/keypair.md
+    - Storage Types : tutorials/storage.md
+    - SLURM Optimisation : tutorials/slurmresources.md
