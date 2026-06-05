@@ -1,21 +1,25 @@
 # Kew Bioinformatics Documentation
 
-This documentation is intended to help Kew staff use the bioinformatic resources available to them. This includes Kewstorage , sftp.kew.org. For help with the Crop Diversity HPC thier documentation is here: [help.cropdiversity.ac.uk](https://help.cropdiversity.ac.uk/)
+This documentation is intended to help Kew staff use the bioinformatic resources listed below.
 
 ## Services
 
-* [KewStorage](./Services/KewStorage.md)
-* [sftp.kew.org](./Other_Services/External_SFTP_Service.md)
+* [HPC](./services/cropdiversityhpc.md)
+* [hpcstorage](./services/hpcstorage.md)
+* [Remote Access](./services/remote_access.md)
+* [sftp.kew.org](./services/SFTP_service.md)
 
 ##  How to
 
-* [generate key pair]()
+* [Generate key pair](./tutorials/keypair.md)
+* [Manage data storage](./tutorials/storage.md)
+* [Set CPU and memory for SLURM Jobs](./tutorials/slurmresources.md)
 
-## Software Examples
 
-* [GATK](./software/gatk.md)
-* [HybPiper](./software/hybpiper.md)
-* [Ipyrad](./software/ipyrad.md)
-* [Python](./software/python.md)
-* [R](./software/R.md)
-* [Trimmomatic](./software/trimmomatic.md)
+## Crop Diversity HPC Documentation
+
+* [help.cropdiversity.ac.uk](https://help.cropdiversity.ac.uk)
+
+
+
+Any errors or inaccuracies please contact [m.clarke@kew.org](mailto:m.clarke@kew.org)
