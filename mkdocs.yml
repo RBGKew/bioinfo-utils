@@ -21,8 +21,16 @@ nav:
   - Services:
     - HPC : services/cropdiversityhpc.md
     - KewStorage : services/hpcstorage.md
+    - Remote Access: services/remoteaccess.md
     - SFTP : services/SFTP_service.md
   - Tutorials:
-    - Key pairs: tutorials/keypair.md
-    - Storage Types : tutorials/storage.md
-    - SLURM Optimisation : tutorials/slurmresources.md
+    - Key Authentication:
+        - Linux:  tutorials/keypair_linux.md
+        - Windows: tutorials/keypair_windows.md
+    - Data Storage : tutorials/storage.md
+    - File Permissions: tutorials/permissions.md
+    - Slurm Jobs : tutorials/slurm.md
+    - Memory Useage : tutorials/memory.md
+    - Parallel Processing : tutorials/parallel.md
+    - Linux VPN: tutorials/openconnect.md
+

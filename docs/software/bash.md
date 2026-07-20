@@ -1,3 +1,0 @@
-# BASH Basics
-
-The 
