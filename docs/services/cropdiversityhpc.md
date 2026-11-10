@@ -6,13 +6,11 @@ Kew staff have access to the Crop Diversity HPC for data processing and analysis
 High Performance Computing (HPC) is the use of large clusters of computers to process huge amounts of data with high throughput. This has typically been the use of multiple CPUs via clustering, but now also includes high core count CPUs and GPUs.
 
 The strengths of HPC over your desktop or laptop computer:
-
-- [Parallel Processing](../tutorials/parallel.md]) : The primary benefit of HPC
+- [Parallel Processing](../tutorials/parallel.md) : The primary benefit of HPC
 - Memory Capacity: much more available so whole data sets can be analysed much faster than on disk
-- Paralellised storage: The same data can be accesed by many processes at once
+- Paralellised storage: The same data can be accesed by all the processes
 
 Where HPC isn't nesssicarily better:
-
 - CPU core speed: single core performance may even be lower than high-end desktop CPUs
 - Latency: Jobs are sent to a queue and don't always run imedialty
 
@@ -28,5 +26,4 @@ There are several ways of transfering data to the Crop Diversity HPC:
 
 - [rsync](https://help.cropdiversity.ac.uk/file-transfers.html#rsync)
 - [scp](https://help.cropdiversity.ac.uk/file-transfers.html#scp)
-- [sftp](../tutorials/sftp.md)
 

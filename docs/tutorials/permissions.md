@@ -6,7 +6,7 @@ Setting these p[ermissions correctly is particularly important in a multi-user e
 
 ## Checking the Permissions of files
 
-To understand who can read, write or execute the file in a directory, use `ls -l ./directory` to get an output like this:
+To see who can read, write or execute the file in a directory, use `ls -l ./directory` to get an output like this:
 
 ```bash
 total 2
@@ -16,14 +16,13 @@ drwxr-xr-x. 1 username group    14 Feb 23 2025 directory
 drwx------. 1 username group    20 Mar 26 2025 private_directory
 ```
 
-To understand who has access to the files we are interested in columss 1, 3 and 4 which are:
+To this end we are interested in columss 1, 3 and 4:
 
  - File permission settings
  - File owner's username
  - The file's group id
 
 ## File Ownership
-
 All Files in the Linux filesystem have an owner and a group for which permissions are set independantly
 
 To change the ownership of a file use the `chown` command:
@@ -38,19 +37,14 @@ To only change the group of a file you own you can use the `chgrp` command:
 ```bash
 chgrp newgrp file.txt
 ```
-!!! warning
-    Be aware of who else is in the group your setting as they will have access acording to the permissions set below
 
+>Be aware of who else is in the group your setting as they will have access acording to the permissions set below
 
 ## File Permissions
-
 File permissions can be displayed symbolicly or numerically and can be changed with `chmod`:
 
 ### Symbolic Notation
-
 The symbolic notation consists of 10 positional characters
-
-
 
 |Symbol| Function | Description|
 |------|----------|------------|
@@ -63,6 +57,7 @@ The symbolic notation consists of 10 positional characters
 | `t`  | sTicky   | When set on a directory it prevents deletion of files inside by anyone other than the owner and root|
 
 Positions:
+
 1. Directory
 2. User Read
 3. User Write
@@ -76,6 +71,7 @@ Positions:
 
 ### Numeric Notation
 This notation consists of 3 or 4 positional numerals. Each per numeral is the sum of the following:
+
 |Number to sum|Function|
 |-------------|--------|
 |`0`| no permissions granted |
@@ -90,8 +86,7 @@ Positions:
 2. Group Permissions
 3. Other Permissions
 
-!!! note
-    Execute permissions are required for directory traversal i.e. `cd`
+>Execute permissions are required for directory traversal i.e. `cd`
 
 #### Examples:
 
@@ -107,7 +102,7 @@ Positions:
 `chmod` is used to change file permissions:
 
 ```bash
-chmod u+rwx file.txt
+chmod u+rwx script.sh # adds read write and execute permissions for the owner
 ```
 The permissions can be modified by adding or removing the symbolic notation.
 

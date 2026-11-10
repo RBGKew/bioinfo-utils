@@ -1,4 +1,4 @@
-# Kew Storage
+# HPC Storage
 Kew storage is a storage server for medium/long term storage of scientific data. 
 
 Key points:
@@ -7,11 +7,11 @@ Key points:
 - Data is mirrored between Kew and Wakehurst on redundant storage.
 - Acessable only in Kew's network
 
-** Please store all data in /science/users_area or /science/projects. Don't store any data in /home this has very limited space and could be wiped without warning. **
+**Please store all data in /science/users_area or /science/projects. Don't store any data in /home this has very limited space and could be wiped without warning.**
 
 ## Methods of connection
 
-hpcstorage can be accessed via ssh and sftp while in Kew's network (onsite or [VPN](./remote_access.md))
+hpcstorage can be accessed via ssh and sftp while in Kew's network (onsite or [VPN](./remote-access.md))
 
 Details:
 Host: `hpcstorage`
@@ -34,6 +34,6 @@ For Graphical user interfaces see:
 
 You can transfer data to and from the Crop Diversity HPC via ssh based methods (rsync,scp). [Full instructions here](https://help.cropdiversity.ac.uk/file-transfers.html#command-line-options)
 
-** Due to firewall restrictions you'll need to run the command from hpcstorage for both sending and receiving data **
+**Due to firewall restrictions you'll need to run the command from hpcstorage for both sending and receiving data**
 
 

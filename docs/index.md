@@ -14,20 +14,16 @@ Storage for scientific data, located at Kew mirrored to Wakehurst. Access via SF
 
 ### [Remote Access](./services/remote_access.md)
 
-Accessing Kew services offsite using Kew's VPN. Required for access to hpcstorage and password access to the Crop Diversity HPC
+Accessing Kew services offsite using Kew's VPN. Required for access to hpcstorage and password based access to the Crop Diversity HPC
 
 ### [SFTP](./services/SFTP_service.md)
 
-Private SFTP for sharing data with collaborators as well a public facing data dumps
+Private SFTP for sharing data with collaborators as well a public facing SFTP and web interface.
 
 ##  Tutorials
 
-There are also several tutortials and guides on best uising the serveces above:
-* [Generate key pair](./tutorials/keypair_windows.md)
-* [Best use of storage](./tutorials/storage.md)
-* [Linux File Permissions](./tutorials/permissions.md)
-* [Parallel Computation](./tutorials/parallel.md)
-* [Using SLURM to run Jobs](./tutorials/slurm.md)
+There are also several tutortials and guides on best using the services above: see the List to the left.
+There are more tutorials and helpful information on the help pages for the [Crop Diversity HPC](https://help.cropdiversity.ac.uk)
 
 
 Any errors or inaccuracies please contact [m.clarke@kew.org](mailto:m.clarke@kew.org)
