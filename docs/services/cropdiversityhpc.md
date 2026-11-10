@@ -20,7 +20,7 @@ Where HPC isn't nesssicarily better:
 
 To get an account on the Crop Diversity HPC fill in the form here: [help.cropdiversity.ac.uk/user-accounts.html](https://help.cropdiversity.ac.uk/user-accounts.html)
 
-Once you recieve your username and temorary password you can then login via ssh while on site at Kew or Wakeurst. For access offsite you need to have key pair authentication with 2FA set up. More details here: [help.cropdiversity.ac.uk/ssh.html](https://help.cropdiversity.ac.uk/ssh.html)
+Once you recieve your username and temporary password you can then login via ssh while on site at Kew or Wakeurst. For access offsite you need to have key pair authentication with 2FA set up. More details here: [help.cropdiversity.ac.uk/ssh.html](https://help.cropdiversity.ac.uk/ssh.html)
 
 ## Transferring Data
 
