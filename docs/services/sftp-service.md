@@ -18,9 +18,11 @@ or via a sftp client such as FileZilla or sftp on the command line:
 	Pass: 
     Port: 22
 
+All files are found in the `pub` directory.
+
 ### Contributing to the public SFTP
 
-If you'd like to have data hosted on the public SFTP please contact [Matthew Clake](mailto:m.clarke@kew.org) or  [Reinis Rozkalns](r.rozkalns@kew.org)
+If you'd like to have data hosted on the public SFTP please contact [Matthew Clake](mailto:m.clarke@kew.org)
 
 ## Private SFTP
 
@@ -28,25 +30,36 @@ This service allows Kew staff to send and receive data with collaborators out si
 
 In order to set up the SFTP accounts contact, [Matthew Clarke](mailto:m.clarke@kew.org) with the following information:
 
-- a project name
-- Name and email of Kew staff member
-- name and email for all collaborators
-- a Public key for each user
+- Name and email of each Kew staff member
+- Name and email of each collaborators
+- Public key for each user
+- Project name if applicable
 
-A username will be assigned and given access to the sftp using the public key provided
+A username will be assigned and given access to the SFTP using the public key provided
 
-### Logging in and tansfering data
+### Logging in 
+
 Use any sftp client with these details:
 
     Host: sftp.kew.org
     Port: 22
-    User: will be provided (usually in project-name format)
+    User: will be provided 
     Key:  private key matching the public one sent to the admin
 
 More detailed Instructions here:
 
 - [SFTP Command line](../tutorials/sftp-commandline.md)
 - [Filezilla](../tutorials/sftp-gui.md)
+
+### Directory structute and access
+
+In addition to their own directory `username_files` each user can be given access to:
+
+- Read only access to other users files `otherusername\_files`
+- Read only access to a project directoy `projectname`
+- Read/Write access to project directory `projectname`
+
+Contact [Matthew Clarke](mailto:m.clarke@kew.org) with relevant owners CC'd to request access.
 
 ### Creating a private/public key pair
 Key generation instructions on the Crop Diversity HPC documentation:

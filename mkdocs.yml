@@ -24,10 +24,9 @@ nav:
     - Remote Access: services/remote-access.md
     - SFTP : services/sftp-service.md
   - Tutorials:
-    - Data Storage : tutorials/storage.md
+#    - Data Storage : tutorials/storage.md
     - File Permissions: tutorials/permissions.md
-    - Slurm Jobs : tutorials/slurm.md
-    - Memory Useage : tutorials/memory.md
-    - Parallel Processing : tutorials/parallel.md
-    - Linux VPN: tutorials/openconnect.md
+#    - Slurm Jobs : tutorials/slurm.md
+#    - Memory Useage : tutorials/memory.md
+#    - Parallel Processing : tutorials/parallel.md
 
