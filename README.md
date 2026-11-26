@@ -1,9 +1,10 @@
 # Welcome to the Kew Bioinformatics Documantation
 These pages are collectively maintained by staff and students at RBG Kew for their own reference. They contain useful information about:
 
-- KewHPC cluster
-- HATTA cluster
-- the Linux Workstations in the Jodrell computer room
+- Bioinformatic resources at Kew
+- Data storage
+- VPN and remote access
+- sharing via SFTP
 - Information and basic help with some bioinformatic software
 
 

@@ -1,31 +1,29 @@
 # Kew Bioinformatics Documentation
 
-This documentation is intended to help new users of the KewHPC system and as an ongoing reference. For further Help or if some thing is not covered here please contact [Matt Clarke](mailto:m.clarke@kew.org). Kew staff can also use the crop diverity cluster (gruffalo) at the James Hutton Institute. For help with accessing or using it thier documentation is here: [help.cropdiversity.ac.uk](https://help.cropdiversity.ac.uk/)
+This documentation is intended to help Kew staff use the bioinformatic resources listed below.
+
+## Services
+
+### [Crop Diversity HPC](./services/cropdiversityhpc.md)
+
+High Performance Compute Cluster, with GPU and fast attached storage hosted in Dundee at the James Hutton Institute. They have more extensive documentation [here](https://help.cropdiversity.ac.uk)
+
+### [HPCStorage](./services/hpcstorage.md)
+
+Storage for scientific data, located at Kew mirrored to Wakehurst. Access via SFTP and SSH.
+
+### [Remote Access](./services/remote_access.md)
+
+Accessing Kew services offsite using Kew's VPN. Required for access to HPCStorage and password based access to the Crop Diversity HPC
+
+### [SFTP](./services/SFTP_service.md)
+
+Private SFTP for sharing data with collaborators as well a public facing SFTP and web interface.
+
+##  Tutorials
+
+There are also several tutortials and guides on best using the services above: see the List to the left.
+There are more tutorials and helpful information on the help pages for the [Crop Diversity HPC](https://help.cropdiversity.ac.uk)
 
 
-####New users should first contact [Matt Clarke](mailto:m.clarke@kew.org) to have their accouts activated.
-
-
-## KewHPC
-
-* [Sytem Description](./KewHPC/Overview.md)   
-* [Getting Connected](./KewHPC/Logging_in_via_ssh.md)
-* [Transfer File](./KewHPC/Transfer_data_via_sftp.md)
-* [Data Storage](./KewHPC/Where_to_store_data.md)
-* [Running Jobs](./KewHPC/Running_Analysis_with_SLURM.md)
-* [Loading Software](./KewHPC/Using_Software_with_LMOD.md)
-* [Environment Management & Containers]()
-
-## Other Services
-
-* [Remote Access](./Other_Services/remote_access.md)
-* [Shareing Data](./Other_Services/External_SFTP_Service.md)
-
-## Software Examples
-
-* [GATK](./software/gatk.md)
-* [HybPiper](./software/hybpiper.md)
-* [Ipyrad](./software/ipyrad.md)
-* [Python](./software/python.md)
-* [R](./software/R.md)
-* [Trimmomatic](./software/trimmomatic.md)
+Any errors or inaccuracies please contact [m.clarke@kew.org](mailto:m.clarke@kew.org)
