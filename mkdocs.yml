@@ -20,7 +20,7 @@ markdown evtentions:
 nav: 
   - Services:
     - Crop Diversity HPC : services/cropdiversityhpc.md
-    - HPCstorage : services/hpcstorage.md
+    - HPCStorage : services/hpcstorage.md
     - Remote Access: services/remote-access.md
     - SFTP : services/sftp-service.md
   - Tutorials:

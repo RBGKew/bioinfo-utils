@@ -8,13 +8,13 @@ This documentation is intended to help Kew staff use the bioinformatic resources
 
 High Performance Compute Cluster, with GPU and fast attached storage hosted in Dundee at the James Hutton Institute. They have more extensive documentation [here](https://help.cropdiversity.ac.uk)
 
-### [hpcstorage](./services/hpcstorage.md)
+### [HPCStorage](./services/hpcstorage.md)
 
 Storage for scientific data, located at Kew mirrored to Wakehurst. Access via SFTP and SSH.
 
 ### [Remote Access](./services/remote_access.md)
 
-Accessing Kew services offsite using Kew's VPN. Required for access to hpcstorage and password based access to the Crop Diversity HPC
+Accessing Kew services offsite using Kew's VPN. Required for access to HPCStorage and password based access to the Crop Diversity HPC
 
 ### [SFTP](./services/SFTP_service.md)
 

@@ -64,7 +64,7 @@ Contact [Matthew Clarke](mailto:m.clarke@kew.org) with relevant owners CC'd to r
 ### Creating a private/public key pair
 Key generation instructions on the Crop Diversity HPC documentation:
 
-- [MacOS/Linux command linei](https://help.cropdiversity.ac.uk/ssh-terminal-keys.html)
+- [MacOS/Linux command line](https://help.cropdiversity.ac.uk/ssh-terminal-keys.html)
 - [Windows GUI](https://help.cropdiversity.ac.uk/ssh-graphical-keys.html)
 
 

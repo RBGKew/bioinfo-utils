@@ -38,7 +38,7 @@ To only change the group of a file you own you can use the `chgrp` command:
 chgrp newgrp file.txt
 ```
 
->Be aware of who else is in the group your setting as they will have access acording to the permissions set below
+Be aware of who else is in the group your setting as they will have access acording to the permissions set below
 
 ## File Permissions
 File permissions can be displayed symbolicly or numerically and can be changed with `chmod`:
@@ -86,7 +86,7 @@ Positions:
 2. Group Permissions
 3. Other Permissions
 
->Execute permissions are required for directory traversal i.e. `cd`
+Execute permissions are required for directory traversal i.e. `cd`
 
 #### Examples:
 
@@ -118,7 +118,7 @@ The permissions can be modified by adding or removing the symbolic notation.
 | `w`  | Write  | Allows writing and usually deletion of the file|
 | `x`  | eXicute| Allows file to be run as a program by bash|
 
-!!! tip
+
 use `chmod -R` to recursivly change permissions for all files and sub-directories in a directory.
 
 
@@ -133,7 +133,7 @@ chmod 2775 directory      # set read/write/execute for user and group and read/w
 
 ### Change all the Permissions
 
-to change all the permissions of a directory tree, while maintaining access to directories (exicute) without giving execute to all files you can use these commands:
+To change all the permissions of a directory tree, while maintaining access to directories (exicute) without giving execute to all files you can use these commands:
 
 ```bash
 find ./directory -type d -exec chmod 2750 {} \; # set user rwx and group read and traversal for all directories
